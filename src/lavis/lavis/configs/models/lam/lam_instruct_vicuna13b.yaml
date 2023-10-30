@@ -1,0 +1,45 @@
+# Copyright (c) 2022, salesforce.com, inc.
+# All rights reserved.
+# SPDX-License-Identifier: BSD-3-Clause
+# For full license text, see the LICENSE file in the repo root or https://opensource.org/licenses/BSD-3-Clause
+
+model:
+  arch: instruct_vicuna13b
+  load_finetuned: False
+  load_pretrained: True
+
+  pretrained: "/data/EECS-MachineListeningLab/jinhua/lam/check_point/Pretrain_stage2/20230823145/checkpoint_1250000.pth"
+  # pretrained: "/data/EECS-MachineListeningLab/jinhua/lam/check_point/Pretrain_stage2_audioset_aqa/with_boa.20230808110/checkpoint_90000.pth" # checkpoint_1250000.pth
+  finetuned: ""
+
+  # vit encoder
+  image_size: 224
+  drop_path_rate: 0
+  use_grad_checkpoint: False
+  vit_precision: "fp16"
+  freeze_vit: True
+
+  # Q-Former
+  num_query_token: 32
+
+  # path to Vicuna checkpoint
+  llm_model: "/data/scratch/eey340/hf_models/llama-2-13b"
+
+  # generation configs
+  prompt: ""
+  qformer_text_input: True
+
+preprocess:
+  vis_processor:
+    train:
+      name: "blip2_image_train"
+      image_size: 224
+    eval:
+      name: "blip_image_eval"
+      image_size: 224
+
+  text_processor:
+    train:
+      name: "blip_caption"
+    eval:
+      name: "blip_caption"
