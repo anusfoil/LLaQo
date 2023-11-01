@@ -88,7 +88,7 @@ class LamQformer(LAMBase):
     PRETRAINED_MODEL_CONFIG_DICT = {
         "pretrain": "configs/models/lam/lam_pretrain.yaml",
     }
-    _VIT_CHECKPOINT_PATH_ = "/data/EECS-MachineListeningLab/jinhua/pretrained_models/finetuned.pth"
+    _VIT_CHECKPOINT_PATH_ = "/data/EECS-MachineListeningLab/huan/pretrained_models/finetuned.pth"
 
     def __init__(
         self,

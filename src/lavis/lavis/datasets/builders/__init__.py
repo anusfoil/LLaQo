@@ -9,10 +9,12 @@ from lavis.datasets.builders.base_dataset_builder import load_dataset_config
 
 from lavis.common.registry import registry
 
-from lavis.datasets.builders.music_qa_builder import ConEspressioneQABuilder
+from lavis.datasets.builders.conespressione_qa_builder import ConEspressioneQABuilder
+from lavis.datasets.builders.expertnovice_qa_builder import ExpertNoviceQABuilder
 
 __all__ = [
     "ConEspressioneQABuilder",
+    "ExpertNoviceQABuilder",
 ]
 
 

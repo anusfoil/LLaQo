@@ -9,15 +9,15 @@ import os
 
 from lavis.common.registry import registry
 from lavis.datasets.builders.base_dataset_builder import BaseDatasetBuilder
-from WORKPLACE.LAM.src.lavis.lavis.datasets.datasets.conespressione_qa import ConEspressioneDatasetQA
+from lavis.datasets.datasets.expertnovice_qa import ExpertNoviceDatasetQA
 
 
-@registry.register_builder("conespressione_qa")
-class ConEspressioneQABuilder(BaseDatasetBuilder):
-    train_dataset_cls = ConEspressioneDatasetQA
-    eval_dataset_cls = ConEspressioneDatasetQA
+@registry.register_builder("expertnovice_qa")
+class ExpertNoviceQABuilder(BaseDatasetBuilder):
+    train_dataset_cls = ExpertNoviceDatasetQA
+    eval_dataset_cls = ExpertNoviceDatasetQA
 
-    DATASET_CONFIG_DICT = {"default": "configs/datasets/music_qa/defaults.yaml"}
+    DATASET_CONFIG_DICT = {"default": "configs/datasets/expertnovice_qa/defaults.yaml"}
 
     def _download_ann(self):
         pass

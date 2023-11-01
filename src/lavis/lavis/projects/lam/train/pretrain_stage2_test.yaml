@@ -9,11 +9,11 @@ model:
   freeze_vit: False
   
   load_pretrained: False
-  pretrained: "/data/EECS-MachineListeningLab/jinhua/lam/check_point/Pretrain_stage1/20230829080/checkpoint_63700.pth"
+  pretrained: "/data/EECS-MachineListeningLab/huan/lam/check_point/Pretrain_stage1/20230829080/checkpoint_63700.pth"
   
   load_finetuned: True
-  # "/data/EECS-MachineListeningLab/jinhua/lam/check_point/Pretrain_stage2/20230905031/checkpoint_3750000.pth"
-  finetuned: "/data/EECS-MachineListeningLab/jinhua/lam/check_point/Pretrain_stage2/20230826222/checkpoint_1125000.pth"
+  # "/data/EECS-MachineListeningLab/huan/lam/check_point/Pretrain_stage2/20230905031/checkpoint_3750000.pth"
+  finetuned: "/data/EECS-MachineListeningLab/huan/lam/check_point/Pretrain_stage2/20230826222/checkpoint_1125000.pth"
 
 datasets:
   # aqa_audioset:
@@ -153,7 +153,7 @@ run:
   warmup_steps: 2000
 
   seed: 42
-  output_dir: "/data/EECS-MachineListeningLab/jinhua/lam/check_point/Pretrain_stage2/vicuna_v1.5"
+  output_dir: "/data/EECS-MachineListeningLab/huan/lam/check_point/Pretrain_stage2/vicuna_v1.5"
 
   amp: True
   resume_ckpt_path: null

@@ -30,7 +30,7 @@ from lavis.models.lam_models.lam import LAMBase, disabled_train
 class SWIFT(LAMBase):
     r"""An extension of (multi-modal) llm for hearing."""
 
-    _VIT_CHECKPOINT_PATH_ = "/data/EECS-MachineListeningLab/jinhua/pretrained_models/finetuned.pth"
+    _VIT_CHECKPOINT_PATH_ = "/data/EECS-MachineListeningLab/huan/pretrained_models/finetuned.pth"
 
     def __init__(self, **kwargs):
         super().__init__()
@@ -321,7 +321,7 @@ if __name__ == "__main__":
     import pandas as pd
     from utilities import dump_pickle
 
-    _BERT_LOCAL_PATH_ = "/data/EECS-MachineListeningLab/jinhua/pretrained_model_zoo/berts/bert_mini"
+    _BERT_LOCAL_PATH_ = "/data/EECS-MachineListeningLab/huan/pretrained_model_zoo/berts/bert_mini"
     device = torch.device("cuda") if torch.cuda.is_available() else "cpu"
 
     df = pd.read_csv(
@@ -332,7 +332,7 @@ if __name__ == "__main__":
     swift = SWIFT()
     swift.init_swift(device=device)
     swift.load_checkpoint(
-        "/data/EECS-MachineListeningLab/jinhua/lam/check_point/Pretrain_stage2_audioset_aqa/without_boa.20230803203/checkpoint_150000.pth"
+        "/data/EECS-MachineListeningLab/huan/lam/check_point/Pretrain_stage2_audioset_aqa/without_boa.20230803203/checkpoint_150000.pth"
     )
 
     categories_tokens, cats = [], []

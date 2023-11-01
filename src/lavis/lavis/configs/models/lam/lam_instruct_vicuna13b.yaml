@@ -8,8 +8,8 @@ model:
   load_finetuned: False
   load_pretrained: True
 
-  pretrained: "/data/EECS-MachineListeningLab/jinhua/lam/check_point/Pretrain_stage2/20230823145/checkpoint_1250000.pth"
-  # pretrained: "/data/EECS-MachineListeningLab/jinhua/lam/check_point/Pretrain_stage2_audioset_aqa/with_boa.20230808110/checkpoint_90000.pth" # checkpoint_1250000.pth
+  pretrained: "/data/EECS-MachineListeningLab/huan/lam/check_point/Pretrain_stage2/20230823145/checkpoint_1250000.pth"
+  # pretrained: "/data/EECS-MachineListeningLab/huan/lam/check_point/Pretrain_stage2_audioset_aqa/with_boa.20230808110/checkpoint_90000.pth" # checkpoint_1250000.pth
   finetuned: ""
 
   # vit encoder

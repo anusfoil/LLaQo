@@ -4,6 +4,7 @@
  SPDX-License-Identifier: BSD-3-Clause
  For full license text, see the LICENSE file in the repo root or https://opensource.org/licenses/BSD-3-Clause
 """
+import hook
 
 import argparse
 import os
@@ -95,6 +96,8 @@ def main():
 
     task = tasks.setup_task(cfg)
     datasets = task.build_datasets(cfg)
+    # print(type(datasets))
+    # print(datasets['train'])
     model = task.build_model(cfg)
 
     runner = get_runner_class(cfg)(cfg=cfg,

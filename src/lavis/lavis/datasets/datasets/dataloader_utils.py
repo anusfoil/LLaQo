@@ -160,3 +160,7 @@ class IterLoader:
 
     def __len__(self):
         return len(self._dataloader)
+
+
+if __name__ == "__main__":
+    PrefetchLoader()

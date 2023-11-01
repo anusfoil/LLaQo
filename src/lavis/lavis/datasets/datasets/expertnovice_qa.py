@@ -14,6 +14,7 @@ from collections import OrderedDict
 from random import randint
 sys.path.append(os.path.dirname(__file__))
 from audio_processor import fbankProcessor
+import hook
 
 try:
     from lavis.datasets.datasets.base_dataset import BaseDataset
@@ -25,11 +26,11 @@ except:
     # from prompt_template import _QUESTION4CLASSIFICATION_ as _QUESTION_
 
 
-ANSWERS_CSV = '/data/EECS-MachineListeningLab/datasets/con_espressione/evaluation_data_anonymous.csv'
-AUDIO_DIR = '/data/EECS-MachineListeningLab/datasets/con_espressione/recordings_and_alignments'
+ANSWERS_CSV = '/data/EECS-MachineListeningLab/datasets/expert_novice/evaluation_data_anonymous.csv'
+AUDIO_DIR = '/data/EECS-MachineListeningLab/datasets/expert_novice/recordings_and_alignments'
 
 class ExpertNoviceDataset(Dataset):
-    """Con espressione dataset."""
+    """Expert Novice dataset."""
 
     def __init__(self, answers_csv=ANSWERS_CSV, audio_dir=AUDIO_DIR, transform=None,
                  audio_processor=fbankProcessor.build_processor()):
@@ -43,26 +44,40 @@ class ExpertNoviceDataset(Dataset):
         self.audio_dir = audio_dir
         self.transform = transform
 
-        self.audio_answers['piece_name_'] = self.audio_answers['piece_name'].apply(lambda x: x.replace("_", '-').replace("excerpt", ""))
-        self.audio_answers['audio_path'] = self.audio_answers['piece_name_'] + "_" + self.audio_answers['performer'].apply(lambda x: x.lower())
+        self.audio_answers['audio_path'] = self.audio_answers['Piece_name'] + "-" + self.audio_answers['Recording_number'].apply(lambda x: str(x).zfill(2))
+        self.audio_answers['audio_path'] = self.audio_answers['Piece_name'].apply(lambda x: "".join(x.split())) + "/" + self.audio_answers['audio_path']
+
+        self.audio_qa = []
+        for _, row in self.audio_answers.iterrows():
+            for idx in range(1, 5):
+                self.audio_qa.append((row['audio_path'], "What feedback would you give to this student's performance?", row[f'Instructor{idx}_text']))
+                self.audio_qa.append((row['audio_path'], "What is the overall rating you would assign to the performance, in a scale 5?", str(row[f'Instructor{idx}_rating'])))
+                self.audio_qa.append((row['audio_path'], "What feedback would you give to this student's performance?", row[f'Rater{idx}_text']))
+                self.audio_qa.append((row['audio_path'], "What is the overall rating you would assign to the performance, in a scale 5?", str(row[f'Rater{idx}_rating'])))
+
+        self.audio_qa = pd.DataFrame(self.audio_qa, columns=['audio_path', 'qtype', 'answer'])
 
         self.audio_processor = audio_processor
 
     def __len__(self):
-        return len(self.audio_answers)
+        return len(self.audio_qa)
 
     def __getitem__(self, idx):
         if torch.is_tensor(idx):
             idx = idx.tolist()
 
         audio_path = os.path.join(self.audio_dir,
-                                self.audio_answers['audio_path'].iloc[idx]) + ".wav"
+                                self.audio_qa['audio_path'].iloc[idx]) + ".wav"
 
-        answer = self.audio_answers['answer'].iloc[idx]
+        answer = self.audio_qa['answer'].iloc[idx]
+        if self.audio_qa['qtype'].iloc[idx] == "feedback":
+            question = "What feedback would you give to this student's performance?"
+        else:
+            question = "What is the overall rating you would assign to the performance, in a scale 5?"
         
         sample = {
                 'audio_path': audio_path, 
-                'question': "How would you describe this piece of performance?",
+                'question': self.audio_qa['qtype'].iloc[idx],
                 'answer': answer}
         
         sample["waveform"], sample["fbank"] = self.audio_processor(audio_path)[:-1]
@@ -114,7 +129,7 @@ if __name__ == "__main__":
     )
     print(next(iter(dataset)))
 
-    # loader = torch.utils.data.DataLoader(dataset, batch_size=1)
-    # for datum in loader:
-    #     print(datum)
-    #     break
+    loader = torch.utils.data.DataLoader(dataset, batch_size=16)
+    for datum in loader:
+        print(datum)
+        hook()

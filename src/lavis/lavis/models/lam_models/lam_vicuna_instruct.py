@@ -53,7 +53,7 @@ class LAMVicunaInstruct(LAMBase):
     }
     # FIXME
     _VIT_CHECKPOINT_PATH_ = (
-        "/data/EECS-MachineListeningLab/jinhua/pretrained_models/finetuned.pth"
+        "/data/EECS-MachineListeningLab/huan/pretrained_models/finetuned.pth"
     )
 
     def __init__(

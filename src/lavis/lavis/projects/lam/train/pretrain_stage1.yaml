@@ -76,7 +76,7 @@ run:
   warmup_steps: 5000
 
   seed: 42
-  output_dir: "/data/EECS-MachineListeningLab/jinhua/lam/check_point/Pretrain_stage1"
+  output_dir: "/data/EECS-MachineListeningLab/huan/lam/check_point/Pretrain_stage1"
 
   amp: True
   resume_ckpt_path: null

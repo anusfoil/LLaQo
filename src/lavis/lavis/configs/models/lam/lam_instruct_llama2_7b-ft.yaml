@@ -8,7 +8,7 @@ model:
   load_finetuned: True
   load_pretrained: False
 
-  pretrained: "/data/EECS-MachineListeningLab/jinhua/lam/check_point/Pretrain_stage1/20230829080/checkpoint_63700.pth"
+  pretrained: "/data/EECS-MachineListeningLab/huan/lam/check_point/Pretrain_stage1/20230829080/checkpoint_63700.pth"
   finetuned: "/data/home/acw630/WORKPLACE/LAM/engine/result_model.pth"
 
   # vit encoder

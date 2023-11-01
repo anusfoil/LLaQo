@@ -9,13 +9,25 @@ model:
   freeze_vit: False
   
   load_pretrained: False
-  pretrained: "/data/EECS-MachineListeningLab/jinhua/lam/check_point/Pretrain_stage1/20230829080/checkpoint_63700.pth"
+  pretrained: "/data/EECS-MachineListeningLab/huan/lam/check_point/Pretrain_stage1/20230829080/checkpoint_63700.pth"
   
   load_finetuned: True
-  finetuned: "/data/EECS-MachineListeningLab/jinhua/lam/check_point/Pretrain_stage2/20230905031/checkpoint_3750000.pth"
+  finetuned: "/data/EECS-MachineListeningLab/huan/lam/check_point/Pretrain_stage2/20230905031/checkpoint_3750000.pth"
 
 datasets:
-  conespressione_qa:
+  # conespressione_qa:
+  #   build_info:
+  #     splits: ["train"]
+  #   audio_processor:
+  #     train:
+  #       name: "audio_processor"
+  #       num_mel_bins: 128
+  #       target_length: 1024
+  #   text_processor:
+  #     train:
+  #       name: "blip_caption"
+
+  expertnovice_qa:
     build_info:
       splits: ["train"]
     audio_processor:
@@ -44,7 +56,7 @@ run:
   warmup_steps: 2000
 
   seed: 42
-  output_dir: "/data/EECS-MachineListeningLab/jinhua/lam/check_point/Pretrain_stage2/test_musicqa"
+  output_dir: "/data/EECS-MachineListeningLab/huan/lam/check_point/Pretrain_stage2/test_musicqa"
 
   amp: True
   resume_ckpt_path: null
