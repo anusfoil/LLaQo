@@ -8,13 +8,13 @@ model:
   load_finetuned: True
   load_pretrained: False
 
-  pretrained: "/data/EECS-MachineListeningLab/huan/lam/check_point/Pretrain_stage1/20230829080/checkpoint_63700.pth"
+  pretrained: "/data/EECS-MachineListeningLab/jinhua/lam/check_point/Pretrain_stage1/20230829080/checkpoint_63700.pth"
   # "/data/home/acw630/WORKPLACE/LAM/engine/20230826222_625000.pth"
   # "/data/home/acw630/WORKPLACE/LAM/engine/20230824102_625000.pth"
   # "/data/home/acw630/WORKPLACE/LAM/engine/result_model.pth"
-  # pretrained: "/data/EECS-MachineListeningLab/huan/lam/check_point/Pretrain_stage2/20230829124/checkpoint_625000.pth" # "/data/home/acw630/WORKPLACE/LAM/engine/20230824102_625000.pth" # "/data/EECS-MachineListeningLab/huan/lam/check_point/Pretrain_stage2/20230823145/checkpoint_1250000.pth"
-  # pretrained: "/data/EECS-MachineListeningLab/huan/lam/check_point/Pretrain_stage2_audioset_aqa/with_boa.20230808110/checkpoint_90000.pth" # checkpoint_1250000.pth
-  finetuned: "/data/EECS-MachineListeningLab/huan/lam/check_point/Pretrain_stage2/20230826222/checkpoint_1125000.pth"
+  # pretrained: "/data/EECS-MachineListeningLab/jinhua/lam/check_point/Pretrain_stage2/20230829124/checkpoint_625000.pth" # "/data/home/acw630/WORKPLACE/LAM/engine/20230824102_625000.pth" # "/data/EECS-MachineListeningLab/jinhua/lam/check_point/Pretrain_stage2/20230823145/checkpoint_1250000.pth"
+  # pretrained: "/data/EECS-MachineListeningLab/jinhua/lam/check_point/Pretrain_stage2_audioset_aqa/with_boa.20230808110/checkpoint_90000.pth" # checkpoint_1250000.pth
+  finetuned: "/data/EECS-MachineListeningLab/jinhua/lam/check_point/Pretrain_stage2/20230826222/checkpoint_1125000.pth"
 
   max_output_txt_len: 2048
 
@@ -29,7 +29,7 @@ model:
   num_query_token: 32
 
   # path to Vicuna checkpoint
-  llm_model: "/data/EECS-MachineListeningLab/huan/pretrained_models/vicuna.7b"
+  llm_model: "/data/EECS-MachineListeningLab/jinhua/pretrained_models/vicuna.7b"
 
   # generation configs
   prompt: ""

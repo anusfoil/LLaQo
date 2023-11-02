@@ -10,7 +10,6 @@ from copy import deepcopy
 import torch
 import torch.nn.functional as F
 from lavis.common.registry import registry
-from lavis.models.albef_models import compute_sim_matrix
 from lavis.models.base_model import (
     MomentumDistilationMixin,
     SharedQueueMixin,

@@ -2,7 +2,7 @@
 #$ -l gpu=1
 #$ -pe smp 8
 #$ -l h_vmem=11G
-#$ -l h_rt=1:0:0
+#$ -l h_rt=240:0:0
 #$ -wd /data/home/acw630/WORKPLACE/LAM/engine/data/_preprocess
 #$ -j y
 #$ -N test_musicqa
@@ -29,8 +29,8 @@ python -m torch.distributed.run \
     ${WORK_PLACE}/train.py \
     --cfg-path ${WORK_PLACE}/lavis/projects/lam/train/pretrain_stage2_test_musicqa.yaml \
     --options \
-    run.max_iters=2000 \
-    run.iters_per_inner_epoch=200 \
+    run.max_iters=20000 \
+    run.iters_per_inner_epoch=1000 \
     run.batch_size_train=8 \
     run.accum_grad_iters=1 \
     run.num_workers=4

@@ -12,15 +12,6 @@ from lavis.common.registry import registry
 
 from lavis.models.base_model import BaseModel
 
-from lavis.models.albef_models.albef_classification import AlbefClassification
-from lavis.models.albef_models.albef_feature_extractor import AlbefFeatureExtractor
-from lavis.models.albef_models.albef_nlvr import AlbefNLVR
-from lavis.models.albef_models.albef_pretrain import AlbefPretrain
-from lavis.models.albef_models.albef_retrieval import AlbefRetrieval
-from lavis.models.albef_models.albef_vqa import AlbefVQA
-from lavis.models.alpro_models.alpro_qa import AlproQA
-from lavis.models.alpro_models.alpro_retrieval import AlproRetrieval
-
 from lavis.models.blip_models.blip import BlipBase
 from lavis.models.blip_models.blip_caption import BlipCaption
 from lavis.models.blip_models.blip_classification import BlipClassification
@@ -56,14 +47,6 @@ from lavis.processors.base_processor import BaseProcessor
 
 __all__ = [
     "load_model",
-    "AlbefClassification",
-    "AlbefFeatureExtractor",
-    "AlbefNLVR",
-    "AlbefVQA",
-    "AlbefPretrain",
-    "AlbefRetrieval",
-    "AlproQA",
-    "AlproRetrieval",
     "BaseModel",
     "BlipBase",
     "BlipFeatureExtractor",

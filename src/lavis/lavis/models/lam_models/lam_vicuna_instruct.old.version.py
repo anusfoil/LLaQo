@@ -40,7 +40,7 @@ class LAMVicunaInstruct(LAMBase):
         "vicuna7b": "configs/models/lam/lam_instruct_vicuna7b.yaml",
     }
     # FIXME
-    _VIT_CHECKPOINT_PATH_ = "/data/EECS-MachineListeningLab/huan/pretrained_models/finetuned.pth"
+    _VIT_CHECKPOINT_PATH_ = "/data/EECS-MachineListeningLab/jinhua/pretrained_models/finetuned.pth"
 
     def __init__(
         self,

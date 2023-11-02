@@ -8,7 +8,7 @@ model:
   load_finetuned: False
   load_pretrained: True
 
-  pretrained: "/data/EECS-MachineListeningLab/huan/lam/check_point/Pretrain_stage1/20230829080/checkpoint_63700.pth"
+  pretrained: "/data/EECS-MachineListeningLab/jinhua/lam/check_point/Pretrain_stage1/20230829080/checkpoint_63700.pth"
   finetuned: ""
 
   # vit encoder
@@ -22,7 +22,7 @@ model:
   num_query_token: 32
 
   # path to Vicuna checkpoint
-  llm_model: "/data/EECS-MachineListeningLab/huan/pretrained_models/vicuna.7b"
+  llm_model: "/data/EECS-MachineListeningLab/jinhua/pretrained_models/vicuna.7b"
 
   # generation configs
   prompt: ""

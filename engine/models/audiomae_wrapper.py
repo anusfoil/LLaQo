@@ -109,8 +109,9 @@ class AudioMAE(nn.Module):
         self.model = self.model.to(device)
 
     def from_pretrained(self, ckpt_path: str) -> str:
-        checkpoint = torch.load(ckpt_path, map_location=self.device)
         logging.info(f"Load pre-trained checkpoint from: {ckpt_path}")
+        checkpoint = torch.load(ckpt_path, map_location=self.device)
+        
         checkpoint_model = checkpoint['model']
 
         msg = self.model.load_state_dict(checkpoint_model, strict=False)
@@ -215,6 +216,7 @@ class AudioMAE(nn.Module):
         if ckpt_path is not None:
             msg = audiomae.from_pretrained(ckpt_path)
             print(f"Load from checkpoint: {msg}.")
+            
 
         if precision == "fp16":
             convert_weights_to_fp16(audiomae.model)

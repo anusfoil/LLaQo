@@ -26,11 +26,11 @@ from lavis.models.eva_vit import create_eva_vit_g
 from lavis.models.clip_vit import create_clip_vit_L
 
 _BERT_LOCAL_PATH_ = (
-    "/data/EECS-MachineListeningLab/huan/pretrained_model_zoo/berts/bert_mini"
+    "/data/EECS-MachineListeningLab/jinhua/pretrained_model_zoo/berts/bert_mini"
 )
 
 # _BERT_LOCAL_PATH_ = (
-#     "/data/EECS-MachineListeningLab/huan/pretrained_model_zoo/berts/bert_small"
+#     "/data/EECS-MachineListeningLab/jinhua/pretrained_model_zoo/berts/bert_small"
 # )
 
 

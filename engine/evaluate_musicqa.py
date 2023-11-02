@@ -25,7 +25,7 @@ def generate_answer_on_musicqa(
     model, _, _ = load_model_and_preprocess(
         name="lam_vicuna_instruct",
         # NOTE: change to other weights
-        model_type="vicuna1.5_7b-ft",  # vicuna7b-ft
+        model_type="vicuna7b-ft", 
         is_eval=True,
         device=device,
     )
@@ -72,7 +72,7 @@ if __name__ == "__main__":
     parser.add_argument("--ckpt_folder_name", type=str)
     args = parser.parse_args()
 
-    results_json_dir = "/data/home/eey340/WORKPLACE/LAM/engine/results/tagging/ablate"
+    results_json_dir = "/data/home/acw630/WORKPLACE/LAM/engine/results/tagging/ablate"
     os.makedirs(results_json_dir, exist_ok=True)
 
     swift_ckpt_path = "/data/EECS-MachineListeningLab/huan/lam/check_point/Pretrain_stage1/20230829080/checkpoint_63700.pth"
@@ -85,7 +85,7 @@ if __name__ == "__main__":
     # ckpt_foldername = args.ckpt_folder_name  # "20230829124"
     # checkpoint_paths = glob(os.path.join(lam_ckpt_dir, ckpt_foldername, "*.pth"))
     checkpoint_paths = [
-        "/data/EECS-MachineListeningLab/huan/lam/check_point/Pretrain_stage2/test_musicqa/20231023000/checkpoint_20000.pth",
+        "/data/EECS-MachineListeningLab/huan/lam/check_point/Pretrain_stage2/test_musicqa/20231101202/checkpoint_6200.pth",
     ]
     for lam_ckpt_path in checkpoint_paths:
         pth = lam_ckpt_path.split("/")[-1].split(".")[0]

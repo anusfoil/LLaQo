@@ -22,7 +22,7 @@ log = set_logger(__name__)
 # class SWIFT(LAMBase):
 #     r"""An extension of (multi-modal) llm for hearing."""
 
-#     _VIT_CHECKPOINT_PATH_ = "/data/EECS-MachineListeningLab/huan/pretrained_models/finetuned.pth"
+#     _VIT_CHECKPOINT_PATH_ = "/data/EECS-MachineListeningLab/jinhua/pretrained_models/finetuned.pth"
 
 #     def init_swift(
 #         self,
@@ -320,7 +320,7 @@ log = set_logger(__name__)
 class SWIFT(LAMBase):
     r"""An extension of (multi-modal) llm for hearing."""
 
-    _VIT_CHECKPOINT_PATH_ = "/data/EECS-MachineListeningLab/huan/pretrained_models/finetuned.pth"
+    _VIT_CHECKPOINT_PATH_ = "/data/EECS-MachineListeningLab/jinhua/pretrained_models/finetuned.pth"
 
     def init_swift(
         self,
@@ -616,7 +616,7 @@ class SWIFT(LAMBase):
 
 
 if __name__ == "__main__":
-    ckpt_path = "/data/EECS-MachineListeningLab/huan/lam/check_point/Pretrain_stage1_audioset/20230728062/checkpoint_270000.pth"
+    ckpt_path = "/data/EECS-MachineListeningLab/jinhua/lam/check_point/Pretrain_stage1_audioset/20230728062/checkpoint_270000.pth"
     device = torch.device("cuda") if torch.cuda.is_available() else "cpu"
 
     swift = SWIFT(map_to_llm=True, device=device)

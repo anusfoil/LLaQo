@@ -9,10 +9,10 @@ model:
   freeze_vit: False
   
   load_pretrained: False
-  pretrained: "/data/EECS-MachineListeningLab/huan/lam/check_point/Pretrain_stage1/20230829080/checkpoint_63700.pth"
+  pretrained: "/data/EECS-MachineListeningLab/jinhua/lam/check_point/Pretrain_stage1/20230829080/checkpoint_63700.pth"
   
   load_finetuned: True
-  finetuned: "/data/EECS-MachineListeningLab/huan/lam/check_point/Pretrain_stage2/20230905031/checkpoint_3750000.pth"
+  finetuned: "/data/EECS-MachineListeningLab/jinhua/lam/check_point/Pretrain_stage2/20230905031/checkpoint_3750000.pth"
 
 datasets:
   # conespressione_qa:
