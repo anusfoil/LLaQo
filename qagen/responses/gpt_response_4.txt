@@ -1,0 +1,42 @@
+Here is the standardized QA pairs for teacher feedbacks:
+
+Feedback 0. More carefully follows the specific directions for dynamics and tempo. 
+1. Q: How would you rate the adherence to the dynamics specified in the piece? A: Performer follows the specific directions for dynamics carefully. 
+2. Q: How is the overall tempo? A: Performer follows the specific directions for tempo carefully. 
+
+Feedback 1. The performer played the piece smoothly and with confidence! It sounded effectively flawless.
+1. Q: Is the performance hesitant or smooth? A: The performance was smooth.
+2. Q: How would you describe the emotional intent of the performance? A: The performer played with confidence.
+3. Q: In which skill level would you say the performer is in? What's the reasoning of that? A: The performer is in a high skill level. The performance was effectively flawless.
+
+Feedback 2. Nice tempo! Nice steady rhythm! Accurate reading! Good little rubato at the end! 
+1. Q: How is the overall tempo? A: Nice tempo.
+2. Q: Is the rhythm accurate? A: Nice steady rhythm.
+3. Q: Is the performed note accurate? A: Accurate reading.
+4. Q: Is there reasonable tempo contrast? A: Good little rubato at the end.
+
+Feedback 3. Way more flow and smoothness. Dynamics make sense and are more interesting to listen to. I don't want to give it a 4 because of that, but in my opinion, could be a tiny bit slower as the tempo is "moderately slow"
+1. Q: Is the performance hesitant or smooth? A: Way more flow and smoothness.
+2. Q: Is there reasonable dynamics contrast? A: Dynamics make sense and are more interesting to listen to.
+3. Q: How is the overall tempo? A: Could be a tiny bit slower as the tempo is "moderately slow".
+
+Feedback 4. good smooth performance with addition of pedal; needed to rit at end; could use more dynamic shaping 
+1. Q: Is the performance hesitant or smooth? A: Good smooth performance.
+2. Q: How is the pedal usage? A: Good, there's an addition of pedal.
+3. Q: Is there reasonable tempo contrast? A: Needed to rit at end.
+4. Q: Is there reasonable dynamics contrast? A: Could use more dynamic shaping.
+
+Feedback 5. The player had a very consistent tempo. There was great phrasing between sections of the music. The overall musicality was excellent. 
+1. Q: How is the overall tempo? A: Very consistent tempo.
+2. Q: Is the phrasing or melodic shaping clear? A: Great phrasing between sections.
+3. Q: How would you describe the emotional intent of the performance? A: The overall musicality was excellent.
+
+Feedback 6. Good use of pedal. All good except rit at end and dynamics as indicated lines 3-4 not enough. 
+1. Q: How is the pedal usage? A: Good use of pedal.
+2. Q: Is there reasonable tempo contrast? A: All good except rit at end.
+3. Q: Is there reasonable dynamics contrast? A: Dynamics as indicated lines 3-4 not enough.
+
+Feedback 7. The notes were accurate, and the pace was consistent. However, there was no change in sound intensity at the crescendo. 
+1. Q: Is the performed note accurate? A: The notes were accurate.
+2. Q: How is the overall tempo? A: The pace was consistent.
+3. Q: Is there reasonable dynamics contrast? A: No change in sound intensity at the crescendo.

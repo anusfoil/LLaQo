@@ -1,0 +1,38 @@
+Here are the QA pairs:
+
+0. 
+1. Q: Is the performed note accurate? A: Error in RH m.11.
+2. Q: Is there reasonable dynamics contrast? A: Nice dynamic contrast. 
+3. Q: Is the performed tempo stable? A: Good Ritard at end.
+
+1. 
+1. Q: Is the pedal usage appropriate? A: Too much pedal.
+2. Q: Is the performed tempo stable? A: Inconsistent tempo.
+
+2. 
+1. Q: How is the overall tempo? A: Excellent tempo. 
+2. Q: Is the rhythm accurate? A: Careful to place the quarter notes correctly in m. 12.
+
+3. 
+1. Q: Is the performed note accurate? A: Mostly accurate.
+2. Q: How is the overall tempo? A: Contains a mistake about the tempo at very last of the piece.
+
+4. 
+1. Q: How is the overall tempo? A: Under tempo.
+2. Q: Is there reasonable dynamics contrast? A: Not enough dynamic shaping.
+3. Q: Is the rhythm accurate? A: One rhythm mistake.
+
+5. 
+1. Q: How is the overall tempo? A: I like the tempo of this recording. 
+2. Q: Is the phrasing or melodic shaping clear? A: It could be better in melodic phrasing.
+3. Q: Is there reasonable dynamics contrast? A: Good change of dynamics.
+
+6. 
+1. Q: How is the overall tempo? A: Bit slow.
+2. Q: Is the rhythm accurate? A: Wrong rhythm end of line 3.
+
+7.  
+1. Q: How is the overall tempo? A: The tempo felt right.
+2. Q: Is the rhythm accurate? A: In the last measure of the third line, the last two quarter notes were rushed.
+3. Q: Is there reasonable dynamics contrast? A: They interpreted dynamics well.
+4. Q: Is the interpretation appropriate to the style of the composition? A: They did the rit at the end, which did a good job of phrasing the ending naturally.

@@ -1,0 +1,48 @@
+Sure, here are the standardized teacher's feedback information into QA pairs based on your framework:
+
+0. Teacher: Accurate and well done, plus a good rit. at the end
+   Generate:
+   1. Q: Is the performed note accurate? A: Accurate.
+   2. Q: How is the overall performance? A: Well done.
+   3. Q: Is there reasonable tempo contrast? A: Good rit. at the end.
+
+1. Teacher: This one was really good! It felt like it hit on all of the important parts of the piece.
+   Generate:
+   1. Q: In which skill level would you say the performer is in? A: Really good.
+   2. Q: Is the performance covering all essential aspects of the piece? A: Yes, it hit on all of the important parts of the piece.
+
+2. Teacher: Nicely played! All accurate! Good diminuendo and rubato ending.
+   Generate:
+   1. Q: Is the performed note accurate? A: Accurate.
+   2. Q: How is the overall performance? A: Nicely played.
+   3. Q: How is the dynamic change? A: Good diminuendo.
+   4. Q: Is there reasonable tempo contrast? A: Good rubato ending.
+
+3. Teacher: Some incorrect rhythm. A bit less bland. Rit. at the end respected. Flat dynamics, insecure.
+   Generate:
+   1. Q: Is the rhythm accurate? A: Some incorrect rhythm.
+   2. Q: Is the tempo stable? A: A bit less bland.
+   3. Q: Is there reasonable tempo contrast? A: Rit. at the end respected.
+   4. Q: How is the dynamic contrast? A: Flat dynamics.
+
+4. Teacher: Very good! Could have dropped a bit more to mf in third line.
+   Generate:
+   1. Q: In which skill level would you say the performer is in? A: Very good.
+   2. Q: What does the student needs to work on? A: Could have dropped a bit more to mf in third line.
+
+5. Teacher: The player has great accuracy and tempo. The flow suits blues well and conveys musicality.
+   Generate:
+   1. Q: Is the performed note accurate? A: Great accuracy.
+   2. Q: How is the overall tempo? A: Great tempo.
+   3. Q: How would you describe the emotional intent of the performance? A: The flow suits blues well and conveys musicality.
+
+6. Teacher: Excellent but a bit heavy. Didn't do the mf line 3. Should be 4 1/2!
+   Generate:
+   1. Q: In which skill level would you say the performer is in? A: Excellent.
+   2. Q: How is the expression of the piece? A: A bit heavy.
+   3. Q: What does the student needs to work on? A: Didn't do the mf line 3.
+
+7. Teacher: This was very excellent; I could not find anything wrong with it.
+   Generate:
+   1. Q: In which skill level would you say the performer is in? A: Very excellent.
+   2. Q: Have the student made any mistakes in the performance? A: Could not find anything wrong with it.

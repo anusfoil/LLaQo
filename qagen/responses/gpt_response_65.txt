@@ -1,0 +1,37 @@
+For the given feedbacks, the QA pairs could be as follows:
+
+0. 
+   1. Q: Is the performed note accurate? A: The pitches are OK.
+   2. Q: Is the rhythm accurate? A: Rhythms are inaccurate.
+   3. Q: Is there reasonable dynamics contrast? A: No dynamic variation at all.
+   4. Q: Is the performed tempo stable? A: No tempo variation.
+
+1. 
+   1. Q: Is the performed note accurate? A: They were the right notes.
+   2. Q: Is the rhythm accurate? A: The performer misunderstood the rhythms of the notes. There was no meter.
+
+2. 
+   1. Q: Is the performed note accurate? A: Left hand chords are all correct.
+   2. Q: Is the rhythm accurate? A: Right hand rhythm is all over the place.
+   3. Q: What does the student needs to work on? A: Needs to rework the entire piece.
+
+3. 
+   1. Q: Is the performed note accurate? A: The main melody line has completely wrong rhythm.
+   2. Q: Is the rhythm accurate? A: What I heard and what is on the paper doesn't match at all.
+   3. Q: Is the performed tempo stable? A: The performance was insecure and rushed.
+
+4. 
+   1. Q: Is the rhythm accurate? A: Lots of wrong rhythms.
+
+5. 
+   1. Q: Is the performed note accurate? A: The player has great accuracy with the notes.
+   2. Q: How would you describe the emotional intent of the performance? A: The performer conveys the blues style well.
+
+6. 
+   1. Q: Is the rhythm accurate? A: Rh rhythms wrong throughout.
+   2. Q: Is the performed note accurate? A: Wrong note line 2.
+
+7. 
+   1. Q: Is the rhythm accurate? A: Some of the quarter notes were consistently played as eighth notes. The rhythm was off.
+   2. Q: Is the performed tempo stable? A: They did not slow down at the rit. at the end.
+   3. Q: How is the overall tempo? A: Both the beat and the tempo were off.

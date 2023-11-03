@@ -1,0 +1,44 @@
+0. Teacher: Tempo varies a little. good ritard at end. Dynamics could be more 
+     Generate: 
+     1. Q: How is the overall tempo? A: Tempo varies a little. 
+     2. Q: Is there reasonalbe tempo contrast? A: There is good ritard at end. 
+     3. Q: Is there reasonalbe dynamics contrast? A: Dynamics could be more. 
+
+1. Teacher: The notes were correct, but some of the rhythms were rushed. They included the staccatos, crescendo, and ritardando correctly. The tempo was slightly sporadic, however, and certain measures were very rushed. Overall, the piece felt inconsistent. 
+     Generate:  
+     1. Q: Is the performed note accurate? A: The notes were correct. 
+     2. Q: Is the rhythm accurate? A: Some of the rhythms were rushed. 
+     3. Q: What is the overall tempo? A: The tempo was slightly sporadic, certain measures were very rushed. 
+     4. Q: How would you describe the emotional intent of the performance? A: The performance felt inconsistent. 
+
+2. Teacher: Well played! All accurate! Gentle rubato at the end. 
+     Generate: 
+     1. Q: In which skill level would you say the performer is in? A: The performer is in a good skill level. 
+     2. Q: Is the performance following score instructions? A: The performance is all accurate.
+     3. Q: How is the overall tempo? A: There is a gentle rubato at the end. 
+
+3. Teacher: The piece was played accurately in notes, rhythm, and dynamics. Pleasant to listen to. 
+     Generate:  
+     1. Q: Is the performed note accurate? A: The notes were played accurately. 
+     2. Q: Is the performed rhythm accurate? A: The rhythm was played accurately. 
+     3. Q: Is there reasonable dynamics contrast? A: The dynamic contrasts were played accurately.
+
+4. Teacher: Didn't hold right hand half notes long enough in the first half of the piece.  Otherwise, nice! 
+     Generate:  
+     1. Q: Is the performed note accurate? A: Didn't hold right hand half notes long enough in the first half of the piece. 
+     2. Q: In which skill level would you say the performer is in? A: The performer has a good skill level, but needs to work on holding right hand half notes.
+
+5. Teacher: Nearly perfect, expect for dynamics and holding right-hand half notes until beat three. 
+     Generate:  
+     1. Q: Is the performed note accurate? A: Needs to work on holding right-hand half notes until beat three. 
+     2. Q: Is there reasonable dynamics contrast? A: Needs more dynamics contrast.
+
+6. Teacher: Some RH half notes shortened. Otherwise good. 
+     Generate:  
+     1. Q: Is the performed note accurate? A: Some RH half notes shortened. 
+     2. Q: In which skill level would you say the performer is in? A: The performance is good overall.
+
+7. Teacher: Sounds very good except some minor tempo inconsistency in the middle. 
+     Generate: 
+     1. Q: How is the overall tempo? A: There is some minor tempo inconsistency in the middle. 
+     2. Q: In which skill level would you say the performer is in? A: The performance sounds very good overall.

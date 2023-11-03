@@ -1,0 +1,40 @@
+0. Teacher feedback: Rhythm error at m.3 and 11. Meter errors throughout chorus. Skipped the repeat 
+   Generated:
+   1. Q: Is the performed rhythm accurate? A: Rhythm error at m.3 and 11. Meter errors throughout chorus. 
+   2. Q: Is the performance hesitant or smooth? A: Performance includes skipping parts (the repeat).
+
+1. Teacher feedback: Exactly what I wanted. Great balance, left hand pops. Tiny bits of hesitation, but otherwise very clean.
+   Generated:
+   1. Q: How would you describe the emotional intent of the performance? A: Exactly what I wanted.
+   2. Q: Is there reasonable balance between hands? A: Great balance, left hand pops.
+   3. Q: Is the performance hesitant or smooth? A: Tiny bits of hesitation, but otherwise very clean.
+
+2. Teacher feedback: First section is better than chorus. Missing right hand melody legato playing in first section. Wrong rhythm in chorus. Also no repeat in chorus.
+   Generated:
+   1. Q: What does the student need to work on? A: Missing right hand melody legato playing in first section, wrong rhythm in chorus.
+   2. Q: Is the performance following score instructions? A: Student missed the repeat in chorus.
+
+3. Teacher feedback: This recording sounds a 3 to 4 for the first half because the only mistake is the dotted note. However, for the second half, this one has no continuous tempo with the first half, and forgets to repeat as noted in the sheet music.
+   Generated:
+   1. Q: In which skill level would you say the performer is in? A: The performance sounds between 3 to 4 for the first half.
+   2. Q: What does the student need to work on? A: The student needs to keep a continuous tempo and remember to repeat as noted in the sheet music.
+
+4. Teacher feedback: Measures 3 and 11 did not do the dotted rhythm. Lots of wrong rhythms in the second half of the piece.
+   Generated:
+   1. Q: What does the student need to work on? A: The student needs to play the dotted rhythm correctly in measures 3 and 11 and correct many wrong rhythms in the second half of the piece.
+
+5. Teacher feedback: The player failed to play the rhythm accurately for all the dotted notes.
+   Generated:
+   1. Q: Is the performed rhythm accurate? A: The player failed to play the rhythm accurately for all the dotted notes.
+
+6. Teacher feedback: Wrong rhythms ms. 3 and line 4. RH not consistent legato. Line 4 multiple wrong rhythms. Good LH balance, staccato.
+   Generated:
+   1. Q: Is the rhythm accurate? A: Wrong rhythms in measures 3 and line 4. Multiple wrong rhythms in line 4.
+   2. Q: Is the articulation appropriate? A: Right hand not playing consistently legato. Good left hand balance, playing staccato.
+
+7. Teacher feedback: The dotted quarter/eighth note wasn't observed either time, and the rhythm of the chorus was completely off and the tempo slowed down entirely in the first part of the chorus. The left hand notes would come in too early and their values were off. Also, the repeat wasn't played.
+   Generated:
+   1. Q: Is the rhythm accurate? A: The dotted quarter/eighth note wasn't observed either time, and the rhythm of the chorus was off.
+   2. Q: How is the performed tempo? A: The tempo slowed down entirely in the first part of the chorus.
+   3. Q: Are the performed notes accurate? A: The left hand notes would come in too early and their values were off.
+   4. Q: Is the performance following score instructions? A: The repeat wasn't played.

@@ -5,7 +5,7 @@
 
 model:
   arch: lam_vicuna_instruct
-  model_type: vicuna7b-ft  # vicuna1.5_7b-ft
+  model_type: vicuna1.5_7b-ft  # vicuna1.5_7b-ft
   freeze_vit: False
   
   load_pretrained: False

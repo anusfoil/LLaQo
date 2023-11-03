@@ -1,0 +1,48 @@
+Here are the generated QA pairs:
+0. Teacher: Error in m.10. Over-pedaling. No dynamic or tempo changes.
+   Generate:
+   1. Q: Is the performed note accurate? A: There was an error in measure 10.
+   2. Q: Is the pedal usage appropriate? A: Over-pedaling was present.
+   3. Q: Is there reasonable dynamics contrast? A: No dynamic changes were observed.
+   4. Q: Is the performed tempo stable? A: No tempo changes were observed.
+   
+1. Teacher: There was only one brief moment of hesitation in the performance, and thus I still believe this smooth performance deserves an Excellent rating.
+   Generate:
+   1. Q: Is the performance hesitant or smooth? A: The performance was generally smooth with only one brief moment of hesitation. 
+   2. Q: What is the overall score you would assign to the performance, in a scale 5? A: 5, Excellent.
+
+2. Teacher: Very good. Pedal use is good, but make sure you clean pedal for left hand quarter notes. Good rhythm.
+   Generate:
+   1. Q: Is the pedal usage appropriate? A: Pedal usage is generally good, but pedal should be cleanly used for left hand quarter notes. 
+   2. Q: Is the performed rhythm accurate? A: Yes, good rhythm.
+
+3. Teacher: A bit mushy, maybe too much right pedal. Very slow, could be a tiny bit faster. Some parts feel 'insecure' (like the player was caught a bit off guard with what's coming next).
+   Generate:
+   1. Q: How is the tone production? A: A bit mushy, possibly due to excessive right pedal usage.
+   2. Q: How is the overall tempo? A: Very slow, could be increased slightly.
+   3. Q: Is the performance hesitant or smooth? A: Some insecurity was displayed in parts of the performance.
+
+4. Teacher: a little blurry pedal and a couple mistakes.  Not much shaping.
+   Generate:
+   1. Q: Is the pedal usage appropriate? A: It was a bit blurry.
+   2. Q: Is the performed note accurate? A: A couple of mistakes were made.
+   3. Q: Is the phrasing or melodic shaping clear? A: Not much shaping was observed.
+
+5. Teacher: This recording is very smooth and the notes are accurate. The chords have a very good tone. The volume is a bit low and makes the piece seem to have less emotion.
+   Generate:
+   1. Q: Is the performance hesitant or smooth? A: The performance was smooth.
+   2. Q: Is the performed note accurate? A: The notes were accurately performed.
+   3. Q: How is the tone production? A: The tone of the chords is very good.
+   4. Q: How would you describe the emotional intent of the performance? A: The lower volume made the piece seem to have less emotion.
+
+6. Teacher: Some pedal blur. Wrong note line 3. No rit., dynamic cresc/dim.
+   Generate:
+   1. Q: Is the pedal usage appropriate? A: There was some pedal blur.
+   2. Q: Is the performed note accurate? A: A wrong note was played on line 3.
+   3. Q: Is there reasonalbe dynamics contrast? A: No crescendo or decrescendo was noted.
+
+7. Teacher: This was good, but there was no change in sound intensity and I believe one of the notes was wrong.
+   Generate:
+   1. Q: What is the overall score you would assign to the performance, in a scale 5? A: 4, Good.
+   2. Q: Is there reasonalbe dynamics contrast? A: There was no change in sound intensity.
+   3. Q: Is the performed note accurate? A: I believe one of the notes was wrong.

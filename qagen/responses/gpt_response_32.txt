@@ -1,0 +1,44 @@
+0. Teacher: Very accurate
+Generate: 
+1. Q: Is the performed note accurate? A: Very accurate.
+2. Q: Score-agreement: Is the performance following score instructions? A: Yes, very accurate.
+
+1. Teacher: Some hesitation on right hand eighth notes, but otherwise a very solid play.
+Generate: 
+1. Q: Integrity: Is the performance hesitant or smooth? A: Some hesitation on right hand eighth notes. 
+2. Q: In which skill level would you say the performer is in? A: The play is very solid.
+
+2. Teacher: Very nice. Good tempo. Good rhythm. Good legato playing. Good chords.
+Generate: 
+1. Q: Is the performed tempo stable? A: Yes, good tempo.
+2. Q: Is the rhythm accurate? A: Yes, good rhythm.
+3. Q: Is the articulation appropriate? A: Yes, good legato playing.
+4. Q: Is the performed note accurate? A: Yes, good chords.
+
+3. Teacher: Although this recording has a little unstable tempo, the performer makes a music shape through the whole piece, which makes it appealing to the audience.
+Generate: 
+1. Q: Is the performed tempo stable? A: No, a little unstable tempo.
+2. Q: Is the phrasing or melodic shaping clear? A: Yes, the performer makes a music shape through the whole piece.
+
+4. Teacher: Right hand could have more dynamic shaping and be smoother
+Generate: 
+1. Q: Dynamics: Is there reasonable dynamics contrast? A: Right hand could have more dynamic shaping.
+2. Q: Integrity: Is the performance hesitant or smooth? A: Right hand could be smoother.
+
+5. Teacher: The balance between two hands is good. Notes and rhythm are correct. The dynamics is steady in mezzo-piano.
+Generate: 
+1. Q: Balance (between hands): Is there reasonable balance between hands? A: The balance is good.
+2. Q: Is the performed note accurate? A: Yes, the notes are correct.
+3. Q: Is the rhythm accurate? A: Yes, the rhythm is correct.
+4. Q: Is there reasonable dynamics contrast? A: The dynamics is steady in mezzo-piano.
+
+6. Teacher: RH not all legato. Good tempo, balance.
+Generate: 
+1. Q: Is the articulation appropriate? A: RH not all legato.
+2. Q: Is the performed tempo stable? A: Good tempo. 
+3. Q: Balance (between hands): Is there reasonable balance between hands? A: Good balance. 
+
+7. Teacher: The tempo was off with the "dilly-dilly" phrases - those were much faster than the rest of the piece, and the first note was much faster than the rest of the piece which set it up to be a little chaotic tempo wise.
+Generate: 
+1. Q: Is the performed tempo stable? A: The tempo was off with the "dilly-dilly" phrases - those were much faster than the rest of the piece, and the first note was much faster than the rest of the piece which set it up to be a little chaotic tempo wise.
+2. Q: Is there reasonable tempo contrast? A: No, there was a little chaotic tempo contrast.

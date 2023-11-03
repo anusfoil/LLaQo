@@ -1,0 +1,40 @@
+Here are the generated QA pairs: 
+
+0. 
+   1. Q: Is the rhythm accurate? A: Serious rhythm errors in LH throughout.
+   2. Q: Is the performed note accurate? A: Pitch errors RH m. 17,18.
+
+1. 
+   1. Q: In which skill level would you say the performer is in? A: The person did fine, had some trouble, but got through it, even though it was hard!
+   2. Q: How would you rate the difficulty level of this piece? A: It was hard!
+
+2. 
+   1. Q: What does the student needs to work on? A: Need to practice slowly.
+   2. Q: Is the rhythm accurate? A: Rhythm is all over the place.
+
+3. 
+   1. Q:  What's the reasoning of the performer's skill level? A: Completely not practiced properly.
+   2. Q: Is the performed tempo stable? A: Huge changes in tempo.
+   3. Q: Is there reasonalbe dynamics contrast? A: Flat dynamics.
+   4. Q: How would you describe the emotional intent of the performance? A: Not inspirational at all.
+
+4. 
+   1. Q: Is the performed note accurate? A: Wrong notes.
+   2. Q: Is the rhythm accurate? A: Incorrect counting throughout.
+   3. Q: In which skill level would you say the performer is in? A: Very poor. 
+
+5. 
+   1. Q: Is the performance hesitant or smooth? A: Some hesitancy in the chords. 
+   2. Q: Is the articulation appropriate? A: The bass clef chords are a bit abrupt.
+
+6. 
+   1. Q: Is the performed tempo stable? A: Line 2 tempo not held.
+   2. Q: Is the rhythm accurate? A: Incorrect rhythm various places p 1.
+   3. Q: Is the performed note accurate? A: P. 2 wrong rhythms, notes, hesitations. 
+   4. Q: Is there reasonable balance between hands? A: Good balance.
+
+7. 
+   1. Q: Is the performed tempo stable? A: The beat was very off, and it inconsistently sped up and slowed down.
+   2. Q: Is the rhythm accurate? A: The rhythm was also very off.
+   3. Q: In which skill level would you say the performer is in? A: I gave it a 1.
+   4. Q: Is the performed note accurate? A: I believe all the notes were correct. 

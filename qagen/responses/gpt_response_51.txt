@@ -1,0 +1,45 @@
+0. Teacher feedback: "Pitch error m. 8. Meter errors at start of chorus and repeat. Tempo good."
+    Generate:
+    1. Q: Is the performed note accurate? A: There is a pitch error at measure 8.
+    2. Q: How is the tempo? A: The tempo is good.
+    3. Q: Is the rhythm accurate? A: There are meter errors at the start of the chorus and repeat.
+
+1. Teacher feedback: "This sounded pretty good. The repeats sounded a little off, but the flow wasn't bad otherwise."
+    Generate:
+    1. Q: How would you describe the performance quality? A: The performance sounded pretty good.
+    2. Q: Was the execution of the repetition accurate? A: The repeats sounded a little off.
+    3. Q: Was the performance flow smooth? A: The flow wasn't bad otherwise.
+
+2. Teacher feedback: "Nice light crisp left hand chords. Tempo is good.  Need to pay closer attention to rhythm in Chorus. Also right hand's legato playing is not consistent."
+    Generate:
+    1. Q: Is there reasonable balance between hands? A: Yes, nice light crisp left hand chords but right hand's legato playing is not consistent.
+    2. Q: How is the performed tempo? A: The tempo is good.
+    3. Q: Is the rhythm accurate? A: Need to pay closer attention to rhythm in Chorus.
+
+3. Teacher feedback: "Very correct in reading the sheets. However, minor issues with some parts of the melody (especially the 1/8 after the long note), where it sounded too staccato even though it was under the legato arc. Dynamics a bit flat, mezzoforte and forte sounded pretty much the same, which is not the case in reality!"
+    Generate:
+    1. Q: Is the performance following score instructions? A: Yes, it is very correct in reading the sheets but minor issues with some parts of the melody.
+    2. Q: Is the articulation appropriate? A: No, it sounded too staccato even though it was under the legato arc.
+    3. Q: Are the dynamics reasonable? A: No, dynamics are a bit flat, mezzoforte and forte sounded pretty much the same.
+
+4. Teacher feedback: "Nice light approach, but mistakes ms. 8."
+    Generate:
+    1. Q: Is the performed note accurate? A: There were mistakes at measure 8.
+    2. Q: How would you describe the approach to the performance? A: It was a nice light approach.
+
+5. Teacher feedback: "The tempo is very precise and quick. The player could have added some phrasing."
+    Generate:
+    1. Q: How is the overall tempo? A: The tempo is very precise and quick.
+    2. Q: Is the phrasing or melodic shaping clear? A: The player could have added some phrasing.
+
+6. Teacher feedback: "Good tempo, good LH balance and staccato. Wrong notes line 2. RH not consistently legato. Chorus: LH not consistent holding longer values."
+    Generate:
+    1. Q: How is the overall tempo? A: The tempo is good.
+    2. Q: Is the performed note accurate? A: There are wrong notes on line 2.
+    3. Q: Is the articulation appropriate? A: No, the RH is not consistently legato and the LH in the chorus is not consistent in holding longer values.
+
+7. Teacher feedback: "I think there were a few incorrect notes, and some of the pauses may have been very slightly too long. Additionally, there was no change in sound intensity."
+    Generate:
+    1. Q: Is the performed note accurate? A: No, there were a few incorrect notes.
+    2. Q: Is the performed rhythm accurate? A: Some of the pauses may have been very slightly too long.
+    3. Q: Were there reasonable dynamics in the performance? A: No, there was no change in sound intensity.

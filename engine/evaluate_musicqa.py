@@ -1,4 +1,4 @@
-import os, sys
+import os, sys, json
 import torch
 import argparse
 from torch.utils.data import DataLoader
@@ -16,7 +16,7 @@ from lavis.models import load_model_and_preprocess
 
 def generate_answer_on_musicqa(
     lam_ckpt_path="",
-    results_json_path="/data/home/eey340/WORKPLACE/LAM/engine/results/lam_on_audioset_val_new2.json",
+    results_json_path="/data/home/acw630/WORKPLACE/LAM/engine/results/lam_on_audioset_val_new2.json",
     mini_data=True,
 ):
     device = torch.device("cuda") if torch.cuda.is_available() else "cpu"
@@ -25,18 +25,17 @@ def generate_answer_on_musicqa(
     model, _, _ = load_model_and_preprocess(
         name="lam_vicuna_instruct",
         # NOTE: change to other weights
-        model_type="vicuna7b-ft", 
+        model_type="vicuna1.5_7b-ft", 
         is_eval=True,
         device=device,
     )
 
     model.load_from_pretrained(lam_ckpt_path)
 
-    # load sample image
     # dataset = ConEspressioneDataset()
-    dataset = ExpertNoviceDataset()
+    dataset = ExpertNoviceDataset(split='test')
 
-    # results = []
+    results = []
     with tqdm(total=10 if mini_data else len(dataset)) as pbar:
         for batch_idx, data in enumerate(dataset):
             # NOTE: change to gererate_new if bos is in the first position.
@@ -55,14 +54,20 @@ def generate_answer_on_musicqa(
                 },
                 temperature=0.1,
             )
-            print(f"[output]: {output}")
-            print(f"[gt]: {data['answer']}")
+            result = {
+                "question": data['question'],
+                "output": output, 
+                "gt": data['answer']
+            }
+            print(result)
+            results.append(result)
 
             pbar.update(1)
             if mini_data and batch_idx == 10:
                 break
 
-    # write_json(results, results_json_path)
+    with open(results_json_path, 'w') as f:
+        json.dump(results, f)
 
 
 if __name__ == "__main__":
@@ -85,7 +90,7 @@ if __name__ == "__main__":
     # ckpt_foldername = args.ckpt_folder_name  # "20230829124"
     # checkpoint_paths = glob(os.path.join(lam_ckpt_dir, ckpt_foldername, "*.pth"))
     checkpoint_paths = [
-        "/data/EECS-MachineListeningLab/huan/lam/check_point/Pretrain_stage2/test_musicqa/20231101202/checkpoint_6200.pth",
+        "/data/EECS-MachineListeningLab/huan/lam/check_point/Pretrain_stage2/test_musicqa/20231102153/checkpoint_20000.pth",
     ]
     for lam_ckpt_path in checkpoint_paths:
         pth = lam_ckpt_path.split("/")[-1].split(".")[0]

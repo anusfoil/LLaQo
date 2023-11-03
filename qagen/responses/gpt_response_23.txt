@@ -1,0 +1,42 @@
+0. Teacher: Very accurate but there is a problem with over-sustaining RH notes in scale passages 
+        Generate: 
+        1. Q: Is the performed note accurate? A: Very accurate. 
+        2. Q: Is the pedal usage appropriate? A: There is a problem with over-sustaining RH notes in scale passages.
+
+1. Teacher: There was slightly more hesitation in this performance, and there was a pause to find a chord, but it was still quite good! 
+        Generate: 
+        1. Q: Is the performance hesitant or smooth? A: There was slightly more hesitation in this performance. 
+        2. Q: In which skill level would you say the performer is in? What's the reasoning of that? A: Quite good, although there was a pause to find a chord.
+
+2. Teacher: Good, solid playing. Be careful that right hand maintains the singing line. 
+        Generate: 
+        1. Q: What is the overall score you would assign to the performance, in a scale of 5? A: 4 
+        2. Q: What does the student needs to work on? A: Be careful that right hand maintains the singing line.
+
+3. Teacher: Too slow. Very insecure, sometimes chords not played properly (instead of playing all three notes together, they are played a bit separately). Seems like a finger muscle control and synergy problem. Some notes were slammed. Often, wrong notes accentuated in the chords. 
+        Generate: 
+        1. Q: How is the overall tempo? A: Too slow. 
+        2. Q: Is the performed note accurate? A: Sometimes chords not played properly (instead of playing all three notes together, they are played a bit separately), often, wrong notes accentuated in the chords.
+        3. Q: Is there reasonable balance between hands? A: Seems like a finger muscle control and synergy problem. Some notes were slammed.
+
+4. Teacher: too heavy in execution; right hand over-accented 
+        Generate: 
+        1. Q: Is the interpretation appropriate to the style of the composition? A: Too heavy in execution.
+        2. Q: Is there reasonable balance between hands? A: Right hand over-accented.
+
+5. Teacher: There is a rich tone and even tempo. The quality is very pleasant and the notes blend well together. 
+        Generate: 
+        1. Q: How is the overall tempo? A: Even tempo.
+        2. Q: How is the tone production? A: There is a rich tone. 
+        3. Q: Is the performed note accurate? A: The notes blend well together.
+
+6. Teacher: LH too loud. Some pedal blur on 8th notes. No dynamic shaping--heavy and plodding. 
+        Generate: 
+        1. Q: Is there reasonable balance between hands? A: LH too loud.
+        2. Q: Is the pedal change clean? A: Some pedal blur on 8th notes.
+        3. Q: Is there reasonalbe dynamics contrast? A: No dynamic shaping--heavy and plodding.
+
+7. Teacher: This was close to excellent, with the exception of one pause between measures that was slightly too long. 
+        Generate: 
+        1. Q: What is the overall score you would assign to the performance, in a scale of 5? A: 4.5
+        2. Q: Is the performance hesitant or smooth? A: One pause between measures that was slightly too long.

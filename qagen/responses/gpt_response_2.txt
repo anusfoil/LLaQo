@@ -1,0 +1,36 @@
+Teacher feedback 0: note errors
+1. Q: Is the performed note accurate? A: No, there were note errors.
+
+Teacher feedback 1: The tempo was too slow and didn't follow the cut time notation. In addition, it sounded too hesitant, and the song didn't flow very well. It was too choppy.
+1. Q: How is the overall tempo? A: The tempo was too slow and didn't follow the cut time notation. 
+2. Q: Is the performance hesitant or smooth? A: It sounded too hesitant, the song didn't flow very well. It was too choppy.
+
+Teacher feedback 2: Good tempo! Good reading of chords (missed the b-flat minor chord).
+1. Q: How is the overall tempo? A: Good tempo 
+2. Q: Is the performed note accurate? A: In chords reading, missed the b-flat minor chord.
+
+Teacher feedback 3: This piece also felt choppy and not cohesive. The dynamics written on the sheet music were not followed. There were also a few times where notes were played that were not written on the sheet music.
+1. Q: Is the performance hesitant or smooth? A: The piece felt choppy and not cohesive. 
+2. Q: Is there reasonable dynamics contrast? A: No, the dynamics written on the sheet music were not followed. 
+3. Q: Is the performed note accurate? A: No, there were notes played that were not written on the sheet music.
+
+Teacher feedback 4: way too slow, no balance, no dynamic contrast.  Not musical.  Wrong notes.
+1. Q: How is the overall tempo? A: Way too slow. 
+2. Q: Is there reasonable balance between hands? A: No balance. 
+3. Q: Is there reasonable dynamics contrast? A: No dynamic contrast. 
+4. Q: Is the performed note accurate? A: Wrong notes.
+
+Teacher feedback 5: Left hand too strong, melody too weak. Very detached. 
+1. Q: How is the balance between hands? A: Left hand too strong, melody too weak. 
+2. Q: Is the articulation appropriate? A: Very detached.
+
+Teacher feedback 6: No LH/RH balance. Wrong notes line 3. Too slow. Heavy sound. 
+1. Q: Is there reasonable balance between hands? A: No LH/RH balance. 
+2. Q: Is the performed note accurate? A: Wrong notes in line 3. 
+3. Q: How is the overall tempo? A: Too slow.
+4. Q: How is the tone production? A: Heavy sound.
+
+Teacher feedback 7: The flow isn't very smooth, otherwise it has accurate notes and tempo. 
+1. Q: Is the performance hesitant or smooth? A: The flow isn't very smooth. 
+2. Q: Is the performed note accurate? A: Yes, it has accurate notes.
+3. Q: How is the overall tempo? A: Good, it has an accurate tempo.

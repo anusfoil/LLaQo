@@ -1,0 +1,29 @@
+Generate:
+0. Q: What does the student needs to work on? A: Attention to detail.
+  
+1. Q: How is the overall tempo? A: The tempo stayed consistent.
+   Q: Is the performed note accurate? A: All of the notes were played correctly.
+   Q: Is there a reasonalbe tempo contrast? A: They followed the cut time tempo.
+   Q: Is the rhythm accurate? A: They held out the notes for the correct length.
+
+2. Q: How would you describe the emotional intent of the performance? A: Good feel for the piece. 
+   Q: Is the pedal usage appropriate? A: Love the use of pedal. 
+   Q: Is there a reasonalbe tempo contrast? A: Nice rubato at the end. 
+   Q: How is the overall tempo? A: A bit fast.
+
+3. Q: Is the performance hesitant or smooth? A: It flowed very well.
+   Q: How is the overall tempo? A: Had great tempo.
+   Q: In which skill level would you say the performer is in? A: Sounded confident in what they were playing.
+
+4. Q: Is the performed note accurate? A: Good accuracy.
+   Q: Is there reasonalbe dynamics contrast? A: Could have more dynamic shaping.
+   
+5. Q: What is the overall score you would assign to the performance? A: High level of musicality, no mistakes.
+   Q: Is the pedal usage appropriate? A: Great use of pedal.
+   
+6. Q: Is there reasonalbe dynamics contrast? A: The cresc. to F and dim. to mp wasn't there.
+
+7. Q: How is the tone production? A: Very good tone.
+   Q: Is the performance hesitant or smooth? A: The flow is very smooth.
+   Q: Is the performed note accurate? A: The notes are perfect.
+   Q: How is the overall tempo? A: The tempo is perfect.

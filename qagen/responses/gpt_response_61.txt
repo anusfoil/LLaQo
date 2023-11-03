@@ -1,0 +1,38 @@
+Here are the QA pairs based on the teacher's feedback:
+
+0. Very accurate 
+   - Q: Is the performed note accurate? A: Yes, very accurate.
+
+1. The notes were correct and the rhythms were very consistent. They maintained a pretty steady tempo, but they didn't include any staccato, dynamics, or ritardandos. Not including the staccato changes the song too much, even though the notes and rhythms were very good. 
+	- Q: Is the performed note accurate? A: Yes, the notes were correct.
+	- Q: Is the rhythm accurate? A: Yes, the rhythms were very consistent.
+	- Q: How is the overall tempo? A: They maintained a pretty steady tempo.
+	- Q: Is the interpretation appropriate to the style of the composition? A: They didn't include any staccato, dynamics, or ritardandos. Not including the staccato changes the song too much.
+
+2. Good rhythm and tempo. Correct notes. Left hand staccatos inconsistent. 
+	- Q: Is the rhythm accurate? A: Yes, good rhythm.
+	- Q: How is the overall tempo? A: Good tempo.
+	- Q: Is the performed note accurate? A: Yes, correct notes.
+	- Q: Is the articulation appropriate? A: Left-hand staccatos inconsistent.
+
+3. The bass notes were not played staccato as marked, but that was the only error. 
+	- Q: Is the performed note accurate? A: The bass notes were not played staccato as marked, but that was the only error.
+
+4. Very good performance, and taper at the end.  I liked the slightly longer Left hand chords. 
+	- Q: How would you describe the emotional intent of the performance? A: Very good performance, and taper at the end.
+	- Q: How is the tone production? A: I liked the slightly longer Left hand chords.
+
+5. Good and mostly-mistake free, but more attention needed on dynamics and staccato versus legato notes. 
+	- Q: How would you assess the overall accuracy of the performance? A: Good and mostly-mistake free.
+	- Q: What does the student need to work on? A: More attention needed on dynamics and staccato versus legato notes.
+
+6. LH not staccato as indicated. No rit and dim at end. Good rhythm. 
+	- Q: Is the articulation appropriate? A: Left hand not staccato as indicated.
+	- Q: Is there a reasonable tempo contrast? A: No ritardando and diminuendo at the end.
+	- Q: Is the rhythm accurate? A: Yes, good rhythm.
+
+7. The notes and tempo are correct, but the dynamics and retard aren't obvious enough. 
+	- Q: Is the performed note accurate? A: Yes, the notes are correct.
+	- Q: How is the overall tempo? A: The tempo is correct.
+	- Q: Is there a reasonable dynamics contrast? A: Dynamics aren't obvious enough.
+	- Q: Is there a reasonable tempo contrast? A: Retard isn't obvious enough.

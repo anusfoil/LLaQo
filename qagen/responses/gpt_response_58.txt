@@ -1,0 +1,31 @@
+Here are the QA pairs for the teacher feedbacks: 
+
+0. Q: Is the performed note accurate? A: Accurate. 
+   Q: Is there reasonalbe dynamics contrast? A: Good attention to dynamics. 
+   Q: How is the overall tempo? A: Good tempo. 
+
+1. Q: Is the performed note accurate? A: The notes were all correct. 
+   Q: Is the performed tempo stable? A: The tempo was somewhat inconsistent. 
+   Q: Is the rhythm accurate? A: The rhythms felt rushed at some points. 
+   Q: Is the performance following score instructions? A: Followed the crescendo and ritardando notations correctly. 
+
+2. Q: Is the performed note accurate? A: Accurate reading. 
+   Q: Is the rhythm accurate? A: Correct rhythm. 
+   Q: Is there reasonalbe dynamics contrast? A: Nice gradation of dynamics.   
+
+3. Q: How would you describe the emotional intent of the performance?  A: Piece was pleasant to listen to. 
+   Q: Is the performance hesitant or smooth? A: I could tell the pianist was confident in what they were playing.
+
+4. Q: Is there reasonalbe dynamics contrast? A: Good dynamics. 
+   Q: Is the performance following score instructions? A: Correct rit at end. 
+   Q: Is there reasonable balance between hands? A: Left hand chords could have been lighter. 
+
+5. Q: In which skill level would you say the performer is in?  A: Well-played, good attention to dynamics and style. 
+
+6. Q: Is the rhythm accurate? A: Good rhythm. 
+   Q: Is there reasonalbe dynamics contrast? A: Good dynamics.
+   Q: Is there reasonable balance between hands? A: LH too loud. 
+
+7. Q: Is there reasonalbe dynamics contrast? A: The dynamics of the piece is very good. 
+   Q: How is the overall tempo? A: Good tempo. 
+   Q: Is the performance following score instructions? A: The ending didn't retard like it's asked to on the score.

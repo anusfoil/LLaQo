@@ -1,0 +1,46 @@
+0. Teacher: Accurate and well done 
+     Generate: 
+     1. Q: Is the performed note accurate? A: Accurate.
+     2. Q: In which skill level would you say the performer is in? A: Well done.
+
+1. Teacher: This one was slower than the others, but sounded just fine otherwise. 
+     Generate: 
+     1. Q: How is the overall tempo? A: Slower than the others.
+     2. Q: In which skill level would you say the performer is in? A: Sounded just fine.
+
+2. Teacher: Even though tempo is quite slow, the student played it with all correct counting and rhythm. And nice rubato at the end, too.
+     Generate:
+     1. Q: How is the overall tempo? A: Quite slow.
+     2. Q: Is the rhythm accurate? A: Yes, with all correct counting and rhythm. 
+     3. Q: Is there reasonalbe tempo contrast? A: Yes, nice rubato at the end.
+
+3. Teacher: Not too incorrect, but painfully slow and insecure. I personally grade painfully slow performances very low because it shows high lack of confidence.
+     Generate:
+     1. Q: How is the overall tempo? A: Painfully slow.
+     2. Q: Is the performance hesitant or smooth? A: Insecure.
+     3. Q: How would you describe the emotional intent of the performance? A: Shows high lack of confidence.
+
+4. Teacher: Under tempo; needs more phrase shaping and left hand too heavy.  Right hand too heavy.
+     Generate:
+     1. Q: How is the overall tempo? A: Under tempo.
+     2. Q: Is the phrasing or melodic shaping clear? A: Needs more phrase shaping.
+     3. Q: Is there reasonable balance between hands? A: No, left hand and right hand too heavy.
+     
+5. Teacher: The is a bit too much spacing between the treble clef notes and the corresponding bass clef chords. This makes the piece have a jumpy quality to it. The notes are in tune. 
+     Generate:
+     1. Q: Is the performance hesitant or smooth? A: There is too much spacing between the notes.
+     2. Q: How would you describe the emotional intent of the performance? A: The piece has a jumpy quality to it.
+     3. Q: Is the performed note accurate? A: Yes, the notes are in tune. 
+
+6. Teacher: Too slow. LH too heavy. No f-mf line 3. Good rit at end.
+     Generate:
+     1. Q: How is the overall tempo? A: Too slow.
+     2. Q: Is the pedal change clean? A: LH too heavy. 
+     3. Q: Is there reasonalbe dynamics contrast? A: No f-mf line 3. 
+     4. Q: Is there reasonalbe tempo contrast? A: Good rit at end.
+
+7. Teacher: The timing was a little off about every other measure, and there was no change in sound intensity/loudness. Also, the song was overall a little too slow.
+     Generate:
+     1. Q: Is the rhythm accurate? A: The timing was a little off about every other measure.
+     2. Q: Is there reasonalbe dynamics contrast? A: There was no change in sound intensity/loudness.
+     3. Q: How is the overall tempo? A: The song was overall a little too slow.

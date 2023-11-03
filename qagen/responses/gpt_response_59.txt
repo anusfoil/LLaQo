@@ -1,0 +1,36 @@
+Here are the standardization for the feedbacks:
+
+Feedback 0:
+0. Q: How is the overall tempo? A: Tempo very erratic.
+1. Q: Is the performed note accurate? A: Pitches are OK.
+2. Q: Is there reasonable dynamics contrast? A: Dynamics are OK.
+
+Feedback 1:
+1. Q: Is the performed note accurate? A: The notes were all correct.
+2. Q: Is the rhythm accurate? A: The rhythms were very wrong.
+3. Q: Is the performed tempo stable? A: There wasn't a consistent tempo, it felt very sporadic overall.
+
+Feedback 2:
+1. Q: Is the performed note accurate? A: All notes were played correctly.
+2. Q: Is the rhythm accurate? A: Rhythm is incorrect.
+3. Q: Is there reasonalbe tempo contrast? A: Nice rubato at the end.
+
+Feedback 3:
+1. Q: Is the rhythm accurate? A: The rhythm was inconsistent.
+2. Q: Is there reasonable dynamics contrast? A: The dynamics were inconsistent.
+3. Q: Is there reasonable balance between hands? A: At times, the bass was played very loud, at other times the treble was.
+
+Feedback 4:
+1. Q: Is the rhythm accurate? A: Overall poor rhythm.
+
+Feedback 5:
+1. Q: Is the rhythm accurate? A: Serious counting issues.
+2. Q: Is the pedal change clean? Is the pedal usage appropriate? A: Serious pedaling issues.
+
+Feedback 6:
+1. Q: Is the rhythm accurate? A: Rhythms wrong throughout.
+2. Q: Is there reasonable balance between hands? A: Fairly good balance.
+
+Feedback 7:
+1. Q: How is the overall tempo? A: The tempo isn't consistent.
+2. Q: Is the performed note accurate? A: The quarter notes don't sound even.

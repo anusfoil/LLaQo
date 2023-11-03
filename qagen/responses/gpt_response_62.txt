@@ -1,0 +1,41 @@
+0. Teacher: Very accurate and good rit. at end
+   Generate: 
+   1. Q: Is the performed note accurate? A: Very accurate. 
+   2. Q: Is there reasonable tempo contrast? A: Good rit. at end.
+
+1. Teacher: The notes and rhythms were all correct. They maintained a consistent tempo, and it flowed very well. In addition, they followed the staccatos, crescendos, and ritardandos correctly. They could have included more difference between forte and mezzoforte dynamics, but overall it was an excellent and consistent performance.
+   Generate:
+   1. Q: Is the performed note accurate? A: The notes were all correct. 
+   2. Q: Is the rhythm accurate? A: The rhythms were all correct. 
+   3. Q: Is there reasonable dynamics contrast? A: They could have included more difference between forte and mezzoforte dynamics. 
+   4. Q: How is the overall tempo? A: They maintained a consistent tempo. 
+
+2. Teacher: Well played! Correct notes and rhythm. Tempo is good. Nice feel for rubato at the end.
+   Generate:
+   1. Q: Is the performed note accurate? A: Correct notes. 
+   2. Q: Is the performed rhythm accurate? A: Correct rhythm. 
+   3. Q: How is the overall tempo? A: Tempo is good. 
+   4. Q: Is there reasonable tempo contrast? A: Nice feel for rubato at the end. 
+
+3. Teacher: The notes were played accurately but the dynamics were not followed.  
+   Generate:
+   1. Q: Is the performed note accurate? A: The notes were played accurately. 
+   2. Q: Is the performance following score instructions? A: The dynamics were not followed.
+
+4. Teacher: Could do more dynamic contrast in the right hand.  Nice rit. at the end  
+   Generate:
+   1. Q: Is there reasonable dynamics contrast? A: Could do more dynamic contrast in the right hand. 
+   2. Q: Is there reasonable tempo contrast? A: Nice rit. at the end.
+
+5. Teacher: Nearly perfect, except for dynamics.  
+   Generate:
+   1. Q: Is the performance following score instructions? A: Instruction was nearly perfectly followed, except for dynamics.
+
+6. Teacher: Didn't do dynamics line 3, but otherwise good.  
+   Generate:
+   1. Q: Is the performance following score instructions? A: Didn't do dynamics line 3. 
+
+7. Teacher: It sounds good overall except I would like the bass sound softer.   
+   Generate:
+   1: Q: How would you describe the overall performance? A: It sounds good. 
+   2. Q: What does the student need to work on? A: The bass sound could be softer.

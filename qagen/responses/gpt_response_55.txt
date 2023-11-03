@@ -1,0 +1,45 @@
+0. Teacher: Pitch errors at m.5-6.  Good transition to chorus 
+     Generate: 
+     1. Q: Is the performed note accurate? A: There were pitch errors at measures 5-6.
+     2. Q: How would you define the transition to the chorus? A: The transition to the chorus was good. 
+
+1. Teacher: Wrong eighth note rhythm in measure 3, hesitations and a severe tempo drop off in areas where the player felt uncomfortable. 
+     Generate: 
+     1. Q: Is the rhythm accurate? A: Wrong eighth note rhythm in measure 3.
+     2. Q: Is the performance hesitant or smooth? A: There were hesitations.
+     3. Q: How is the overall tempo? A: The tempo dropped off severely in parts where the player was uncomfortable.
+
+2. Teacher: Good tempo. Rhythm is quite good. Right hand melody playing is lacking legato. 
+     Generate: 
+     1. Q: How is the overall tempo? A: The tempo was good.
+     2. Q: Is the rhythm accurate? A: The rhythm was quite good. 
+     3. Q: Is the articulation appropriate? A: The right hand's melody playing was lacking legato.
+
+3. Teacher: This one is between 2 to 3. It has unclear and missed notes and unstable tempo. 
+     Generate: 
+     1. Q: In which skill level would you say the performer is in? A: The skill level is between 2 to 3.
+     2. Q: Is the performed note accurate? A: The performance has unclear notes and misses some notes.
+     3. Q: Is the performed tempo stable? A: The tempo is unstable.
+
+4. Teacher: Right hand needed to be smoother, and there were some hesitations. Left hand too heavy, line 4.
+     Generate: 
+     1. Q: Is the performance hesitant or smooth? A: There were hesitations.
+     2. Q: Is the balance between hands reasonable? A: The left hand is too heavy in line 4.
+     3. Q: What does the student needs to work on? A: The right hand needs to be smoother.
+
+5. Teacher: The rhythm is mostly correct. But in the first half there were a few mistakes made. Also there was a blurring sound probably made because the player held several notes together. 
+     Generate: 
+     1. Q: Is the rhythm accurate? A: The rhythm is mostly correct but there were a few mistakes in the first half.
+     2. Q: Is the performed note accurate? A: There was a blurring sound likely made by holding several notes together.
+
+6. Teacher: Too slow. LH too loud. Hesitations end line 1 into line 2. Inconsistent RH legato. Correct rhythm into Chorus (finally!).  Heavy with no RH melodic shaping. 
+     Generate: 
+     1. Q: How is the overall tempo? A: The tempo is too slow.
+     2. Q: Is the balance between hands reasonable? A: The left hand is too loud.
+     3. Q: Is the performance hesitant or smooth? A: There were hesitations at the end of line 1 into line 2.
+     4. Q: Is the articulation appropriate? A: The right hand's legato is inconsistent.
+
+7. Teacher: Sometimes all the notes in the left hand chords weren't coming through and in the last measure of the first line, the notes were completely off which was easy to tell. In the chorus, the full half notes weren't observed before starting the chorus again. 
+     Generate: 
+     1. Q: Is the performed note accurate? A: The left hand chords occasionally missed notes and the notes in the last measure of the first line were completely off.
+     2. Q: Is the performance following the score instructions? A: The full half notes were not observed before starting the chorus again.

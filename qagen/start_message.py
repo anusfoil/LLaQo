@@ -28,7 +28,6 @@ general feedback about the performance.  \n \
                 \t Score-agreement: Is the performance following score instructions? \n \n \
             Description (similar to captioning & reasoning)  \n \
                 \t How would you describe the emotional intent of the performance?  \n \
-                \t What is the overall score you would assign to the performance, in a scale 5?  \n \
                 \t In which skill level would you say the performer is in? What's the reasoning of that?  \n \
                 \t How would you rate the difficulty level of this piece?  \n \
                 \t Is the interpretation appropriate to the style of the composition?  \n \

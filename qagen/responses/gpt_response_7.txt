@@ -1,0 +1,44 @@
+Here are the QA pairs generated from the teacher feedback:
+
+0. 
+   Q: Is the balance between hands reasonable? A: Right hand should be louder, Left hand softer. 
+   Q: Is there a reasonable tempo contrast? A: No tempo contrast. 
+   Q: Is the performed note accurate? A: Notes are accurate.
+   
+1. 
+   Q: How is the performer's musicality? A: Lack of musicality. 
+   Q: Is the pedal usage appropriate? A: Clunky pedal work. 
+   Q: Is the performance hesitant or smooth? A: Nonfluid transitions between left hand chords.
+
+2. 
+   Q: How is the overall tempo? A: Excellent! I like the tempo! 
+   Q: Is the rhythm accurate? A: Steady rhythm. 
+   Q: Is the performed note accurate? A: Good solid chords.
+
+3. 
+   Q: Is the performed tempo stable? A: No mistakes about the tempo. 
+   Q: Is the performed note accurate? A: Notes are accurate. 
+   Q: Is the performance following score instructions? A: Lacks of slight things like the break in measure 4.
+   
+4.
+   Q: Is the balance between hands reasonable? A: Left hand a bit too heavy.
+   Q: Is the articulation appropriate? A: Left hand a bit too detached.
+   Q: Is the phrasing or melodic shaping clear? A: Not enough melodic shaping.
+   Q: Is the performed note accurate? A: Accuracy good.
+   
+5.
+   Q: Is the performed note accurate? A: Accurate notes.
+   Q: Is the rhythm accurate? A: Accurate rhythm.
+   Q: Is the performance following score instructions? A: The pianist did not do dynamic changes indicated on the score. The left hand is playing too loudly than the right hand (the melody).
+   
+6. 
+   Q: Is the balance between hands reasonable? A: Heavy LH. 
+   Q: Is there reasonalbe dynamics contrast? A: No dynamics lines 3-4. 
+   Q: Is the performance following score instructions? A: No rit. No phrasing.
+   
+7.
+   Q: Is the rhythm accurate? A: This has correct rhythm.
+   Q: Is the performed note accurate? A: The notes were correct.
+   Q: Is the performance following score instructions? A: It was true to the sheet music. But it didn't incorporate any dynamics or the rit marking or tempo marking.
+   Q: Is the performed tempo stable? A: It felt a bit rushed. The tempo marking said moderately slow.
+   Q: Is the phrasing or melodic shaping clear? A: I thought the phrasing was good and natural, in line with the sheet music.

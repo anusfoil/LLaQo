@@ -1,0 +1,47 @@
+0. Teacher: All good and nice rit.
+   Generate: 
+   1. Q: What does the student needs to work on? A: No need, all good.
+   2. Q: Is there reasonable tempo contrast? A: Nice rit.
+
+1. Teacher: Perhaps too much staccatos in this one which made it feel very aggressive and took the feel away from the right hand melody.
+   Generate: 
+   1. Q: Is the articulation appropriate? A: Perhaps too much staccatos, which took the feel away from the right hand melody.
+   2. Q: How would you describe the emotional intent of the performance? A: A bit aggressive due to excess staccatos.
+
+2. Teacher: All correct. Good rhythm. Good tempo. Love the crisp left hand chords and strict playing of the piece. Good ritardando at the end, too.
+   Generate: 
+   1. Q: Is the performed note accurate? A: All notes were correct.
+   2. Q: How is the overall tempo? A: Good tempo.
+   3. Q: Is the rhythm accurate? A: Good rhythm.
+   4. Q: Is there reasonable tempo contrast? A: Good ritardando at the end.
+
+3. Teacher: It sounds great and follows most of the musical signals.
+   Generate: 
+   1. Q: How would you describe the emotional intent of the performance? A: It sounds great.
+   2. Q: Is the performance following score instructions? A: Follows most of the musical signals.
+
+4. Teacher: Left hand chords too punched.  But very steady and accurate.
+   Generate: 
+   1. Q: Is the articulation appropriate? A: Left hand chords too punched.
+   2. Q: Is the performance hesitant or smooth? A: It's very steady.
+   3. Q: Is the performed note accurate? A: Notes are accurate.
+
+5. Teacher: The staccato notes were played nicely. No mistakes made. Can be better in doing the dynamic changes.
+   Generate: 
+   1. Q: Is the performed note accurate? A: No mistakes were made.
+   2. Q: Is the articulation appropriate? A: The staccato notes were played nicely.
+   3. Q: Is there reasonalbe dynamics contrast? A: Can be better in doing the dynamic changes.
+
+6. Teacher: LH too loud/sharp. Dynamics not observed. Good rit. Steady rhythm.
+   Generate: 
+   1. Q: Is there reasonable balance between hands? A: LH too loud/sharp.
+   2. Q: Is there reasonalbe dynamics contrast? A: Dynamics not observed.
+   3. Q: Is there reasonalbe tempo contrast? A: Good rit.
+   4. Q: Is the rhythm accurate? A: Steady rhythm.
+
+7. Teacher: The left hand notes were too loud and felt choppy. There was also no change in dynamics - it was loud all the way through, but the notes were right. 
+   Generate: 
+   1. Q: Is there reasonable balance between hands? A: The left hand notes were too loud.
+   2. Q: Is the articulation appropriate? A: Left hand felt choppy.
+   3. Q: Is there reasonalbe dynamics contrast? A: No change in dynamics, was loud all the way.
+   4. Q: Is the performed note accurate? A: The notes were correct.

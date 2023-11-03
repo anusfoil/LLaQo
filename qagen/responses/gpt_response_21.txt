@@ -1,0 +1,38 @@
+Here are the generated questions and answers for teacher's feedbacks:
+
+0. Very accurate
+    Q: Is the performed note accurate? A: Very accurate.
+    
+1. No blemishes or blunders that I heard! I thought it went just fine! 
+    Q: Is the performance hesitant or smooth? A: It went just fine, smooth.
+    Q: Is the performed note accurate? A: No blemishes or blunders, note accurate.
+
+2. Nice accurate reading! Next work on phrasing every four measures. 
+    Q: Is the performed note accurate? A: Nice accurate reading.
+    Q: What does the student needs to work on? A: Work on phrasing every four measures.
+
+3. I was thinking between a 3 and a 4. However, the tempo was respected, no obvious mistakes in playing. A bit bland and boring, but not too bad. A bit insecure. 1/8 notes a bit shaky and unequal on the down runs. 
+    Q: What is the overall score you would assign to the performance, in a scale of 5? A: Between a 3 and 4.
+    Q: How is the overall tempo? A: Tempo was respected.
+    Q: Is the performed note accurate? A: No obvious mistakes in playing.
+
+4. Good energy; right hand is a bit heavy, choppy at times.  Ending needs to taper down more. 
+    Q: In which skill level would you say the performer is in? A: Good energy, skill level is good.
+    Q: Is the articulation appropriate? A: Right hand is a bit heavy, choppy at times.
+    Q: What does the student needs to work on? A: Ending needs to taper down more.
+
+5. The tempo is very consistent and the player transitions well between chords. The ending has a great tone. 
+    Q: How is the overall tempo? A: Very consistent.
+    Q: Is the played rhythm transition smooth? A: The player transitions well between chords.
+    Q: How is the tone production? A: The ending has a great tone.
+
+6. RH overbalanced the LH. Some non-legato. No dynamic shaping note to note--sounded "punchy."
+    Q: Is there reasonable balance between hands? A: RH overbalanced the LH.
+    Q: Is the articulation appropriate? A: Some non-legato.
+    Q: Is there reasonalbe dynamics contrast? A: No dynamic shaping note to note--sounded "punchy."
+
+7. This was close to excellent. The beat was very slightly off in places and it was a little too loud for mezzo piano. It also did not sound as smooth. 
+    Q: What is the overall score you would assign to the performance, in a scale of 5? A: Close to excellent.
+    Q: Are the performed rhythm and beat accurate? A: Beat was very slightly off in places.
+    Q: Is there reasonalbe dynamics contrast? A: A little too loud for mezzo piano.
+    Q: Is the performance hesitant or smooth? A: Did not sound as smooth.

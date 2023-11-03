@@ -1,0 +1,35 @@
+Here are the QA pairs for each teacher's feedback:
+
+0. Feedback: Too fast, but otherwise OK
+   - Q: How is the overall tempo? A: Too fast
+   - Q: In which skill level would you say the performer is in? A: OK
+
+1. Feedback: This was played with confidence and correctness. Great!
+   - Q: What is the overall score you would assign to the performance, in a scale of 5? A: 5
+   - Q: In which skill level would you say the performer is in? A: Played with confidence and correctness
+
+2. Feedback: Nice use of pedal. Steady, consistent rhythm. Excellent!
+   - Q: How is the pedal usage? A: Nice use of pedal
+   - Q: How is the overall rhythm? A: Steady, consistent rhythm
+
+3. Feedback: Nice performance. Relative to the one I gave a 5, a bit less interesting, but still very good. I would maybe cut down the right pedal in some parts, there seems to be too much buzz. The ending a bit wobbly and abrupt.
+   - Q: What is the overall score you would assign to the performance, in a scale of 5? A: 4
+   - Q: How would you rate the pedal usage? A: Too much buzz, need to cut down right pedal in some parts
+   - Q: How would you describe the ending? A: A bit wobbly and abrupt
+
+4. Feedback: too much pedal  But right hand was very smooth
+   - Q: How would you rate the pedal usage? A: Too much pedal
+   - Q: How is the right hand performance? A: Very smooth
+
+5. Feedback: The tempo is faster than the others that I have listened to, but they player hits all the notes with great tone. The chords match very well.
+   - Q: How is the overall tempo? A: Faster than usual
+   - Q: How would you rate the performed note accuracy? A: Player hits all notes with great tone
+   - Q: How would you rate the chord match? A: Chords match very well
+
+6. Feedback: Too fast for Moderato. Pedal blurs 8th note measures.
+   - Q: How is the overall tempo? A: Too fast for Moderato
+   - Q: How would you rate the pedal usage? A: Pedal blurs 8th note measures
+
+7. Feedback: This was excellent; I could not find anything wrong with it.
+   - Q: What is the overall score you would assign to the performance, in a scale of 5? A: 5
+   - Q: In which skill level would you say the performer is in? A: Excellent, couldn't find anything wrong.

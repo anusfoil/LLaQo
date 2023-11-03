@@ -1,0 +1,44 @@
+0. Teacher Feedback: Meter errors at start and repeat of chorus 
+    Generate: 
+    1. Q: Is the performed rhythm accurate? A: Meter errors at start and repeat of chorus.
+    2. Q: Is the performed note accurate? A: Meter error suggests that there were inaccuracies in the performance.
+
+1. Teacher Feedback: Some misplayed melodies, left hand could be poppier and felt a little too uniform, but the shape of the song was intact so a 3.
+    Generate:
+    1. Q: Is the performed note accurate? A: Some misplayed melodies.
+    2. Q: Is there reasonable balance between hands? A: Left hand could be poppier.
+    3. Q: In which skill level would you say the performer is in?  A: Skill level is judged at a 3.
+
+2. Teacher Feedback: Good march tempo and character! Too long a wait between first section and chorus; first ending to beginning of chorus.
+    Generate:
+    1. Q: Is the performed tempo stable? A: Good march tempo.
+    2. Q: Is the performance hesitant or smooth? A: Too long a wait between first section and chorus; first ending to beginning of chorus.
+
+3. Teacher Feedback: This one is between 3 to 4. There are a few unstable tempo and unclear notes, but it sounds good generally because the performance is continuous.
+    Generate:
+    1. Q: In which skill level would you say the performer is in?  A: Skill level is judged between 3 to 4.
+    2. Q: Is the performed tempo stable? A: There are a few unstable tempos.
+    3. Q: Is the performed note accurate? A: Unclear notes were identified.
+
+4. Teacher Feedback: Nice and steady, one left hand error.  Right hand needs more dynamic shaping.
+    Generate:
+    1. Q: Is the performance hesitant or smooth? A: The performance was nice and steady.
+    2. Q: Is the performed note accurate? A: One error identified in the left hand. 
+    3. Q: Is there reasonable dynamics contrast? A: Right hand needs more dynamic shaping.
+
+5. Teacher Feedback: The tempo is steady, and the rhythm is correct, but the player made a few mistakes.
+    Generate:
+    1. Q: Is the performed tempo stable? A: The tempo was steady.
+    2. Q: Is the rhythm accurate? A: The rhythm was correct.
+    3. Q: Is the performed note accurate? A: There were a few mistakes.
+
+6. Teacher Feedback: Wrong LH chord line 2. RH not consistent legato. Bit slow for cut time. Added extra time before start of Chorus. Could be lighter and faster.
+    Generate:
+    1. Q: Is the performed note accurate? A: Wrong LH chord line 2.
+    2. Q: Is the articulation appropriate? A: RH not consistent legato.
+    3. Q: Is the overall tempo appropriate? A: Bit slow for cut time.
+
+7. Teacher Feedback: Sometimes the notes weren't clear (like that d in measure 7). This only happened twice though where a wrong note was played and it was corrected to cause lack of clarity.
+    Generate:
+    1. Q: Is the performed note accurate? A: Sometimes the notes weren't clear, wrong note played twice.
+    2. Q: What does the student needs to work on? A: The student needs to work on unclear notes and correcting wrong notes.

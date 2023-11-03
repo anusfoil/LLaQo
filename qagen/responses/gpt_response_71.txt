@@ -1,0 +1,39 @@
+0. Teacher: LH mistake m.3
+    Generate:
+    1. Q: Is the performed note accurate? A: There is a mistake in the left hand at measure 3.
+    
+1. Teacher: This performer did just fine, but it didn't seem to flow quite as much as the others.
+    Generate:
+    1. Q: In which skill level would you say the performer is in? A: The performance was fine.
+    2. Q: Is the performance smooth? A: The performance didn't seem to flow quite as much as others.
+
+2. Teacher: All left hand chords correct except for one. Good playing. Rhythm and tempo good. But left hand chords need to be played staccato.
+    Generate:
+    1. Q: Is the performed note accurate? A: All left hand chords are correct except for one.
+    2. Q: How is the overall rhythm and tempo? A: The rhythm and tempo are good.
+    3. Q: Is the articulation appropriate? A: The left hand chords need to be played staccato.
+
+3. Teacher: Bland, wobbly. A bit too slow. Not every staccato was respected.
+    Generate:
+    1. Q: How would you describe the emotional intent of the performance? A: The performance was bland and wobbly.
+    2. Q: How is the overall tempo? A: The tempo is a bit too slow.
+    3. Q: Is the articulation appropriate? A: Not every staccato was respected.
+
+4. Teacher: Wrong Left hand chord measure 4, but overall nice, light performance.
+    Generate:
+    1. Q: Is the performed note accurate? A: Wrong left hand chord at measure 4.
+    2. Q: In which skill level would you say the performer is in?  A: The performer gave a nice, light performance.
+
+5. Teacher: The player has great flow and connection between the notes, giving the piece a smooth quality that is musically pleasant.
+    Generate:
+    1. Q: Is the performance hesitant or smooth? A: The player has great flow and connection between the notes, giving the piece a smooth quality.
+    2. Q: How would you describe the emotional intent of the performance? A: The performance was musically pleasant.
+
+6. Teacher: Wrong chord end line 1.
+    Generate:
+    1. Q: Is the performed note accurate? A: There is a wrong chord at the end of line 1.
+
+7. Teacher: This was good. I think one of the chord was incorrect.
+    Generate:
+    1. Q: In which skill level would you say the performer is in?  A: The performance was good.
+    2. Q: Is the performed note accurate? A: There may be one incorrect chord.

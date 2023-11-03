@@ -1,0 +1,63 @@
+Here are the standardize Q&A pairs according to your teacher feedback:
+
+0. Teacher: Small rhythm error m.20, otherwise correct 
+    1. Q: Is the rhythm accurate? 
+       A: Small rhythm error at measure 20. 
+    2. Q: Is the performed note accurate? 
+       A: Notes are overall correct. 
+
+1. Teacher: Well, the performer stayed relatively consistent in tempo, but the rhythms and notes were not super accurate. There was some hesitation, and the left hand's notes sounded very jarring. Got through it, though. 
+    1. Q: How is the overall tempo? 
+       A: The performer stayed relatively consistent in tempo. 
+    2. Q: Is the rhythm accurate? 
+       A: The rhythms were not super accurate. 
+    3. Q: Is the performed note accurate? 
+       A: Notes were not super accurate. 
+    4. Q: Is the performance hesitant or smooth?
+       A: There was some hesitation. 
+
+2. Teacher: All chords and notes are there, but rhythm is all over the place. Dotted quarter and half notes should not be played like a dotted rhythm. Good tempo, though. 
+    1. Q: Are all chords and notes performed? 
+       A: All chords and notes are there. 
+    2. Q: Is the rhythm accurate? 
+       A: Rhythm is all over the place. 
+    3. Q: How is the overall tempo? 
+       A: Good tempo.   
+
+3. Teacher: Tempo not carried out. Note accentuation not proper everywhere. Very insecure, bland. It seems like the player was scared of their own performance. 
+    1. Q: How is the overall tempo? 
+       A: Tempo not carried out. 
+    2. Q: Is the performed note accurate? 
+       A: Note accentuation not proper everywhere. 
+    3. Q: In which skill level would you say the performer is in?
+       A: Very insecure, bland. 
+
+4. Teacher: Rhythm mistakes, and left hand is too clipped.  Note errors too. 
+    1. Q: Is the rhythm accurate? 
+       A: There are rhythm mistakes.
+    2. Q: Is the articulation appropriate?
+       A: Left hand is too clipped. 
+    3. Q: Is the performed note accurate?
+       A: There are note errors.
+
+5. Teacher: The bass clef chords are very abrupt and the player hesitates at times. They push past these moments to continue. The second half of the piece has much better accuracy. 
+    1. Q: Are all chords and notes performed? 
+       A: The bass clef chords are very abrupt.
+    2. Q: Is the performance hesitant or smooth?
+       A: The player hesitates at times. 
+
+6. Teacher: Wrong rhythm meas. 3. Hesitation line 2. Wrong rhythms and hesitation line 3. Chorus: overdotted rhythms and other wrong rhythms. Balance bit LH heavy. 
+    1. Q: Is the rhythm accurate? 
+       A: Wrong rhythm measure 3. Wrong rhythms and hesitation line 3. Overdotted rhythms and other wrong rhythms in chorus.
+    2. Q: Is the performance hesitant or smooth?
+       A: Hesitation at lines 2 and 3.
+    3. Q: Is there reasonable balance between hands? 
+       A: Balance bit left hand heavy.
+
+7. Teacher: There were many pauses, and there was an eighth note played as a quarter note. Additionally, some of the notes did not line up correctly between left and right hands, and some of the half notes were held a little too long. 
+    1. Q: Is the performance hesitant or smooth?
+       A: There were many pauses. 
+    2. Q: Is the rhythm accurate? 
+       A: An eighth note was played as a quarter note. Some of the half notes were held a little too long.
+    3. Q: Is the performed note accurate?
+       A: Some of the notes did not line up correctly between left and right hands.

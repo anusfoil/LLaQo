@@ -1,0 +1,45 @@
+0. Teacher: Pitch errors m. 22 and 30-31.  No pedal
+   Generate: 
+   1. Q: Is the pedal usage appropriate? A: No pedal used in the performance.
+   2. Q: Is the performed note accurate? A: Pitch errors m. 22 and 30-31.
+   
+1. Teacher: Good balance between left and right hands. The hesitation at the end brings what would have been a 4 down to a 3. Left hand could have been poppier, but that also might have been a piano quirk.
+   Generate: 
+   1. Q: Is there reasonable balance between hands? A: Good balance between left and right hands.
+   2. Q: What is the overall score you would assign to the performance, in a scale of 5? A: 3
+   3. Q: Is the performance hesitant or smooth? A: The hesitation at the end.
+
+2. Teacher: A couple wrong right hand notes, but rhythm and tempo are good. Last measure left hand needs to be played legato.
+   Generate: 
+   1. Q: Is the performed note accurate? A: A couple wrong right hand notes.
+   2. Q: Is the performed tempo stable? A: Tempo is good.
+   3. Q: Is the rhythm accurate? A: Rhythm is good.
+   
+3. Teacher: This one is between 3 to 4. This recordings is great during the first half of the piece. However, nearly to the end, the performer misses the tempo a little.
+   Generate: 
+   1. Q: What is the overall score you would assign to the performance, in a scale of 5? A: Between 3 to 4.
+   2. Q: Is the performed tempo stable? A: The performer misses the tempo nearly to the end.
+
+4. Teacher: Nice performance, tempo, and pedalling.  A couple mistakes and hesitation.
+   Generate: 
+   1. Q: Is there reasonalbe tempo contrast? A: Nice tempo.
+   2. Q: Is the pedal usage appropriate? A: Good pedalling.
+   3. Q: Is the performed note accurate? A: A couple mistakes.
+   
+5. Teacher: The first half of the piece was good, although the player did not use the pedal. However, there was a wrong note played in the second half. 
+   Generate: 
+   1. Q: Is the pedal usage appropriate? A: The player did not use the pedal.
+   2. Q: Is the performed note accurate? A: There was a wrong note played in the second half.
+   
+6. Teacher: Wrong LH bottom p.1. No pedal as indicated. Slightly slow. Wrong notes p.2 line 2. Hesitation last line, no rit. Good balance, good LH staccato (not too sharp). Good p.2 rh dynamic shaping.
+   Generate: 
+   1. Q: Is the pedal usage appropriate? A: No pedal as indicated.
+   2. Q: How is the overall tempo? A: Slightly slow.
+   3. Q: Is the performed note accurate? A: Wrong notes p.2 line 2 and wrong LH bottom p.1.
+   4. Q: Is there reasonable balance between hands? A: Good balance.
+   
+7. Teacher: Some wrong notes and hesitancy about that last G in the third to last measure, also the last note in the staccato phrases was often note staccato. Also the mistake in the last line of the first page threw off the syncopation.
+   Generate: 
+   1. Q: Is the performed note accurate? A: Some wrong notes.
+   2. Q: Is the rhythm accurate? A: The mistake in the last line of the first page threw off the syncopation.
+   3. Q: Is the performance hesitant or smooth? A: Hesitancy about that last G in the third to last measure.

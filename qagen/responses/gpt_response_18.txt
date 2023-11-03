@@ -1,0 +1,45 @@
+Here are the QA pairs for given teacher feedbacks:
+
+0. Teacher: Inaccurate rhythm and notes throughout. (adding extra beats to the measure)
+    Generate: 
+    1. Q: Is the rhythm accurate? A: Inaccurate rhythm throughout. (Adding extra beats to the measure)
+    2. Q: Is the performed note accurate? A: Inaccurate notes throughout.
+
+1. Teacher: A lot of the rhythms were incorrect, and so the song was played wrong. In addition, it sounded really hesitant, and so the tempo did not stay consistent because they had to pause to figure out what to play next. 
+    Generate: 
+    1. Q: Is the rhythm accurate? A: A lot of the rhythms were incorrect.
+    2. Q: Is the performance hesitant or smooth? A: The performance was hesitant.
+    3. Q: Is the performed tempo stable? A: Tempo did not stay consistent.
+
+2. Teacher: Good reading overall. Tempo is good. Just need to practice playing four eighth notes smoothly. 
+    Generate: 
+    1. Q: In which skill level would you say the performer is in? A: Good reading overall.
+    2. Q: How is the overall tempo? A: Tempo is good.
+    3. Q: What does the student need to work on? A: Needs to practice playing four eighth notes smoothly.
+
+3. Teacher: There was a very noticeable note mistake in the middle of the piece and multiple pauses where the pianist was clearly trying to find the correct note to play. Because of this, the rhythm was not steady either. 
+    Generate: 
+    1. Q: Is the performed note accurate? A: There was a noticeable note mistake in the middle of the piece.
+    2. Q: Is the performance hesitant or smooth? A: Performance was hesitant with multiple pauses.
+    3. Q: Is the rhythm accurate? A: The rhythm was not steady.
+    
+4. Teacher: under tempo and unsteady beat.  lots of hesitation in right hand
+    Generate: 
+    1. Q: Is the performed tempo stable? A: Under tempo and unsteady beat.
+    2. Q: Is the performance hesitant or smooth? A: Lots of hesitation in right hand.
+
+5. Teacher: Had some counting issues. I liked the dynamic feel of the playing, but it was too inconsistent.
+    Generate: 
+    1. Q: Is there reasonalbe dynamics contrast? A: Inconsistent dynamic feel.
+    2. Q: What does the student needs to work on? A: Student had some counting issues.
+
+6. Teacher: Multiple rhythm hesitations in 8th note measures. Otherwise good.
+    Generate: 
+    1. Q: Is the rhythm accurate? A: Multiple rhythm hesitations in 8th note measures.
+    2. Q: In which skill level would you say the performer is in?  A: Otherwise good.
+
+7. Teacher: The overall tempo is too slow, since in the score it's indicated that the tempo is moderate. There are also some notes and the length of some of the eighth notes are too long. 
+    Generate: 
+    1. Q: How is the overall tempo? A: The overall tempo is too slow.
+    2. Q: Is the performance following score instructions? A: Not fully, the score indicated a moderate tempo.
+    3. Q: Is the performed note accurate? A: Some notes and the length of some of the eighth notes are too long.

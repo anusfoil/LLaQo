@@ -1,0 +1,44 @@
+0. Teacher Feedback: Meter errors at the start and middle of the chorus, but otherwise OK 
+   Generate:
+   1. Q: Is the rhythm accurate? A: Meter errors at the start and middle of the chorus. 
+   2. Q: How would you describe the emotional intent of the performance?  A: The performance was otherwise OK.   
+
+1. Teacher Feedback: The notes were correct, and the tempo stayed fairly consistent. However, some of the rhythms were incorrectly, especially as they transitioned between the verse and chorus (too long of a pause). Overall, it felt confident, but it dragged in some places.
+   Generate: 
+   1. Q: Is the performed note accurate? A: The notes were correct. 
+   2. Q: Is the performed tempo stable? A: The tempo stayed fairly consistent.
+   3. Q: Is the rhythm accurate? A: Some of the rhythms were incorrect.
+   4. Q: In which skill level would you say the performer is in? A: The performance felt confident.
+
+2. Teacher Feedback: Accurate note reading. Missed correct rhythm going into chorus and at the end of first ending in chorus.
+   Generate: 
+   1. Q: Is the performed note accurate? A: Accurate note reading.
+   2. Q: Is the rhythm accurate? A: Not accurate going into chorus and at the end of first ending in chorus.
+
+3. Teacher Feedback: The piece was played accurately and was pleasant to listen to.
+   Generate: 
+   1. Q: Is the performance hesitant or smooth? A: The piece was played accurately and was pleasant to listen to.
+   2. Q: What is the overall score you would assign to the performance, in a scale of 5? A: 4
+
+4. Teacher Feedback: Good tempo and character.  Needs more dynamic shaping.  A couple rhythm mistakes (not holding dotted notes long enough).
+   Generate: 
+   1. Q: How is the overall tempo? A: Good tempo.
+   2. Q: What does the student needs to work on? A: Need to work on dynamic shaping and correct rhythm.
+   3. Q: Is the rhythm accurate? A: Not accurate, not holding dotted notes long enough.
+
+5. Teacher Feedback: Some counting issues and also too slow. But mostly mistake-free and musical.
+   Generate: 
+   1. Q: How is the overall tempo? A: Too slow.
+   2. Q: Is the rhythm accurate? A: There are some counting issues.
+   3. Q: What does the student needs to work on? A: Work on counting and tempo.
+
+6. Teacher Feedback: Wrong rhythm end lines 3 and 4 and 1st ending. Bit slow, LH slightly heavy and not short enough.
+   Generate: 
+   1. Q: How is the overall tempo? A: Bit slow.
+   2. Q: Is the rhythm accurate? A: Wrong rhythm at the end of lines 3 and 4 and 1st ending.
+   3. Q: Is the articulation appropriate? A: LH slightly heavy and not short enough.
+
+7. Teacher Feedback: In the ending section, the length of the half and dot note and haft notes are not long enough. 
+   Generate: 
+   1. Q: Is the rhythm accurate? A: In the ending section, the length of the half and dot note and half notes are not long enough.
+   2. Q: What does the student needs to work on? A: Work on the length of notes towards the ending.

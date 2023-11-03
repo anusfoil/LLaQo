@@ -26,36 +26,28 @@ except:
     # from prompt_template import _QUESTION4CLASSIFICATION_ as _QUESTION_
 
 
-ANSWERS_CSV = '/data/EECS-MachineListeningLab/datasets/expert_novice/evaluation_data_anonymous.csv'
+ANSWERS_CSV = '/data/EECS-MachineListeningLab/datasets/expert_novice/evaluation_qa.csv'
 AUDIO_DIR = '/data/EECS-MachineListeningLab/datasets/expert_novice/recordings_and_alignments'
 
 class ExpertNoviceDataset(Dataset):
     """Expert Novice dataset."""
 
     def __init__(self, answers_csv=ANSWERS_CSV, audio_dir=AUDIO_DIR, transform=None,
-                 audio_processor=fbankProcessor.build_processor()):
+                 audio_processor=fbankProcessor.build_processor(),
+                 split='train'):
         """
         Arguments:
             answers_csv (string): Path to the csv file with con espressione game answer.
             audio_dir (string): Directory with all the audios.
             transform (callable, optional): Optional transform to be applied on a sample.
         """
-        self.audio_answers = pd.read_csv(answers_csv)
+        self.audio_qa = pd.read_csv(answers_csv)
+        self.audio_qa = self.audio_qa[self.audio_qa['split'] == split]
         self.audio_dir = audio_dir
         self.transform = transform
 
-        self.audio_answers['audio_path'] = self.audio_answers['Piece_name'] + "-" + self.audio_answers['Recording_number'].apply(lambda x: str(x).zfill(2))
-        self.audio_answers['audio_path'] = self.audio_answers['Piece_name'].apply(lambda x: "".join(x.split())) + "/" + self.audio_answers['audio_path']
-
-        self.audio_qa = []
-        for _, row in self.audio_answers.iterrows():
-            for idx in range(1, 5):
-                self.audio_qa.append((row['audio_path'], "What feedback would you give to this student's performance?", row[f'Instructor{idx}_text']))
-                self.audio_qa.append((row['audio_path'], "What is the overall rating you would assign to the performance, in a scale 5?", str(row[f'Instructor{idx}_rating'])))
-                self.audio_qa.append((row['audio_path'], "What feedback would you give to this student's performance?", row[f'Rater{idx}_text']))
-                self.audio_qa.append((row['audio_path'], "What is the overall rating you would assign to the performance, in a scale 5?", str(row[f'Rater{idx}_rating'])))
-
-        self.audio_qa = pd.DataFrame(self.audio_qa, columns=['audio_path', 'qtype', 'answer'])
+        self.audio_qa['audio_path'] = self.audio_qa['piece_name'] + "-" + self.audio_qa['recording_number'].apply(lambda x: str(x).zfill(2))
+        self.audio_qa['audio_path'] = self.audio_qa['piece_name'].apply(lambda x: "".join(x.split())) + "/" + self.audio_qa['audio_path']
 
         self.audio_processor = audio_processor
 
@@ -69,16 +61,10 @@ class ExpertNoviceDataset(Dataset):
         audio_path = os.path.join(self.audio_dir,
                                 self.audio_qa['audio_path'].iloc[idx]) + ".wav"
 
-        answer = self.audio_qa['answer'].iloc[idx]
-        if self.audio_qa['qtype'].iloc[idx] == "feedback":
-            question = "What feedback would you give to this student's performance?"
-        else:
-            question = "What is the overall rating you would assign to the performance, in a scale 5?"
-        
         sample = {
                 'audio_path': audio_path, 
-                'question': self.audio_qa['qtype'].iloc[idx],
-                'answer': answer}
+                'question': self.audio_qa['Q'].iloc[idx],
+                'answer': self.audio_qa['A'].iloc[idx]}
         
         sample["waveform"], sample["fbank"] = self.audio_processor(audio_path)[:-1]
 

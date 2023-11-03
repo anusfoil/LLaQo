@@ -1,0 +1,46 @@
+0. Teacher: Almost perfect.
+   Generate: 
+   1. Q: What is the overall score you would assign to the performance, in a scale 5? A: 5
+   2. Q: What does the student needs to work on? A: None, it's almost perfect.
+
+1. Teacher: Mistakes in right hand measures 11 and 13, but otherwise very solid. Good left hand staccatos overall, though some were missed and others could have been snappier. Good understanding of slurs vs non slurs, but not a lot of thought given to the flow of the song. 
+   Generate: 
+   1. Q: Is the performed note accurate? A: Mistakes in right hand measures 11 and 13. 
+   2. Q: Is the articulation appropriate? A: Good left hand staccatos overall, though some were missed and could have been snappier.
+   3. Q: Is the performance following score instructions? A: Good understanding of slurs vs. non slurs, but not a lot of thought given to the flow of the song.
+
+2. Teacher: Good steady tempo throughout. Work on right hand legato. Love the consistent touch of left hand. Last 3-4 measures of chorus need reworking. Other than that, nice solid playing!
+   Generate: 
+   1. Q: How is the overall tempo? A: Good steady tempo throughout. 
+   2. Q: Is the articulation appropriate? A: Work on right hand legato. 
+   3. Q: What does the student need to work on? A: Last 3-4 measures of chorus need reworking.
+
+3. Teacher: This recording is mostly accurate, but misses a note in the second last line. However, it makes great musical shape in a whole.
+   Generate: 
+   1. Q: Is the performed note accurate? A: Mostly accurate, but misses a note in the second last line.
+   2. Q: How would you describe the emotional intent of the performance? A: It makes great musical shape in a whole.
+
+4. Teacher: under tempo; right hand needs to be smoother with phrase shaping. Left hand mistakes.
+   Generate: 
+   1. Q: How is the overall tempo? A: Under tempo. 
+   2. Q: Is the articulation appropriate? A: Right hand needs to be smoother with phrase shaping.
+   3. Q: Is the performed note accurate? A: Left hand mistakes.
+
+5. Teacher: Steady tempo and correct notes are played. The player did a good job in playing the staccato notes on the left hand.
+   Generate: 
+   1. Q: How is the overall tempo? A: Steady tempo.
+   2. Q: Is the performed note accurate? A: Correct notes are played.
+   3. Q: Is the articulation appropriate? A: The player did a good job in playing the staccato notes on the left hand.
+
+6. Teacher: Too slow (not lively). Some articulation breaks of legato in RH. Tie added line 3; wrong notes line 4.
+   Generate: 
+   1. Q: How is the overall tempo? A: Too slow (not lively).
+   2. Q: Is the articulation appropriate? A: Some articulation breaks of legato in RH. 
+   3. Q: Is the performed note accurate? A: Tie added line 3; wrong notes line 4.
+
+7. Teacher: The third measure of the chorus was wrong (forgot the second D in the treble clef), but this was good otherwise and capture the essence of the piece well (lively, upbeat, and got the staccato markings and phrasing right). It also observed the tied notes and played at a nice tempo. 
+   Generate: 
+   1. Q: Is the performed note accurate? A: The third measure of the chorus was wrong (forgot the second D in the treble clef).
+   2. Q: How would you describe the emotional intent of the performance? A: Captured the essence of the piece well (lively, upbeat, and got the staccato markings and phrasing right).
+   3. Q: Is the performance following score instructions? A: Yes, it observed the tied notes.
+   4. Q: How is the overall tempo? A: Played at a nice tempo.
