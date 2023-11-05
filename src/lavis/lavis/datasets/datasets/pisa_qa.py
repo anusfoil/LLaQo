@@ -12,6 +12,7 @@ from torch.utils.data import DataLoader, Dataset
 from omegaconf import OmegaConf
 from collections import OrderedDict
 from random import randint
+import copy
 sys.path.append(os.path.dirname(__file__))
 from audio_processor import fbankProcessor
 import hook
@@ -26,14 +27,49 @@ except:
     # from prompt_template import _QUESTION4CLASSIFICATION_ as _QUESTION_
 
 
-ANSWERS_CSV = '/data/EECS-MachineListeningLab/datasets/LLaQo/expert_novice/evaluation_qa.csv'
-AUDIO_DIR = '/data/EECS-MachineListeningLab/datasets/LLaQo/expert_novice/recordings_and_alignments'
+def transform_PISA_dataset():
+    """PISA is a dataset with student performance of various difficulty levels. 
+    The 
+    
+    """
+    meta_csv = pd.read_csv('/data/EECS-MachineListeningLab/datasets/LLaQo/PISA/Annotations_v1.csv')
+    for i in range(12, 29):
+        meta_csv.drop(columns=f'Unnamed: {i}', inplace=True)
 
-_ANSWERS_CSV = '/data/EECS-MachineListeningLab/datasets/LLaQo/con_espressione/con_espressione_game_answers.csv'
-_AUDIO_DIR = '/data/EECS-MachineListeningLab/datasets/LLaQo/con_espressione/audio_all'
+    # divide into train and test split
+    meta_csv['split'] = 'train'
+    test_idx = [randint(0, 59) for _ in range(10)]
+    meta_csv.loc[test_idx, 'split'] = 'test'
 
-class ExpertNoviceDataset(Dataset):
-    """Expert Novice dataset."""
+    # populate QA pairs
+    qa_csv = []
+    for idx, row in meta_csv.iterrows():
+        row['Q'] = "Which difficulty level is the piece, in a scale of 9?"
+        row['A'] = str(row['level_song'])
+        qa_csv.append(copy.deepcopy(row))
+        row['Q'] = "Which skill level is the performer in, in a scale of 9?"
+        row['A'] = str(row['level_player'])
+        qa_csv.append(copy.deepcopy(row))
+        row['Q'] = "How would you rate the performance, in a scale of 5?"
+        row['A'] = "4" # PISA performances are all clean and accurate
+        qa_csv.append(copy.deepcopy(row))
+        row['Q'] = "What kind of performance might this be?"
+        row['A'] = "This is a examplary student's performance, and everything is executed correctly."
+        qa_csv.append(copy.deepcopy(row))
+        if not pd.isna(row['piece_description']):
+            row['Q'] = "What is the stylistic period of the piece? Who is the potential composer?"
+            row['A'] = row['piece_description']
+            qa_csv.append(copy.deepcopy(row))           
+
+    qa_csv = pd.DataFrame(qa_csv)
+    qa_csv.to_csv("/data/EECS-MachineListeningLab/datasets/LLaQo/PISA/Annotations_v2.csv")
+
+
+ANSWERS_CSV = '/data/EECS-MachineListeningLab/datasets/LLaQo/PISA/Annotations_v2.csv'
+AUDIO_DIR = '/data/EECS-MachineListeningLab/datasets/LLaQo/PISA/processed_samples_audio'
+
+class PISADataset(Dataset):
+    """PISA dataset."""
 
     def __init__(self, answers_csv=ANSWERS_CSV, audio_dir=AUDIO_DIR, transform=None,
                  audio_processor=fbankProcessor.build_processor(),
@@ -49,15 +85,6 @@ class ExpertNoviceDataset(Dataset):
         self.audio_dir = audio_dir
         self.transform = transform
 
-        self.audio_qa['audio_path'] = self.audio_qa['piece_name'] + "-" + self.audio_qa['recording_number'].apply(lambda x: str(x).zfill(2))
-        self.audio_qa['audio_path'] = self.audio_qa['piece_name'].apply(lambda x: "".join(x.split())) + "/" + self.audio_qa['audio_path']
-
-        # tmp
-        # self.audio_answers = pd.read_csv(_ANSWERS_CSV)
-        # self._audio_dir = _AUDIO_DIR
-        # self.audio_answers['piece_name_'] = self.audio_answers['piece_name'].apply(lambda x: x.replace("_", '-').replace("excerpt", ""))
-        # self.audio_answers['audio_path'] = self.audio_answers['piece_name_'] + "_" + self.audio_answers['performer'].apply(lambda x: x.lower())
-
         self.audio_processor = audio_processor
 
     def __len__(self):
@@ -68,15 +95,12 @@ class ExpertNoviceDataset(Dataset):
             idx = idx.tolist()
 
         audio_path = os.path.join(self.audio_dir,
-                                self.audio_qa['audio_path'].iloc[idx]) + ".wav"
-        # audio_path = os.path.join(self._audio_dir,
-        #                         self.audio_answers['audio_path'].iloc[idx]) + ".wav"
+                                str(int(self.audio_qa['filename'].iloc[idx]))) + ".wav"
 
         sample = {
                 'audio_path': audio_path, 
                 'question': self.audio_qa['Q'].iloc[idx],
                 'answer': self.audio_qa['A'].iloc[idx]}
-                # 'answer': self.audio_answers['answer'].iloc[idx]}
         
         sample["waveform"], sample["fbank"] = self.audio_processor(audio_path)[:-1]
 
@@ -86,11 +110,11 @@ class ExpertNoviceDataset(Dataset):
         return sample
 
 
-class ExpertNoviceDatasetQA(BaseDataset):
+class PISADatasetQA(BaseDataset):
     def __init__(self, vis_processor, audio_root, seg_name, **kwargs):
         super().__init__(vis_processor=vis_processor, vis_root=audio_root)
 
-        self.inner_dataset = ExpertNoviceDataset(ANSWERS_CSV, AUDIO_DIR)
+        self.inner_dataset = PISADataset(ANSWERS_CSV, AUDIO_DIR)
 
         self._add_instance_ids()
 
@@ -120,16 +144,16 @@ class ExpertNoviceDatasetQA(BaseDataset):
 
 
 if __name__ == "__main__":
-    import torch
+    transform_PISA_dataset()
 
-    dataset = ExpertNoviceDatasetQA(
+    dataset = PISADatasetQA(
         vis_processor=lambda x: x,
         audio_root="/data/EECS-MachineListeningLab/datasets/AudioSet/audios",
         seg_name="all_train",
     )
     print(next(iter(dataset)))
 
-    loader = torch.utils.data.DataLoader(dataset, batch_size=16)
+    loader = torch.utils.data.DataLoader(dataset, batch_size=2)
     for datum in loader:
         print(datum)
         hook()

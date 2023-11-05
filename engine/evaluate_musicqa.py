@@ -55,6 +55,7 @@ def generate_answer_on_musicqa(
                 temperature=0.1,
             )
             result = {
+                "audio_path": data['audio_path'],
                 "question": data['question'],
                 "output": output, 
                 "gt": data['answer']
@@ -80,7 +81,6 @@ if __name__ == "__main__":
     results_json_dir = "/data/home/acw630/WORKPLACE/LAM/engine/results/tagging/ablate"
     os.makedirs(results_json_dir, exist_ok=True)
 
-    swift_ckpt_path = "/data/EECS-MachineListeningLab/huan/lam/check_point/Pretrain_stage1/20230829080/checkpoint_63700.pth"
     mini_data = False
     normalize_sim = False
 
@@ -90,13 +90,10 @@ if __name__ == "__main__":
     # ckpt_foldername = args.ckpt_folder_name  # "20230829124"
     # checkpoint_paths = glob(os.path.join(lam_ckpt_dir, ckpt_foldername, "*.pth"))
     checkpoint_paths = [
-        "/data/EECS-MachineListeningLab/huan/lam/check_point/Pretrain_stage2/test_musicqa/20231102153/checkpoint_20000.pth",
+        "/data/EECS-MachineListeningLab/huan/lam/check_point/Pretrain_stage2/test_musicqa/20231103032/checkpoint_51000.pth",
     ]
     for lam_ckpt_path in checkpoint_paths:
         pth = lam_ckpt_path.split("/")[-1].split(".")[0]
-        # results_json_path = os.path.join(
-        #     results_json_dir, f"{ckpt_foldername}_{pth}.json"
-        # )
         results_json_path = os.path.join(results_json_dir, f"{pth}.json")
         generate_answer_on_musicqa(
             lam_ckpt_path=lam_ckpt_path,

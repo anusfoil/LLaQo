@@ -5,13 +5,14 @@
  For full license text, see the LICENSE file in the repo root or https://opensource.org/licenses/BSD-3-Clause
 """
 
-import os, sys
+import os, sys, math
 import pandas as pd
 import torch
 from torch.utils.data import DataLoader, Dataset
 from omegaconf import OmegaConf
 from collections import OrderedDict
 from random import randint
+import copy
 sys.path.append(os.path.dirname(__file__))
 from audio_processor import fbankProcessor
 import hook
@@ -26,37 +27,52 @@ except:
     # from prompt_template import _QUESTION4CLASSIFICATION_ as _QUESTION_
 
 
-ANSWERS_CSV = '/data/EECS-MachineListeningLab/datasets/LLaQo/expert_novice/evaluation_qa.csv'
-AUDIO_DIR = '/data/EECS-MachineListeningLab/datasets/LLaQo/expert_novice/recordings_and_alignments'
+def transform_MusicGestures_dataset():
+    """YCUPPE is a dataset with student performances of entry levels, with different teacher's rating in the scale of 100. 
+    
+    """
+    qa_csv = []
+    test_idx = [randint(0, 150) for _ in range(15)]
+    for i in range(1, 14):
+        piece_dir = f"/data/EECS-MachineListeningLab/datasets/LLaQo/YCU-PPE-III/raw/{i}"
+        score_csv = pd.read_csv(f"{piece_dir}/score.csv", names=['name', 's1', 's2', 's3'])
+        for idx, row in score_csv.iterrows():
 
-_ANSWERS_CSV = '/data/EECS-MachineListeningLab/datasets/LLaQo/con_espressione/con_espressione_game_answers.csv'
-_AUDIO_DIR = '/data/EECS-MachineListeningLab/datasets/LLaQo/con_espressione/audio_all'
+            row['split'] = 'test' if idx in test_idx else 'train'
+            row['audio_path'] = f"{piece_dir}/wav/{row['name']}.wav"
+            row['rating'] = math.ceil((row['s1'] + row['s2'] + row['s3']) / 30) / 2 # from 0 - 5, round to 0.5
+            
+            row['Q'] = "How would you rate the performance, in a scale of 5?"
+            row['A'] = str(row['rating'])
+            qa_csv.append(copy.deepcopy(row))
+            row['Q'] = "What kind of performance might this be?"
+            row['A'] = "This is a student's performance."
+            qa_csv.append(copy.deepcopy(row))
+            row['Q'] = "Which difficulty level is the piece, in a scale of 9?"
+            row['A'] = "3"
+            qa_csv.append(copy.deepcopy(row))
 
-class ExpertNoviceDataset(Dataset):
-    """Expert Novice dataset."""
+    qa_csv = pd.DataFrame(qa_csv)
+    qa_csv.to_csv("/data/EECS-MachineListeningLab/datasets/LLaQo/expressive_musical_gestures/audio_qa.csv")
 
-    def __init__(self, answers_csv=ANSWERS_CSV, audio_dir=AUDIO_DIR, transform=None,
+
+ANSWERS_CSV = '/data/EECS-MachineListeningLab/datasets/LLaQo/expressive_musical_gestures/audio_qa.csv'
+
+
+class MusicGesturesDataset(Dataset):
+    """PISA dataset."""
+
+    def __init__(self, answers_csv=ANSWERS_CSV, transform=None,
                  audio_processor=fbankProcessor.build_processor(),
                  split='train'):
         """
         Arguments:
             answers_csv (string): Path to the csv file with con espressione game answer.
-            audio_dir (string): Directory with all the audios.
             transform (callable, optional): Optional transform to be applied on a sample.
         """
         self.audio_qa = pd.read_csv(answers_csv)
         self.audio_qa = self.audio_qa[self.audio_qa['split'] == split]
-        self.audio_dir = audio_dir
         self.transform = transform
-
-        self.audio_qa['audio_path'] = self.audio_qa['piece_name'] + "-" + self.audio_qa['recording_number'].apply(lambda x: str(x).zfill(2))
-        self.audio_qa['audio_path'] = self.audio_qa['piece_name'].apply(lambda x: "".join(x.split())) + "/" + self.audio_qa['audio_path']
-
-        # tmp
-        # self.audio_answers = pd.read_csv(_ANSWERS_CSV)
-        # self._audio_dir = _AUDIO_DIR
-        # self.audio_answers['piece_name_'] = self.audio_answers['piece_name'].apply(lambda x: x.replace("_", '-').replace("excerpt", ""))
-        # self.audio_answers['audio_path'] = self.audio_answers['piece_name_'] + "_" + self.audio_answers['performer'].apply(lambda x: x.lower())
 
         self.audio_processor = audio_processor
 
@@ -67,16 +83,12 @@ class ExpertNoviceDataset(Dataset):
         if torch.is_tensor(idx):
             idx = idx.tolist()
 
-        audio_path = os.path.join(self.audio_dir,
-                                self.audio_qa['audio_path'].iloc[idx]) + ".wav"
-        # audio_path = os.path.join(self._audio_dir,
-        #                         self.audio_answers['audio_path'].iloc[idx]) + ".wav"
+        audio_path = self.audio_qa['audio_path'].iloc[idx]
 
         sample = {
                 'audio_path': audio_path, 
                 'question': self.audio_qa['Q'].iloc[idx],
                 'answer': self.audio_qa['A'].iloc[idx]}
-                # 'answer': self.audio_answers['answer'].iloc[idx]}
         
         sample["waveform"], sample["fbank"] = self.audio_processor(audio_path)[:-1]
 
@@ -86,11 +98,11 @@ class ExpertNoviceDataset(Dataset):
         return sample
 
 
-class ExpertNoviceDatasetQA(BaseDataset):
+class MusicGesturesDatasetQA(BaseDataset):
     def __init__(self, vis_processor, audio_root, seg_name, **kwargs):
         super().__init__(vis_processor=vis_processor, vis_root=audio_root)
 
-        self.inner_dataset = ExpertNoviceDataset(ANSWERS_CSV, AUDIO_DIR)
+        self.inner_dataset = MusicGesturesDataset(ANSWERS_CSV)
 
         self._add_instance_ids()
 
@@ -120,16 +132,17 @@ class ExpertNoviceDatasetQA(BaseDataset):
 
 
 if __name__ == "__main__":
-    import torch
+    transform_MusicGestures_dataset()
+    hook()
 
-    dataset = ExpertNoviceDatasetQA(
+    dataset = YCUPPEDatasetQA(
         vis_processor=lambda x: x,
         audio_root="/data/EECS-MachineListeningLab/datasets/AudioSet/audios",
         seg_name="all_train",
     )
     print(next(iter(dataset)))
 
-    loader = torch.utils.data.DataLoader(dataset, batch_size=16)
+    loader = torch.utils.data.DataLoader(dataset, batch_size=2)
     for datum in loader:
         print(datum)
-        hook()
+        # hook()
