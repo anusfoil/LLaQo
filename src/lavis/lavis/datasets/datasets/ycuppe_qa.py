@@ -133,7 +133,7 @@ class YCUPPEDatasetQA(BaseDataset):
 
 if __name__ == "__main__":
     transform_YCUPPE_dataset()
-    hook()
+    # hook()
 
     dataset = YCUPPEDatasetQA(
         vis_processor=lambda x: x,

@@ -11,10 +11,18 @@ from lavis.common.registry import registry
 
 from lavis.datasets.builders.conespressione_qa_builder import ConEspressioneQABuilder
 from lavis.datasets.builders.expertnovice_qa_builder import ExpertNoviceQABuilder
+from lavis.datasets.builders.pisa_qa_builder import PISAQABuilder
+from lavis.datasets.builders.ycuppe_qa_builder import YCUPPEQABuilder
+from lavis.datasets.builders.musicgestures_qa_builder import MusicGesturesQABuilder
+from lavis.datasets.builders.musicshape_qa_builder import MusicShapeQABuilder
 
 __all__ = [
     "ConEspressioneQABuilder",
     "ExpertNoviceQABuilder",
+    "PISAQABuilder",
+    "YCUPPEQABuilder",
+    "MusicGesturesQABuilder",
+    "MusicShapeQABuilder",
 ]
 
 

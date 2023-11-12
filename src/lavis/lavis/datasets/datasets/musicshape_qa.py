@@ -46,54 +46,70 @@ INTENTION_ANSWER = {
     "EXAG": "Performed with exaggerated tempo and dynamics change, very expressive.",
 }
 
-def transform_MusicGestures_dataset():
-    """Music Gestrues dataset is a dataset recorded by two pianists, playing the same piece under
-    different instruction such as tempo, use metronome or not, and legato / staccato. 
+
+
+def transform_MusicShape_dataset():
+    """Music Shape dataset is a set of recordings of Schmitt excercises. It contains recordings of varying 
+        dynamics and tempo with labels. Additionally, these excercises are of different 
     
     """
     import glob
     qa_csv = []
-    test_idx = [randint(0, 210) for _ in range(20)]
+    test_idx = [randint(0, 3948) for _ in range(400)]
 
-    piece_dir = glob.glob("/data/EECS-MachineListeningLab/datasets/LLaQo/expressive_musical_gestures/piano/**/*.wav", recursive=True)
+    piece_dir = glob.glob("/data/EECS-MachineListeningLab/datasets/LLaQo/music_shape_dataset/**/*.wav", recursive=True)
 
     for idx, audio_path in enumerate(piece_dir):
         audio_info = {}
 
         audio_info['split'] = 'test' if idx in test_idx else 'train'
         audio_info['audio_path'] = audio_path
-        audio_info['player'] = audio_path.split("/")[7]
         
-        instruction = audio_path.split("/")[-2]
-        metro, tempo, articulation, _ = instruction.split("_")
+        audio_info['shape'] = audio_path.split("/")[-2]    
 
-        audio_info['Q'] = "How is the overall tempo?"
-        audio_info['A'] = TEMPO_ANSWER[tempo]
-        qa_csv.append(copy.deepcopy(audio_info))
-        if ("LEG" in articulation) or ("STA" in articulation):
+        if (audio_info['shape'] in ["3", "5_3", "6_3", "7_3", "8_3"]):
+            audio_info['Q'] = "How is the dynamics change in the piece?"
+            audio_info['A'] = "The dynamics is increasing, with a cresc. applied on the phrase."
+            qa_csv.append(copy.deepcopy(audio_info))
+        if (audio_info['shape'] in ["4", "5_4", "6_4", "7_4", "8_4"]):
+            audio_info['Q'] = "How is the dynamics change in the piece?"
+            audio_info['A'] = "The dynamics is decreasing, with a decresc. applied on the phrase."
+            qa_csv.append(copy.deepcopy(audio_info))
+        if (audio_info['shape'] in ["7", "7_1", "7_2", "7_3", "7_4"]):
+            audio_info['Q'] = "How is the tempo change in the piece?"
+            audio_info['A'] = "The tempo is increasing, with a accel. applied on the phrase."
+            qa_csv.append(copy.deepcopy(audio_info))
+        if (audio_info['shape'] in ["8", "8_1", "8_2", "8_3", "8_4"]):
+            audio_info['Q'] = "How is the tempo change in the piece?"
+            audio_info['A'] = "The tempo is decreasing, with a rit. applied on the phrase."
+            qa_csv.append(copy.deepcopy(audio_info))
+
+        if (audio_info['shape'] in ["27"]):
+            audio_info['Q'] = "How is the rhythm of the piece?"
+            audio_info['A'] = "The phrase is played with the syncopated rhythm."
+            qa_csv.append(copy.deepcopy(audio_info))
+
+        if ("staccato" in audio_path):
             audio_info['Q'] = "How is the articulation in the piece?"
-            audio_info['A'] = ARTICULATION_ANSWER[articulation]
+            audio_info['A'] = "The piece is played with staccato articulation."
             qa_csv.append(copy.deepcopy(audio_info))
-        else:
-            audio_info['Q'] = "How is the expressive intention in the performance?"
-            audio_info['A'] = INTENTION_ANSWER[articulation]
-            qa_csv.append(copy.deepcopy(audio_info))
+
         audio_info['Q'] = "What is the stylistic period of the piece? Who is the potential composer?"
-        audio_info['A'] = "This is a piece in romantic style, and composer is Schumann."
+        audio_info['A'] = "This is a short technical excercise for student. It could be from Hanon or Schmitt."
         qa_csv.append(copy.deepcopy(audio_info))
         audio_info['Q'] = "Which difficulty level is the piece, in a scale of 9?"
-        audio_info['A'] = "5"
+        audio_info['A'] = "1"
         qa_csv.append(copy.deepcopy(audio_info))
 
     qa_csv = pd.DataFrame(qa_csv)
-    qa_csv.to_csv("/data/EECS-MachineListeningLab/datasets/LLaQo/expressive_musical_gestures/audio_qa.csv")
+    qa_csv.to_csv("/data/EECS-MachineListeningLab/datasets/LLaQo/music_shape_dataset/audio_qa.csv")
     hook()
 
 
-ANSWERS_CSV = '/data/EECS-MachineListeningLab/datasets/LLaQo/expressive_musical_gestures/audio_qa.csv'
+ANSWERS_CSV = '/data/EECS-MachineListeningLab/datasets/LLaQo/music_shape_dataset/audio_qa.csv'
 
 
-class MusicGesturesDataset(Dataset):
+class MusicShapeDataset(Dataset):
     """PISA dataset."""
 
     def __init__(self, answers_csv=ANSWERS_CSV, transform=None,
@@ -132,11 +148,11 @@ class MusicGesturesDataset(Dataset):
         return sample
 
 
-class MusicGesturesDatasetQA(BaseDataset):
+class MusicShapeDatasetQA(BaseDataset):
     def __init__(self, vis_processor, audio_root, seg_name, **kwargs):
         super().__init__(vis_processor=vis_processor, vis_root=audio_root)
 
-        self.inner_dataset = MusicGesturesDataset(ANSWERS_CSV)
+        self.inner_dataset = MusicShapeDataset(ANSWERS_CSV)
 
         self._add_instance_ids()
 
@@ -166,9 +182,10 @@ class MusicGesturesDatasetQA(BaseDataset):
 
 
 if __name__ == "__main__":
-    # transform_MusicGestures_dataset()
+    # transform_MusicShape_dataset()
+    # hook()
 
-    dataset = MusicGesturesDatasetQA(
+    dataset = MusicShapeDatasetQA(
         vis_processor=lambda x: x,
         audio_root="/data/EECS-MachineListeningLab/datasets/AudioSet/audios",
         seg_name="all_train",

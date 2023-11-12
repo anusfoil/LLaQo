@@ -22,8 +22,6 @@ try:
 except:
     from base_dataset import BaseDataset
 
-    # from prompt_template import _QUESTION4CLASSIFICATION_ as _QUESTION_
-
 
 ANSWERS_CSV = '/data/EECS-MachineListeningLab/datasets/LLaQo/con_espressione/con_espressione_game_answers.csv'
 AUDIO_DIR = '/data/EECS-MachineListeningLab/datasets/LLaQo/con_espressione/audio_all'
