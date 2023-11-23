@@ -335,7 +335,7 @@ class fbankProcessor:
 
         audio_configs["sampling_rate"] = audio_configs.get("sampling_rate", 32000)
         audio_configs["n_mels"] = audio_configs.get("n_mels", 128)
-        audio_configs["target_length"] = audio_configs.get("target_length", 1024)
+        audio_configs["target_length"] = audio_configs.get("target_length", 8192)
         audio_configs["resample"] = audio_configs.get("resample", True)
         audio_configs["normalize"] = audio_configs.get("normalize", True)
         audio_configs["timem"] = audio_configs.get("timem", 0)

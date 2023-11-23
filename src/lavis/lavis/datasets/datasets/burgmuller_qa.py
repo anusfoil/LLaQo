@@ -5,7 +5,7 @@
  For full license text, see the LICENSE file in the repo root or https://opensource.org/licenses/BSD-3-Clause
 """
 
-import os, sys
+import os, sys, math
 import pandas as pd
 import torch
 from torch.utils.data import DataLoader, Dataset
@@ -24,67 +24,57 @@ try:
 except:
     from base_dataset import BaseDataset
 
-    # from prompt_template import _QUESTION4CLASSIFICATION_ as _QUESTION_
 
-
-def transform_PISA_dataset():
-    """PISA is a dataset with student performance of various difficulty levels. 
-    The 
+def transform_Burgmuller_dataset():
+    """Burgmuller is a dataset with student performances of intermediate Burgmuller etudes.
+      The performer did not learn the pieces thouroughly, so the performance has a lot of errors.
     
     """
-    meta_csv = pd.read_csv('/data/EECS-MachineListeningLab/datasets/LLaQo/PISA/Annotations_v1.csv')
-    for i in range(12, 29):
-        meta_csv.drop(columns=f'Unnamed: {i}', inplace=True)
-
-    # divide into train and test split
-    meta_csv['split'] = 'train'
-    test_idx = [randint(0, 59) for _ in range(10)]
-    meta_csv.loc[test_idx, 'split'] = 'test'
-
-    # populate QA pairs
     qa_csv = []
-    for idx, row in meta_csv.iterrows():
-        row['Q'] = "Which difficulty level is the piece, in a scale of 9?"
-        row['A'] = str(row['level_song'])
-        qa_csv.append(copy.deepcopy(row))
-        row['Q'] = "Which skill level is the performer in, in a scale of 9?"
-        row['A'] = str(row['level_player'])
-        qa_csv.append(copy.deepcopy(row))
-        row['Q'] = "How would you rate the performance, in a scale of 5?"
-        row['A'] = "4" # PISA performances are all clean and accurate
-        qa_csv.append(copy.deepcopy(row))
+    test_idx = [randint(0, 25) for _ in range(5)]
+    error_notes = pd.read_csv("/data/EECS-MachineListeningLab/datasets/LLaQo/Burgmuller/error_notes.csv")
+    for idx, name in enumerate(error_notes.name.unique()):
+
+        notes = error_notes[error_notes['name'] == name]
+
+        row = {'audio_path': f"/data/EECS-MachineListeningLab/datasets/LLaQo/Burgmuller/{name}.wav",
+               'split': 'test' if idx in test_idx else 'train'}
+        
         row['Q'] = "What kind of performance might this be?"
-        row['A'] = "This is a examplary student's performance, and everything is executed correctly."
+        row['A'] = "This is a student's performance."
         qa_csv.append(copy.deepcopy(row))
-        if not pd.isna(row['piece_description']):
-            row['Q'] = "What is the stylistic period of the piece? Who is the potential composer?"
-            row['A'] = row['piece_description']
-            qa_csv.append(copy.deepcopy(row))           
+        row['Q'] = "Which difficulty level is the piece, in a scale of 9?"
+        row['A'] = "5"
+        qa_csv.append(copy.deepcopy(row))
+        row['Q'] = "What might this piece be and who is the composer?"
+        row['A'] = "This is a practice piece for student, and it's from Burgmuller etude set."
+        qa_csv.append(copy.deepcopy(row))
+
+        for j in range(len(notes)):
+            row['Q'] = notes.iloc[j, 1]
+            row['A'] = notes.iloc[j, 2]
+            qa_csv.append(copy.deepcopy(row))
 
     qa_csv = pd.DataFrame(qa_csv)
-    qa_csv.to_csv("/data/EECS-MachineListeningLab/datasets/LLaQo/PISA/Annotations_v2.csv")
+    qa_csv.to_csv("/data/EECS-MachineListeningLab/datasets/LLaQo/Burgmuller/audio_qa.csv")
 
 
-ANSWERS_CSV = '/data/EECS-MachineListeningLab/datasets/LLaQo/PISA/Annotations_v2.csv'
-AUDIO_DIR = '/data/EECS-MachineListeningLab/datasets/LLaQo/PISA/processed_samples_audio'
+ANSWERS_CSV = '/data/EECS-MachineListeningLab/datasets/LLaQo/Burgmuller/audio_qa.csv'
 
-class PISADataset(Dataset):
-    """PISA dataset."""
 
-    def __init__(self, answers_csv=ANSWERS_CSV, audio_dir=AUDIO_DIR, transform=None,
-                 audio_processor=fbankProcessor.build_processor({
-                     "target_length": 9216     # around 90s
-                 }),
+class BurgmullerDataset(Dataset):
+    """Burgmuller dataset."""
+
+    def __init__(self, answers_csv=ANSWERS_CSV, transform=None,
+                 audio_processor=fbankProcessor.build_processor(),
                  split='train'):
         """
         Arguments:
             answers_csv (string): Path to the csv file with con espressione game answer.
-            audio_dir (string): Directory with all the audios.
             transform (callable, optional): Optional transform to be applied on a sample.
         """
         self.audio_qa = pd.read_csv(answers_csv)
         self.audio_qa = self.audio_qa[self.audio_qa['split'] == split]
-        self.audio_dir = audio_dir
         self.transform = transform
 
         self.audio_processor = audio_processor
@@ -96,8 +86,7 @@ class PISADataset(Dataset):
         if torch.is_tensor(idx):
             idx = idx.tolist()
 
-        audio_path = os.path.join(self.audio_dir,
-                                str(int(self.audio_qa['filename'].iloc[idx]))) + ".wav"
+        audio_path = self.audio_qa['audio_path'].iloc[idx]
 
         sample = {
                 'audio_path': audio_path, 
@@ -112,11 +101,11 @@ class PISADataset(Dataset):
         return sample
 
 
-class PISADatasetQA(BaseDataset):
+class BurgmullerDatasetQA(BaseDataset):
     def __init__(self, vis_processor, audio_root, seg_name, **kwargs):
         super().__init__(vis_processor=vis_processor, vis_root=audio_root)
 
-        self.inner_dataset = PISADataset(ANSWERS_CSV, AUDIO_DIR)
+        self.inner_dataset = BurgmullerDataset(ANSWERS_CSV)
 
         self._add_instance_ids()
 
@@ -146,9 +135,10 @@ class PISADatasetQA(BaseDataset):
 
 
 if __name__ == "__main__":
-    transform_PISA_dataset()
+    # transform_Burgmuller_dataset()
+    # hook()
 
-    dataset = PISADatasetQA(
+    dataset = BurgmullerDatasetQA(
         vis_processor=lambda x: x,
         audio_root="/data/EECS-MachineListeningLab/datasets/AudioSet/audios",
         seg_name="all_train",

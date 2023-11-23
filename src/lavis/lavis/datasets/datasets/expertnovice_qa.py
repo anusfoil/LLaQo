@@ -29,14 +29,13 @@ except:
 ANSWERS_CSV = '/data/EECS-MachineListeningLab/datasets/LLaQo/expert_novice/evaluation_qa.csv'
 AUDIO_DIR = '/data/EECS-MachineListeningLab/datasets/LLaQo/expert_novice/recordings_and_alignments'
 
-_ANSWERS_CSV = '/data/EECS-MachineListeningLab/datasets/LLaQo/con_espressione/con_espressione_game_answers.csv'
-_AUDIO_DIR = '/data/EECS-MachineListeningLab/datasets/LLaQo/con_espressione/audio_all'
-
 class ExpertNoviceDataset(Dataset):
     """Expert Novice dataset."""
 
     def __init__(self, answers_csv=ANSWERS_CSV, audio_dir=AUDIO_DIR, transform=None,
-                 audio_processor=fbankProcessor.build_processor(),
+                 audio_processor=fbankProcessor.build_processor({
+                     "target_length": 4096     # around 40s
+                 }),
                  split='train'):
         """
         Arguments:
@@ -51,12 +50,6 @@ class ExpertNoviceDataset(Dataset):
 
         self.audio_qa['audio_path'] = self.audio_qa['piece_name'] + "-" + self.audio_qa['recording_number'].apply(lambda x: str(x).zfill(2))
         self.audio_qa['audio_path'] = self.audio_qa['piece_name'].apply(lambda x: "".join(x.split())) + "/" + self.audio_qa['audio_path']
-
-        # tmp
-        # self.audio_answers = pd.read_csv(_ANSWERS_CSV)
-        # self._audio_dir = _AUDIO_DIR
-        # self.audio_answers['piece_name_'] = self.audio_answers['piece_name'].apply(lambda x: x.replace("_", '-').replace("excerpt", ""))
-        # self.audio_answers['audio_path'] = self.audio_answers['piece_name_'] + "_" + self.audio_answers['performer'].apply(lambda x: x.lower())
 
         self.audio_processor = audio_processor
 
