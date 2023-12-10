@@ -5,15 +5,17 @@
  For full license text, see the LICENSE file in the repo root or https://opensource.org/licenses/BSD-3-Clause
 """
 
-import os, sys
+import os, sys, math
 import pandas as pd
 import torch
 from torch.utils.data import DataLoader, Dataset
 from omegaconf import OmegaConf
 from collections import OrderedDict
-from random import randint
+import random
+import copy
 sys.path.append(os.path.dirname(__file__))
 from audio_processor import fbankProcessor
+import hook
 
 try:
     from lavis.datasets.datasets.base_dataset import BaseDataset
@@ -22,48 +24,87 @@ try:
 except:
     from base_dataset import BaseDataset
 
-
-ANSWERS_CSV = '/data/EECS-MachineListeningLab/datasets/LLaQo/con_espressione/con_espressione_game_answers.csv'
+ORIGINAL_CSV = '/data/EECS-MachineListeningLab/datasets/LLaQo/con_espressione/con_espressione_game_answers_.csv'
 AUDIO_DIR = '/data/EECS-MachineListeningLab/datasets/LLaQo/con_espressione/audio_all'
 
-class ConEspressioneDataset(Dataset):
-    """Con espressione dataset."""
+def transform_conespressione_dataset():
+    """Con Espressione is a dataset that contains master's performance, as well as 
+    """
 
-    def __init__(self, answers_csv=ANSWERS_CSV, audio_dir=AUDIO_DIR, transform=None,
-                 audio_processor=fbankProcessor.build_processor({
-                     "target_length": 9216     # around 90s
-                 })):
+    audio_answers = pd.read_csv(ORIGINAL_CSV)
+
+    audio_answers['piece_name_'] = audio_answers['piece_name'].apply(lambda x: x.replace("_", '-').replace("excerpt", ""))
+    audio_answers['audio_path'] = audio_answers['piece_name_'] + "_" + audio_answers['performer'].apply(lambda x: x.lower())
+    audio_answers['audio_path'] = AUDIO_DIR + "/" + audio_answers['audio_path'] + ".wav"
+
+    qa_csv = []
+    test_idx = random.choices( audio_answers.music_id.unique(), k = 10)
+    for _, (_, arow) in enumerate(audio_answers.iterrows()):
+
+        row = {'audio_path': arow['audio_path'],
+               'split': 'test' if arow['music_id'] in test_idx else 'train'}
+
+        answer = arow['answer'].replace("_", " ")
+        
+        if random.random() < 0.3:
+            row['Q'] = "How would you describe this performance?"
+            if ("MIDI" in row['audio_path']) or ("midi" in row['audio_path']):
+                row['A'] = f"This piece sounds like a MIDI performance without any expression. I would describe it as {answer}."
+            else:
+                row['A'] = answer
+            qa_csv.append(copy.deepcopy(row))
+        else:
+            row['Q'] = "How would you assess this student performance?"
+            if ("MIDI" in row['audio_path']) or ("midi" in row['audio_path']):
+                row['A'] = f"This piece sounds like a MIDI performance without any expression. I would describe it as {answer}."
+            else:
+                row['A'] = f"Sorry, but this piece sounds like a virtuoso performance. I would describe it as {answer}."
+            qa_csv.append(copy.deepcopy(row))     
+
+        row['Q'] = "What kind of music is this piece and who is the composer?"
+        row['A'] = arow['piece_style']
+        qa_csv.append(copy.deepcopy(row))
+        row['Q'] = "How would you rate the difficulty of this piece, in a scale of 9?"
+        row['A'] = str(arow['piece_difficulty'])
+        qa_csv.append(copy.deepcopy(row))
+
+    qa_csv = pd.DataFrame(qa_csv)
+    qa_csv.to_csv("/data/EECS-MachineListeningLab/datasets/LLaQo/con_espressione/audio_qa.csv")
+
+
+ANSWERS_CSV = '/data/EECS-MachineListeningLab/datasets/LLaQo/con_espressione/audio_qa.csv'
+
+
+class ConEspressioneDataset(Dataset):
+    """Burgmuller dataset."""
+
+    def __init__(self, answers_csv=ANSWERS_CSV, transform=None,
+                 audio_processor=fbankProcessor.build_processor(),
+                 split='train'):
         """
         Arguments:
             answers_csv (string): Path to the csv file with con espressione game answer.
-            audio_dir (string): Directory with all the audios.
             transform (callable, optional): Optional transform to be applied on a sample.
         """
-        self.audio_answers = pd.read_csv(answers_csv)
-        self.audio_dir = audio_dir
+        self.audio_qa = pd.read_csv(answers_csv)
+        self.audio_qa = self.audio_qa[self.audio_qa['split'] == split]
         self.transform = transform
-
-        self.audio_answers['piece_name_'] = self.audio_answers['piece_name'].apply(lambda x: x.replace("_", '-').replace("excerpt", ""))
-        self.audio_answers['audio_path'] = self.audio_answers['piece_name_'] + "_" + self.audio_answers['performer'].apply(lambda x: x.lower())
 
         self.audio_processor = audio_processor
 
     def __len__(self):
-        return len(self.audio_answers)
+        return len(self.audio_qa)
 
     def __getitem__(self, idx):
         if torch.is_tensor(idx):
             idx = idx.tolist()
 
-        audio_path = os.path.join(self.audio_dir,
-                                self.audio_answers['audio_path'].iloc[idx]) + ".wav"
+        audio_path = self.audio_qa['audio_path'].iloc[idx]
 
-        answer = self.audio_answers['answer'].iloc[idx]
-        
         sample = {
                 'audio_path': audio_path, 
-                'question': "How would you describe this piece of performance?",
-                'answer': answer}
+                'question': self.audio_qa['Q'].iloc[idx],
+                'answer': self.audio_qa['A'].iloc[idx]}
         
         sample["waveform"], sample["fbank"] = self.audio_processor(audio_path)[:-1]
 
@@ -73,11 +114,13 @@ class ConEspressioneDataset(Dataset):
         return sample
 
 
+
+
 class ConEspressioneDatasetQA(BaseDataset):
     def __init__(self, vis_processor, audio_root, seg_name, **kwargs):
         super().__init__(vis_processor=vis_processor, vis_root=audio_root)
 
-        self.inner_dataset = ConEspressioneDataset(ANSWERS_CSV, AUDIO_DIR)
+        self.inner_dataset = ConEspressioneDataset()
 
         self._add_instance_ids()
 
@@ -104,8 +147,10 @@ class ConEspressioneDatasetQA(BaseDataset):
         }
 
 
+
 if __name__ == "__main__":
-    import torch
+    transform_conespressione_dataset()
+    hook()
 
     dataset = ConEspressioneDatasetQA(
         vis_processor=lambda x: x,
@@ -114,7 +159,7 @@ if __name__ == "__main__":
     )
     print(next(iter(dataset)))
 
-    # loader = torch.utils.data.DataLoader(dataset, batch_size=1)
-    # for datum in loader:
-    #     print(datum)
-    #     break
+    loader = torch.utils.data.DataLoader(dataset, batch_size=2)
+    for datum in loader:
+        print(datum)
+        hook()

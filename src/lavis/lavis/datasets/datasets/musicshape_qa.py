@@ -113,9 +113,7 @@ class MusicShapeDataset(Dataset):
     """PISA dataset."""
 
     def __init__(self, answers_csv=ANSWERS_CSV, transform=None,
-                 audio_processor=fbankProcessor.build_processor({
-                     "target_length": 1024     # around 10s
-                 }),
+                 audio_processor=fbankProcessor.build_processor(),
                  split='train'):
         """
         Arguments:

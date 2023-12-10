@@ -47,7 +47,7 @@ def generate_answer_on_musicqa(
             #     },
             #     temperature=0.1,
             # )
-            output = model.generate_new(
+            output = model.generate(
                 {
                     "audio": data["fbank"].unsqueeze(0).cuda(),
                     "prompt": data["question"],  # "Describe the sound events",

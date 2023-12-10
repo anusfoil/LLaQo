@@ -97,9 +97,7 @@ class MusicGesturesDataset(Dataset):
     """PISA dataset."""
 
     def __init__(self, answers_csv=ANSWERS_CSV, transform=None,
-                 audio_processor=fbankProcessor.build_processor({
-                     "target_length": 4096     # around 40s
-                 }),
+                 audio_processor=fbankProcessor.build_processor(),
                  split='train'):
         """
         Arguments:

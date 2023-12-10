@@ -1,15 +1,35 @@
-import os, re
+import os, re, copy
 import json
 import openai
 import pandas as pd
 import tiktoken
 from datetime import datetime
 from tqdm import tqdm
-import hook
+import  hook
 from start_message import *
 
 # openai.api_base = os.getenv("OPENAI_API_BASE")
 openai.api_key = os.getenv("OPENAI_API_KEY")
+
+DIFFICULTY_DICT = {
+    "Careless Love": 3,
+    "Cielito Lindo": 3,
+    "Lavenders Blue": 3,
+    "Over the Waves": 3,
+    "She Wore a Yellow Ribbon": 4,
+    "The Blues": 2,
+    "The Entertainer": 3,
+}
+
+CONTENT_DICT = {
+    "Careless Love": "This is a traditional song, adapted in simple melody and chords accompaniment.  ",
+    "Cielito Lindo": "This is a folk song, adapted in simple melody and chords accompaniment. There are some syncopated rhythm that might be challenging. ",
+    "Lavenders Blue": "This is a folk song, adapted in simple melody and chords accompaniment. ",
+    "Over the Waves": "This is an easy folk song, adapted in simple melody and chords accompaniment. The rhythms might be challenging.",
+    "She Wore a Yellow Ribbon": "This is a traditional song. ",
+    "The Blues": "This is an easy piece in the style of Blues. ",
+    "The Entertainer": "This is an easy piano version of a famous tune. The swing rhythm are difficult. ",
+}
 
 
 MODEL = 'gpt-4'
@@ -48,24 +68,45 @@ def gpt_api_stream(messages: list):
 
 def prompt_and_save():
     """prompt and save module for the expert novice dataset."""
-    ANSWERS_CSV = '/data/EECS-MachineListeningLab/datasets/expert_novice/evaluation_data_anonymous.csv'
+    ANSWERS_CSV = '/data/EECS-MachineListeningLab/datasets/LLaQo/expert_novice/evaluation_data_anonymous.csv'
 
     answers_csv = pd.read_csv(ANSWERS_CSV)
 
     qa_table = []
     for id, row in tqdm(answers_csv.iterrows()):
+
+        # add the piece (recording) level questions
+        qa_table.append([row['Piece_name'], row['Recording_number'], 'N/A', -1, 
+                         "What kind of performance might this be? ", 
+                         "This is a student performance."
+                        ])   
+        qa_table.append([row['Piece_name'], row['Recording_number'], 'N/A', -1, 
+                         "How would you rate the difficulty level of the piece, in a scale of 9? ", 
+                         str(DIFFICULTY_DICT[row['Piece_name']])
+                        ])
+        qa_table.append([row['Piece_name'], row['Recording_number'], 'N/A', -1, 
+                         "What kind of music is this piece and what's difficult about it?", 
+                         CONTENT_DICT[row['Piece_name']]
+                        ])         
+
         queries_list = []
         for idx in range(1, 5):
             queries_list.append(answers_csv[f'Instructor{idx}_text'][id])
             queries_list.append(answers_csv[f'Rater{idx}_text'][id])
 
-            # add the rating question
+            # add the rating & overall text question
             qa_table.append([row['Piece_name'], row['Recording_number'], row[f'Instructor{idx}_rating'], 
                             idx, "What is the overall score you would assign to the performance, in a scale of 5? ", 
                             str(row[f'Instructor{idx}_rating'])])
             qa_table.append([row['Piece_name'], row['Recording_number'], row[f'Rater{idx}_rating'], 
                             idx, "What is the overall score you would assign to the performance, in a scale of 5? ", 
                             str(row[f'Instructor{idx}_rating'])])
+            qa_table.append([row['Piece_name'], row['Recording_number'], row[f'Instructor{idx}_text'], 
+                            idx, "Can you give an overall assessment of the student performance? Elaborate in detail? ", 
+                            row[f'Instructor{idx}_text']])
+            qa_table.append([row['Piece_name'], row['Recording_number'], row[f'Rater{idx}_text'], 
+                            idx, "Can you give an overall assessment of the student performance? Elaborate in detail? ", 
+                            row[f'Instructor{idx}_text']])
 
         queries_str = "".join([f"{i}. {query} \n" for i, query in enumerate(queries_list)])
 
@@ -100,9 +141,9 @@ def prompt_and_save():
     qa_table.loc[qa_table['recording_number'] == 1, 'split'] = 'test'
 
     qa_table.to_csv("evaluation_qa.csv")
-    qa_table.to_csv("/data/EECS-MachineListeningLab/datasets/expert_novice/evaluation_qa.csv")
-    hook()
+    qa_table.to_csv("/data/EECS-MachineListeningLab/datasets/LLaQo/expert_novice/evaluation_qa.csv")
     return 
+
 
 def parse_completion(completion):
     """parse the response into a series of QA pairs"""

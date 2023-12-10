@@ -2,7 +2,7 @@
 #$ -l gpu=1
 #$ -pe smp 8
 #$ -l h_vmem=11G
-#$ -l h_rt=1:0:0
+#$ -l h_rt=240:0:0
 #$ -wd /data/home/acw630/WORKPLACE/LAM/engine/data/_preprocess
 #$ -j y
 #$ -N test_musicqa

@@ -72,9 +72,7 @@ class PISADataset(Dataset):
     """PISA dataset."""
 
     def __init__(self, answers_csv=ANSWERS_CSV, audio_dir=AUDIO_DIR, transform=None,
-                 audio_processor=fbankProcessor.build_processor({
-                     "target_length": 9216     # around 90s
-                 }),
+                 audio_processor=fbankProcessor.build_processor(),
                  split='train'):
         """
         Arguments:
