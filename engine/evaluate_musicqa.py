@@ -10,6 +10,7 @@ from lavis.datasets.datasets.expertnovice_qa import ExpertNoviceDataset
 # from utilities import collate_func, set_logger, write_json, collate_func
 
 from lavis.models import load_model_and_preprocess
+from factory import *
 
 # log = set_logger(__name__)
 
@@ -90,9 +91,10 @@ if __name__ == "__main__":
     # ckpt_foldername = args.ckpt_folder_name  # "20230829124"
     # checkpoint_paths = glob(os.path.join(lam_ckpt_dir, ckpt_foldername, "*.pth"))
     checkpoint_paths = [
-        "/data/EECS-MachineListeningLab/huan/lam/check_point/Pretrain_stage2/test_musicqa/20231103032/checkpoint_51000.pth",
+        load_latest_checkpoint()
     ]
     for lam_ckpt_path in checkpoint_paths:
+        print(f"Using checkpoint {lam_ckpt_path}")
         pth = lam_ckpt_path.split("/")[-1].split(".")[0]
         results_json_path = os.path.join(results_json_dir, f"{pth}.json")
         generate_answer_on_musicqa(

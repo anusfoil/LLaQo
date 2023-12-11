@@ -1,0 +1,58 @@
+burgmuller_b-07-annot:
+- What might this piece be and who is the composer?
+- Which difficulty level is the piece, in a scale of 9?
+- What's difficult about the piece?
+- Who might be the player of this performance?
+- How is the rhythm performed?
+- Is the performance hesitant or smooth?
+- What does the student need to work on?
+
+
+conespressione_beethoven_casadesus:
+- How would you assess this student performance?
+- What kind of music is this piece and who is the composer?
+- How would you describe this performance?
+- How would you rate the difficulty of this piece, in a scale of 9?
+
+
+expertnovice_Careless Love-01: 
+- What kind of performance might this be? 
+- How would you rate the difficulty level of the piece, in a scale of 9? 
+- What is the overall score you would assign to the performance, in a scale of 5? # 4
+- How is the overall tempo? 
+- Is the performed note accurate? 
+- Is there a reasonalbe tempo contrast? 
+- Is the rhythm accurate? 
+- How would you describe the emotional intent of the performance? 
+- Is the pedal usage appropriate? 
+- Is there a reasonalbe tempo contrast? 
+
+
+gestures_NOMETRO_FAST_LEG_1_audio:
+- How is the overall tempo?
+- How is the articulation in the piece?
+- What is the stylistic period of the piece? Who is the potential composer?
+- Which difficulty level is the piece, in a scale of 9?
+- How would you rate the skill of the player, in a scale of 5?
+
+
+musicshape_staccato0007:
+- Which difficulty level is the piece, in a scale of 9?
+- What kind of piece might this be?
+- How is the articulation in the piece? 
+
+
+PISA_50:
+- Which difficulty level is the piece, in a scale of 9?
+- What is the overall score you will assign to the performance, in a scale of 9?
+- What is the stylistic period of the piece? Who is the potential composer?
+
+
+YCUPPE_CZ1516-26:
+- How would you rate the performance, in a scale of 5?
+- Who might be the player of the performance?
+- Which difficulty level is the piece, in a scale of 9? 
+
+
+
+

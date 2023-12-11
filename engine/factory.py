@@ -1,3 +1,4 @@
+import os, glob
 import torch
 from subprocess import run
 from torch import Tensor
@@ -59,3 +60,11 @@ def tensor_move_to(input, device=torch.device('cpu')):
             input.grad.data = input.grad.to(device)
 
     return input
+
+
+def load_latest_checkpoint():
+    checkpoint_dir = "/data/EECS-MachineListeningLab/huan/lam/check_point/Pretrain_stage2/test_musicqa/**/*.pth"
+    list_of_files = glob.glob(checkpoint_dir, recursive=True) # * means all if need specific format then *.csv
+    latest_file = max(list_of_files, key=os.path.getctime)
+
+    return latest_file
