@@ -14,12 +14,6 @@ from factory import *
 import hook
 
 
-def greet(name):
-    return "Hello " + name + "!"
-
-demo = gr.Interface(fn=greet, inputs="text", outputs="text")
-
-
 def generate_answer(
         model,
         fbank, 
@@ -37,9 +31,8 @@ def generate_answer(
         "question": input_question,
         "output": output, 
     }
-    print(output)
 
-    return result
+    return output
 
 if __name__ == "__main__":
 
@@ -71,9 +64,6 @@ if __name__ == "__main__":
     model.load_from_pretrained(checkpoint_path)
 
     audio_processor=fbankProcessor.build_processor()
-
-    input_wav = []
-
     test_audio = [
         "../test_audio/burgmuller_b-07-annot.wav",
         "../test_audio/conespressione_beethoven_casadesus.wav",
@@ -84,34 +74,27 @@ if __name__ == "__main__":
         "../test_audio/YCUPPE_CZ1516-26.wav"
     ]
 
-    waveform, fbank = audio_processor(test_audio[0])[:-1]
+    def process_input(wav_path, input_text):
+        try:
+            waveform, fbank = audio_processor(wav_path)[:-1]
+        except Exception as e:
+            return f"Error in audio processing: {e}"
+        
+        result = generate_answer(model, fbank, input_text)
+        return result
 
-    while True:
-        while True:
-            wav_path = input("Add audio file: ")
-            if wav_path == "BREAK":
-                break
-            try:
-                waveform, fbank = audio_processor(wav_path)[:-1]
-            except Exception as e:
-                print(e)
-                print('audio loading failed. Please try again')
-                continue
-            else:
-                break
+    demo = gr.Interface(
+        fn=process_input,
+        inputs=[
+            gr.Audio(type="filepath", label="Audio File (WAV)", choices=test_audio),
+            gr.Textbox(label="Query for the audio")
+        ],
+        outputs=gr.Textbox(label="Answer"),
+        title="LLaQo Toy Model Demo (solo piano performance)",
+        description="Upload an audio file and enter your question regards to the performance. ",
+    )
 
-        while True:
-            input_text = input("Enter your instruction (input `EXIT` to exit the process, input `ANOTHER` to question another wav file): ")
-
-            if input_text == "EXIT":
-                print("LLaQo session stopped.")
-                break
-            if input_text == "ANOTHER":
-                break
-            
-            result = generate_answer(model, fbank, input_text)
-
-        if input_text == "EXIT":
-            break
+    # manual forwarding: ssh -i ~/.ssh/id_rsa_apocrita -L 7860:rdg10:7860 acw630@login.hpc.qmul.ac.uk
+    demo.launch(server_name="rdg10")
 
 
