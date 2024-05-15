@@ -1,0 +1,40 @@
+0. Teacher: There are many original and interpreted versions of Bach's scores, and this is the Vienna original.
+I can't tell you what the correct interpretation of the score is, so I'll just say what caught my attention.
+You play the trills in bars 1 and 2 down like mordents, but I play them up to take advantage of the mordent in bar 5.
+As I said before, I can't tell you what is the right way to play the song, and I was wondering if perhaps you are used to playing it in other interpreted versions.
+Why does the eighth-note re in bar 5 and the first beat of bar 6 suddenly jump? Is it the Busoni version? Is it?
+Did the rattling of the 14th bar show your dislike of it? Is it lack of practice? From bar 15, it would be nice if the right hand and left hand each had some color/expression, like singing or dialoguing. The eighth note in measure 20, the eighth note do, is the only highest eighth note, so please handle it carefully.
+I was really stuck on the eighth note because it was almost the way I liked to play it, except for this note.
+
+Generate:
+1. Q: Is the interpretation of the composition correct? A: Not able to determine as there are many interpreted versions but the trills in bars 1 and 2 were played like mordents instead of being taking advantage in bar 5.
+2. Q: How was the expression, like singing or dialoguing, between hands? A: It would improve from bar 15 if there is more color/expression in the right hand and the left hand.
+3. Q: How was the specific note handling? A: A sudden jump in the eighth-note re in bar 5 and the first beat of bar 6 needs attention and the only highest eighth note do in measure 20 is to be handled carefully.
+
+1. Teacher: The warm and gentle tone reached my heart and healed it.
+The key, though, is to play the inner voice so that it is not louder than the melody,
+I was able to pay attention to that,
+I think it is a good idea to work on the rhythm more quietly and comfortably.
+I think it would be good if you continue to train yourself to play quieter and more comfortable rhythms other than the melody.
+
+Generate:
+1. Q: How was the tone production? A: The tone was warm and gentle which was healing.
+2. Q: How was the performance in terms of the inner voice and melody? A: The inner voice needs to be lower than the melody.
+3. Q: How was the rhythm? A: Rhythm may benefit from quieter and more comfortable playing.
+
+2. Teacher: This is a very unique performance. The fast eighth-note ascending form that appears repeatedly from the first phrase of the melody is very unique. Is this done with an agenda, or is it an imitation of some famous performer's CD? The entire piece must be played calmly so as not to destroy the child's dream. If you are unintentionally "going too fast," you may want to use a metronome or try "conducting" a recording of your own performance in four beats to see if the tempo and beat are correct. If the tempo is intentionally fast, the overall tempo is not bad, but it gives the impression that the singer is in a hurry only here.
+
+Generate:
+1. Q: How is the overall performance? A: The performance was unique especially due to the fast eighth-note ascending form that appears repeatedly.
+2. Q: How was the tempo of the performance? A: The tempo may feel hurried, using a metronome or "conducting" a recording may help ensure correct tempo.
+3. Q: How was the interpretation of the piece in terms of the composer's intention? A: The whole piece needs to be played calmly consistent with the theme of a child's dream.
+
+3. Teacher: The eighth notes of Bach's Invention are basically played in trills (non-legato), but in the eighth and ninth bars, the left hand plays only the first and third beats in trills, and the rest is played in legato.
+The note after the trill seems too strong, so do not insist on it too much. It is better to play the first note of the trill at the same time as the left hand than to play it before.
+The right hand in bars 16 and 17 should follow the slur and be more smooth and yet crescendoing.
+You could finish slowly and calmly without the rit notation at the end with the melody of the theme in mind.
+
+Generate:
+1. Q: How was the articulation of the eighth notes? A: The eighth and ninth bars played only the first and third beats in trills, while the remaining were played in legato.
+2. Q: How accurate was the weight on the notes? A: The note after the trill seems too strong and needs to be less pronounced.
+3. Q: How was the interpretation in the ending? A: It could be finished slowly and calmly without the rit notation at the end maintaining the melody of the theme.

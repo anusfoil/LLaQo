@@ -2,7 +2,7 @@
 #$ -l gpu=1
 #$ -pe smp 8
 #$ -l h_vmem=11G
-#$ -l h_rt=240:0:0
+#$ -l h_rt=1:0:0
 #$ -wd /data/home/acw630/WORKPLACE/LAM/engine/data/_preprocess
 #$ -j y
 #$ -N test_musicqa
@@ -20,6 +20,7 @@ export WORK_PLACE=/data/home/acw630/WORKPLACE/LAM/src/lavis
 
 export OMP_NUM_THREADS=1
 
+source ~/.bashrc
 source /data/home/acw630/venvs/lam/bin/activate
 # nvidia-smi
 
@@ -40,7 +41,7 @@ python ${WORK_PLACE}/train.py \
     --options \
     run.max_iters=50000 \
     run.iters_per_inner_epoch=3000 \
-    run.batch_size_train=8 \
+    run.batch_size_train=6 \
     run.accum_grad_iters=1 \
     run.num_workers=4
 

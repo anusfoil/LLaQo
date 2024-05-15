@@ -1,0 +1,41 @@
+Teacher feedback 0:
+　　The tone is soft and flowing, and the performance is very nice.
+　　I like the breadth of expression after the melody becomes octave playing.
+　　I would like to see a little more movement of sound in the middle section from the 51st bar.
+Each phrase is carefully played, but when listening to the whole piece, it sounds a little too slow.
+If you create some movement in the middle section, the softness and beauty of the sound after returning to "Tempo I" will come alive.
+　　I think you are practicing very carefully.
+
+Generate: 
+1. Q: How is the tone production? A: The tone is soft and flowing, the performance is very nice.
+2. Q: How is the overall tempo? A: It sounds a little too slow.
+3. Q: What does the student needs to work on? A: The student needs to create some movement of sound in the middle section from the 51st bar and careful about the overall tempo.
+
+Teacher feedback 1:
+　This is a very beautiful piece written by Beethoven. This performance clearly shows that the player has been practicing very carefully and listening to the notes very carefully. The right hand melody notes and the bass notes in the left hand are well balanced as if the fingers are well supported.
+
+　The next task is not only to improve the vertical balance but also to listen to the horizontal connections.
+
+Generate: 
+1. Q: In which skill level would you say the performer is in? A: The performer has been practicing very carefully and listening to the notes attentively.
+2. Q: Is there reasonable balance between hands? A: The right hand melody notes and the left hand bass notes are well balanced.
+3. Q: What does the student needs to work on? A: The student needs to improve the vertical balance and listen to the horizontal connections.
+
+Teacher feedback 2:
+Each note is played clearly and carefully. To improve this performance, it would be good to learn the playing style of the period in which this piece was written. In this performance, there were crescendos and rubato like those of the Romantic period. Singing in a word, the style of singing varies from period to period. In Bach's time, the tempo was somewhat constant, and crescendos and rubato were performed sparingly. Even in this situation, it is possible to sing beautifully. Listen to recordings by various pianists and study them.
+
+Generate: 
+1. Q: Is the performed note accurate? A: Each note is played clearly and carefully.
+2. Q: Is the interpretation appropriate to the style of the composition? A: It would be good to learn the playing style of the period in which this piece was written.
+3. Q: What does the student needs to work on? A: The student needs to learn more about period singing styles and listen to various pianists' recordings to study.
+
+Teacher feedback 3:
+It went in very gently, but a little too weak and there is not much difference between it and the pp that comes in the second half.
+Since the right hand notes are adjacent to each other, you should be a little more careful with the pedal so as not to muddy the sound.
+Ff should be played a little harder to make it more expressive.
+Be careful not to play too delicately, because the left hand tends to lose notes.
+
+Generate: 
+1. Q: What's the dynamics contrast in the performance? A: It is a bit too weak and lacked contrast with the pp part in the second half.
+2. Q: Is the pedal usage appropriate? A: Needs to handle the pedal a little more carefully as the right hand notes are adjacent to each other.
+3. Q: What does the student needs to work on? A: The student needs to play Ff a bit harder for better expressiveness and avoid playing too delicately because the left hand tends to lose notes.

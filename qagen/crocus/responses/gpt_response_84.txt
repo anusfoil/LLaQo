@@ -1,0 +1,19 @@
+Feedback 0 - Generate: 
+1. Q: How would you describe the emotional intent of the performance? A: The performance should involve feelings of hope, desire, longing, despair, denial of despair, acceptance, and premonition.
+2. Q: What does the student needs to work on? A: The student needs to work on incorporating more emotion into their performance based on the specific measures in the composition.
+3. Q: Is the interpretation appropriate to the style of the composition? A: As per the feedback, the student’s current performance seems to be played as if they are angry from giving up, which the teacher suggests may not fit the required emotional journey of the piece.
+
+Feedback 1 - Generate:
+1. Q: How would you describe the overall integrity of the performance? A: The performance is nicely organized, although there's room for improvement in differentiating expression between sections.
+2. Q: What does the student needs to work on? A: The student needs to work on differentiating the note patterns in the left hand, creating a sense of anticipation, expressing the rhythm dynamically, and untangling the triplet note pattern sequence.
+3. Q: How would you rate the difficulty level of this piece? A: The complexity of the rhythms and expressivity of the piece could mark it as of a higher difficulty level.
+
+Feedback 2 - Generate:
+1. Q: How would you describe the musicality or timbre of the performance? A: Overall, the performance was polite, coherent, and pleasant to listen to, but deeper sound from bars 11 to 12 would be beneficial.
+2. Q: What does the student needs to work on? A: The student could add depth to the sound in bars 11 through 12.
+3. Q: In which skill level would you say the performer is in? A: The performer appears to be at a skill level where they can deliver a polite and coherent performance, but could work towards further depth in sound.
+
+Feedback 3 - Generate:
+1. Q: How would you describe the emotional intent of the performance? A: The performer was exquisite in pausing and feeling each phrase, drawing the listener in.
+2. Q: In which skill level would you say the performer is in? A: The performer is at a level where they can deliver an exquisite performance that compels listeners.
+3. Q: How would you rate the performance out of 10? A: The performance was wonderful, indicating high scoring.

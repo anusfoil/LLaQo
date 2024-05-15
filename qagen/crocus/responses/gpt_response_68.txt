@@ -1,0 +1,31 @@
+The feedback processing for each of the 4 teachers is as follows:
+
+0. Teacher's Feedback: "I think it is a very beautiful performance... Your playing is very beautiful, but I felt that some parts of it sounded a little subdued and flat in a kind of swaying way... Also, what you have to be careful about is the pedal handling."
+
+   QA Pairs: 
+   1. Q: How would you describe the emotional intent of the performance? 
+      A: Some parts sounded a little subdued and flat.
+   2. Q: What does the student needs to work on? 
+      A: The student should work on pedaling and bringing out the melody in a more dynamic way.
+   3. Q: How would you rate the difficulty level of this piece? 
+      A: The difficult part of this piece is creating a process to reach the peak intensity while starting from a quiet beginning.
+
+1. Teacher's Feedback: "Overall, a soft invention. It could be a little more firm given the style of the piece... The left hand sounds stronger in the exchange from the 15th bar... I think it would be better to play it lightly rather than expressively, which would be more suitable for this piece."
+
+   QA Pairs: 
+   1. Q: Is the balance between hands reasonable?
+      A: No, the left hand sounds stronger in the exchange from the 15th bar.
+   2. Q: Is the interpretation appropriate to the style of the composition? 
+      A: No, it could be a little more firm and light to better suit the style of the piece.
+   3. Q: Is the performed note accurate? 
+      A: No, the modifier note in bar 8 is not included.
+
+2. Teacher's Feedback: "I was impressed by the simplicity of the music without exaggerated articulation... The difference between trills and praltrillers is also clearly audible, which I think is good... I am concerned about the rhythm shift around the 57th second."
+
+   QA Pairs: 
+   1. Q: How would you describe the emotional intent of the performance?
+      A: The performance was simple without exaggerated articulation.
+   2. Q: What does the student needs to work on? 
+      A: The student needs to work on the rhythm around the 57th second.
+   3. Q: Is the rhythm accurate? 
+      A: No, there was a rhythm shift around the 57th second.

@@ -55,13 +55,13 @@ if __name__ == "__main__":
     print(f"Using checkpoint {checkpoint_path}")
     # pth = checkpoint_path.split("/")[-1].split(".")[0]
     device = torch.device("cuda") if torch.cuda.is_available() else "cpu"
-    model, _, _ = load_model_and_preprocess(
-        name="lam_vicuna_instruct",
-        model_type="vicuna1.5_7b-ft", 
-        is_eval=True,
-        device=device,
-    )
-    model.load_from_pretrained(checkpoint_path)
+    # model, _, _ = load_model_and_preprocess(
+    #     name="lam_vicuna_instruct",
+    #     model_type="vicuna1.5_7b-ft", 
+    #     is_eval=True,
+    #     device=device,
+    # )
+    # model.load_from_pretrained(checkpoint_path)
 
     audio_processor=fbankProcessor.build_processor()
     test_audio = [
@@ -92,9 +92,10 @@ if __name__ == "__main__":
         outputs=gr.Textbox(label="Answer"),
         title="LLaQo Toy Model Demo (solo piano performance)",
         description="Upload an audio file and enter your question regards to the performance. ",
+        server_port=7861
     )
 
-    # manual forwarding: ssh -i ~/.ssh/id_rsa_apocrita -L 7860:rdg10:7860 acw630@login.hpc.qmul.ac.uk
-    demo.launch(server_name="rdg10")
+    # manual forwarding: ssh -i ~/.ssh/id_rsa_apocrita -L 7860:rdg7:7860 acw630@login.hpc.qmul.ac.uk
+    demo.launch(server_name="sbg19")
 
 

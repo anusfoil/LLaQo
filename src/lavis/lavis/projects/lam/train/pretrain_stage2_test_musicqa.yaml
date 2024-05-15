@@ -26,6 +26,18 @@ datasets:
     text_processor:
       train:
         name: "blip_caption"
+        
+  crocus_qa:
+    build_info:
+      splits: ["train"]
+    audio_processor:
+      train:
+        name: "audio_processor"
+        num_mel_bins: 128
+        target_length: 1024
+    text_processor:
+      train:
+        name: "blip_caption"
 
   expertnovice_qa:
     build_info:

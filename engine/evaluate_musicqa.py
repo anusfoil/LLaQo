@@ -51,7 +51,7 @@ def generate_answer_on_musicqa(
             output = model.generate(
                 {
                     "audio": data["fbank"].unsqueeze(0).cuda(),
-                    "prompt": data["question"],  # "Describe the sound events",
+                    "prompt": data["question"], 
                 },
                 temperature=0.1,
             )
@@ -79,17 +79,12 @@ if __name__ == "__main__":
     parser.add_argument("--ckpt_folder_name", type=str)
     args = parser.parse_args()
 
-    results_json_dir = "/data/home/acw630/WORKPLACE/LAM/engine/results/tagging/ablate"
+    results_json_dir = "/data/home/acw630/WORKPLACE/LAM/engine/results/"
     os.makedirs(results_json_dir, exist_ok=True)
 
     mini_data = False
     normalize_sim = False
 
-    # lam_ckpt_dir = (
-    #     "/data/EECS-MachineListeningLab/huan/lam/check_point/Pretrain_stage2"
-    # )
-    # ckpt_foldername = args.ckpt_folder_name  # "20230829124"
-    # checkpoint_paths = glob(os.path.join(lam_ckpt_dir, ckpt_foldername, "*.pth"))
     checkpoint_paths = [
         load_latest_checkpoint()
     ]

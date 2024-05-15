@@ -1,0 +1,23 @@
+0. Teacher: It is cohesive and beautiful, but sometimes the tempo swings too much, so a little less tame would be good. The top notes are audible and easy to listen to.
+    Generate:
+    1. Q: How would you describe the emotional intent of the performance? A: It is cohesive and beautiful.
+    2. Q: Is the performed tempo stable? A: Sometimes the tempo swings too much, so a little less tame would be good.
+    3. Q: How is the tone production? A: The top notes are audible and easy to listen to.
+
+1. Teacher: This is an impressive performance, typical of Debussy. I thought it was beautifully played at an overall appropriate tempo. What bothered me was the way he played the forte chords around measure 27. It sounded a bit broken. I also thought it would be better to let the bass play a little more in bar 37. Also, the tempo primo at the end sounded a bit rushed. Also, I thought a little more contrast between tenuto and legato in bar 92 would have been nice. However, I think this is a highly technical performance.
+    Generate:
+    1. Q: In which skill level would you say the performer is in? A: This is a highly technical performance.
+    2. Q: How is the overall tempo? A: The overall tempo is appropriate, but the tempo primo at the end sounded a bit rushed.
+    3. Q: What does the student need to work on? A: Balance between the bass play and forte chords, contrast between tenuto and legato.
+
+2. Teacher: It is good that the difference between the main melody and the chords moving three degrees below is clear. However, the melody sounds a little floaty, so it might be better to practice a little more balance in terms of matching the inner voice. The "swing" of taking a bar in two large beats, which is characteristic of 6/8 time signature, is not so apparent in this piece. The last time you release the pedal is regrettable. If you release the pedal slowly when the note is extended, you will inevitably get the chattering sound of the strings.
+    Generate:
+    1. Q: Is the performed note accurate? A: The difference between the main melody and the chords moving three degrees below is clear.
+    2. Q: Is there reasonable balance between hands? A: The melody sounds a little floaty. It might be better to practice a little more balance in terms of matching the inner voice.
+    3. Q: Is the pedal change clean? A: There was a problem on releasing the pedal. Release the pedal slowly to avoid the chattering sound of the strings.
+
+3. Teacher: As I always tell other people, please sing the song after reading the music to some extent. This song in particular is firmly marked "cantabile" in the score, so please sing the melody line out loud first, and think about where the breath is. There were a few places where I almost choked because I couldn't feel the breaths. Please play it after you can sing it. I think you were able to play from the beginning to the end of the song without any problems, but I think it would be better if there was a little more difference in volume between the melody line and the rest of the song, even if it was only a slight difference. I'll start from the beginning of the song and go through the parts that bothered me. The second beat of the 6th bar was too hesitant and I felt like I was going to fall. 33rd and 34th bars were the same. I think the triplet staccato in the 8th bar should be lighter.
+    Generate:
+    1. Q: Is the interpretation appropriate to the style of the composition? A: Interpretation needs to be more "cantabile".
+    2. Q: Is there reasonable dynamics contrast? A: There was a need for a little more difference in volume between the melody and the rest of the song.
+    3. Q: Is the performance hesitant or smooth? A: The second beat of the 6th bar was too hesitant, as were the 33rd and 34th bars.

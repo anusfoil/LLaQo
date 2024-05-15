@@ -1,0 +1,17 @@
+For the feedback 0:
+Generate: 
+1. Q: What does the student need to work on? A: Study the causes of the missing notes & your own habits in order to achieve a more stable performance.
+2. Q: How is the dynamics? A: Good, but it would be good to delve a little deeper into your own expression.
+3. Q: How would you describe the emotional intent of the performance? A: Good, but could improve by listening to various performances to deepen understanding of the music and establish your own style of playing. 
+
+For the feedback 1:
+Generate: 
+1. Q: Is the performed note accurate? A: Yes, the melody is played carefully and the notes of the melody are well produced.
+2. Q: Is the performed tempo stable? A: The arpeggio in bar 12 should be played a little faster, the last four bars are too slow, so if you play them a little faster, the overall cohesiveness of the piece will improve.
+3. Q: How would you rate the difficulty level of this piece? A: Moderate, requires fine control over tempo changes.
+
+For the feedback 2:
+Generate: 
+1. Q: How would you describe the emotional intent of the performance? A: Beautiful sound, right way to play this song.
+2. Q: Is there reasonable dynamics contrast? A: Could add a little crescendo in descending parts for more lively expression.
+3. Q: What does the student need to work on? A: Playing while keeping the story of the piece in mind to express more within a single piece of music. 

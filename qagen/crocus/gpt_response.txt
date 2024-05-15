@@ -1,0 +1,29 @@
+Here are the generated QA pairs for your teacher feedbacks:
+
+0. Q: How would you describe the emotional intent of the performance? A: Good feel for the piece. 
+   Q: Is the pedal usage appropriate? A: Love the use of pedal. 
+   Q: Is there reasonable tempo contrast? A: Nice rubato at the end. 
+   Q: How is the overall tempo? A: Tempo is a bit fast. 
+
+1. Q: How is the overall tempo? A: Good tempo. 
+   Q: Is the rhythm accurate? A: Nice steady rhythm. 
+   Q: Is the performed note accurate? A: Missed a B-flat right hand. 
+
+2. Q: How is the overall tempo? A: Good tempo!
+   Q: Is the performed note accurate? A: Good reading of chords but missed the B-flat minor chord. 
+
+3. Q: In which skill level would you say the performer is in? A: Good job reading.
+   Q: How is the performed rhythm? A: Nice rhythm throughout.  
+   Q: Is the performance following score instructions? A: Correct the b-flat minor chord, add dynamics, ritardando at the end.
+
+4. Q: How is the overall tempo? A: Nice tempo!
+   Q: Is the rhythm accurate? A: Nice steady rhythm. 
+   Q: Is the performed note accurate? A: Accurate reading. 
+   Q: Is there reasonable tempo contrast? A: Good little rubato at the end. 
+
+5. Q: In which skill level would you say the performer is in? A: Good reading overall.
+   Q: How is the overall tempo? A: Tempo a bit fast.
+   Q: Is the performed note accurate? A: Missed left hand B-flat minor chords. 
+   Q: Is the rhythm accurate? A: Nice steady rhythm.
+
+And so on...

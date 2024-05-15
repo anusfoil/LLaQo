@@ -36,7 +36,7 @@ class BaseDatasetBuilder:
             self.config = cfg
 
         self.data_type = self.config.data_type
-
+        
         self.vis_processors = {"train": BaseProcessor(), "eval": BaseProcessor()}
         self.text_processors = {"train": BaseProcessor(), "eval": BaseProcessor()}
 

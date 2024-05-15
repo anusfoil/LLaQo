@@ -16,6 +16,7 @@ from lavis.datasets.builders.ycuppe_qa_builder import YCUPPEQABuilder
 from lavis.datasets.builders.musicgestures_qa_builder import MusicGesturesQABuilder
 from lavis.datasets.builders.musicshape_qa_builder import MusicShapeQABuilder
 from lavis.datasets.builders.burgmuller_qa_builder import BurgmullerQABuilder
+from lavis.datasets.builders.crocus_qa_builder import CROCUSQABuilder
 
 __all__ = [
     "ConEspressioneQABuilder",
@@ -25,6 +26,7 @@ __all__ = [
     "MusicGesturesQABuilder",
     "MusicShapeQABuilder",
     "BurgmullerQABuilder",
+    "CROCUSQABuilder",
 ]
 
 

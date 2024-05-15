@@ -1,0 +1,38 @@
+Teacher Feedback 0: 
+The natural rubato was pleasant, the melody of the chords that tended to be buried in the melody line was well highlighted, and the pedal changes were carefully executed, giving the overall impression of clarity.
+I thought it would be better if the ornamental notes in some places were sung with more room to spare. 
+
+Generate: 
+1. Q: How is the overall tempo? A: The natural rubato was pleasant.
+2. Q: Is the pedaling change clean? A: The pedal changes were carefully executed.
+3. Q:  What does the student needs to work on? A: The ornamental notes could have been sung with more room to spare.
+
+Teacher Feedback 1: 
+The left and right vertical lines are not aligned and sound disjointed.
+Also, the volume of the ornamental notes is too loud and sounds unnatural.
+In the third measure of the second row of the score, there are notes that are sounding and notes that are not sounding.
+
+Generate: 
+1. Q: Is there reasonable balance between hands? A: The left and right vertical lines are not aligned.
+2. Q: Is the performed note accurate? A: In the third measure of the second row of the score, there are notes that are sounding and notes that are not sounding.
+3. Q: Is there reasonalbe dynamics contrast? A: The volume of the ornamental notes is too loud and sounds unnatural. 
+
+Teacher Feedback 2: 
+The third beat of the fourth measure is too fast; count the three beats carefully.
+The quarter note and eighth note in the seventh bar are also rhythmically ambiguous, so keep the length of the eighth note.
+The second beat of measure 29 has been entered too early. The tie should also be counted as a beat.
+
+Generate: 
+1. Q: Is the rhythm accurate? A: The third beat of the fourth measure is too fast
+2. Q: Is the rhythm accurate? A: The quarter note and eighth note in the seventh bar are rhythmically ambiguous.
+3. Q: Is the rhythm accurate? A: The second beat of measure 29 has been entered too early. 
+
+Teacher Feedback 3: 
+I have played this piece myself at work, and I think it is a piece that requires a lot of pedaling skill.
+I would like to see more changes in tone when the note is extended and when it is moving. There is not much change in tone throughout the song, and it has become a bit monotonous.
+It sounds rushed and a waste of time...
+
+Generate: 
+1. Q: How would you rate the difficulty level of this piece? A: It is a piece that requires a lot of pedaling skill.
+2. Q: How is the tone production? A: There is not much change in tone throughout the song, and it has become a bit monotonous.
+3. Q: What does the student needs to work on? A: The performance sounds rushed, needs more attention to changes in tone when the note is extended and when it is moving.
