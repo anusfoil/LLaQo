@@ -1,7 +1,7 @@
 #!/bin/bash
 #$ -N caption_audio
-#$ -o /data/home/eey340/WORKPLACE/LAM/engine/data/_preprocess/logs/audio-0000x.log
-#$ -wd /data/home/eey340/WORKPLACE/LAM/engine/data/_preprocess
+#$ -o /data/home/acw630/WORKPLACE/LAM/engine/data/_preprocess/logs/audio-0000x.log
+#$ -wd /data/home/acw630/WORKPLACE/LAM/engine/data/_preprocess
 #$ -l h_vmem=11G
 #$ -l h_rt=240:0:0
 #$ -cwd
@@ -9,12 +9,12 @@
 #$ -pe smp 1
 export lab_path=/data/EECS-MachineListeningLab
 
-export WORK_DIR=/data/home/eey340/WORKPLACE/LAM/engine/data/_preprocess
-export SCRATCH_DIR=/data/scratch/eey340/acav/acav10m
+export WORK_DIR=/data/home/acw630/WORKPLACE/LAM/engine/data/_preprocess
+export SCRATCH_DIR=/data/scratch/acw630/acav/acav10m
 export OUTPUT_DIR=${lab_path}/datasets/ACAV/acav10m
 
 module load ffmpeg/4.1.6
-source /data/home/eey340/venvs/lam/bin/activate
+source /data/home/acw630/venvs/lam/bin/activate
 
 export OMP_NUM_THREADS=1
 
@@ -37,7 +37,7 @@ python3 ${WORK_DIR}/captioning.py \
 # batch_size=10
 # end_idx=${start_idx}+${batch_size}-1
 
-# log_dir=/data/home/eey340/WORKPLACE/LAM/engine/data/_preprocess/logs
+# log_dir=/data/home/acw630/WORKPLACE/LAM/engine/data/_preprocess/logs
 # prefix=custom_ncentroids-500-subset_size-10M_part
 # log_path=${log_dir}/logs${idx}
 

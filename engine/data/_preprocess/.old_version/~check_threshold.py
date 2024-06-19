@@ -342,7 +342,7 @@ def main(json_path, weights_path, meta_dir, mini_data, use_cuda):
         "/data/EECS-MachineListeningLab/datasets/ESC-50/meta/esc50.csv",
         fold=[1, 2, 3, 4, 5],
         cfg_path=
-        '/data/home/eey340/WORKPLACE/class_dropout/config/esc50_config.yaml',
+        '/data/home/acw630/WORKPLACE/class_dropout/config/esc50_config.yaml',
         output_fmt=['file_name', 'class_category'],
     )
     dataloader = torch.utils.data.DataLoader(dataset,

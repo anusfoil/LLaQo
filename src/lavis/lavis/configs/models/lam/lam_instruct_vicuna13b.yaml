@@ -23,7 +23,7 @@ model:
   num_query_token: 32
 
   # path to Vicuna checkpoint
-  llm_model: "/data/scratch/eey340/hf_models/llama-2-13b"
+  llm_model: "/data/scratch/acw630/hf_models/llama-2-13b"
 
   # generation configs
   prompt: ""

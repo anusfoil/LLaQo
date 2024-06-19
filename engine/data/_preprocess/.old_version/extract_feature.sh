@@ -3,17 +3,17 @@
 #$ -pe smp 8
 #$ -l h_vmem=11G
 #$ -l h_rt=240:0:0
-#$ -wd /data/home/eey340/WORKPLACE/LAM/engine/data/_preprocess
+#$ -wd /data/home/acw630/WORKPLACE/LAM/engine/data/_preprocess
 #$ -j y
 #$ -N extract_feature
-#$ -o /data/home/eey340/WORKPLACE/LAM/engine/data/_preprocess/caption_frames.log
+#$ -o /data/home/acw630/WORKPLACE/LAM/engine/data/_preprocess/caption_frames.log
 #$ -m beas
 #$ -l gpu_type='ampere'
 # --------------------------------------------------------
 # A script to run multinode training with submitit.
 # --------------------------------------------------------
 # Environment variables
-source /data/home/eey340/venvs/lam/bin/activate
+source /data/home/acw630/venvs/lam/bin/activate
 nvidia-smi
 # Variables
 lab_path=/data/EECS-MachineListeningLab

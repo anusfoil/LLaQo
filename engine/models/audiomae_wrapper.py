@@ -11,11 +11,11 @@ import sys
 
 # FIXME: RELETIVE PATH
 # sys.path.append("..")
-sys.path.append("/data/home/eey340/WORKPLACE/LAM/engine")
+sys.path.append("/data/home/acw630/WORKPLACE/LAM/engine")
 from factory import tensor_move_to
 
 # sys.path.append("../../src")
-sys.path.append("/data/home/eey340/WORKPLACE/LAM/src")
+sys.path.append("/data/home/acw630/WORKPLACE/LAM/src")
 from audiomae import models_vit
 from utils import read_json
 

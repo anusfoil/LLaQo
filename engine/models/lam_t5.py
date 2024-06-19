@@ -34,7 +34,7 @@ from lavis.models.blip2_models.blip2 import Blip2Base, disabled_train
 from lavis.models.blip2_models.modeling_t5 import T5Config, T5ForConditionalGeneration
 
 # def load_model(model_name: str, is_eval: bool = True, device=device("cpu")):
-#     PATH = "/data/scratch/eey340/clap_logs/2023_05_15-18_44_45-model_ViT_Qformer-lr_0.0001-b_150-j_1-p_fp32/checkpoints/epoch_10.pt"
+#     PATH = "/data/scratch/acw630/clap_logs/2023_05_15-18_44_45-model_ViT_Qformer-lr_0.0001-b_150-j_1-p_fp32/checkpoints/epoch_10.pt"
 
 #     if model_name == "lam":
 #         model = LamQformer(

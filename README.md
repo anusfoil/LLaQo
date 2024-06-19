@@ -7,8 +7,10 @@ Training:
 qsub pretrain_stage2_test_musicqa.sh
 
 evaluate:
-source venv/lam/bin/activate
-python WORKPLACE/LAM/engine/evaluate_musicqa.py
+sh interact_gpu_node.sh  # start the environment
+source venvs/lam/bin/activate
+cd WORKPLACE/LAM/engine
+python evaluate_musicqa.py
 
 start demo:
 sh interact_gpu_node.sh  # start the environment

@@ -1,12 +1,13 @@
-import os, sys, json
+import os, sys
 import torch
 import argparse
+import pandas as pd
+import numpy as np
 from torch.utils.data import DataLoader
 from tqdm import tqdm
 sys.path.append("../src/lavis")
 
-from lavis.datasets.datasets.conespressione_qa import ConEspressioneDataset
-from lavis.datasets.datasets.expertnovice_qa import ExpertNoviceDataset
+from lavis.datasets.datasets.objeval_qa import ObjevalDataset
 # from utilities import collate_func, set_logger, write_json, collate_func
 
 from lavis.models import load_model_and_preprocess
@@ -17,7 +18,7 @@ from factory import *
 
 def generate_answer_on_musicqa(
     lam_ckpt_path="",
-    results_json_path="/data/home/acw630/WORKPLACE/LAM/engine/results/lam_on_audioset_val_new2.json",
+    results_path="/data/home/acw630/WORKPLACE/LAM/engine/results/lam_on_audioset_val_new2.csv",
     mini_data=True,
 ):
     device = torch.device("cuda") if torch.cuda.is_available() else "cpu"
@@ -33,21 +34,11 @@ def generate_answer_on_musicqa(
 
     model.load_from_pretrained(lam_ckpt_path)
 
-    # dataset = ConEspressioneDataset()
-    dataset = ExpertNoviceDataset(split='test')
+    dataset = ObjevalDataset()
 
-    results = []
+    results, mae = [], []
     with tqdm(total=10 if mini_data else len(dataset)) as pbar:
         for batch_idx, data in enumerate(dataset):
-            # NOTE: change to gererate_new if bos is in the first position.
-            # Before 9/1 use `generate` method
-            # output = model.generate_new(
-            #     {
-            #         "audio": data["fbank"].unsqueeze(0).cuda(),
-            #         "prompt": data["question"],
-            #     },
-            #     temperature=0.1,
-            # )
             output = model.generate(
                 {
                     "audio": data["fbank"].unsqueeze(0).cuda(),
@@ -59,17 +50,28 @@ def generate_answer_on_musicqa(
                 "audio_path": data['audio_path'],
                 "question": data['question'],
                 "output": output, 
-                "gt": data['answer']
+                "gt": int(data['answer'])
             }
             print(result)
-            results.append(result)
-
+            
+            # calculate the MAE
+            results.append((
+                data['audio_path'],
+                data['question'],
+                output,
+                int(data['answer']),
+                data["qidx"], data["qcategory"], 
+                np.abs(int(output[0]) - data['answer'])))
+            
             pbar.update(1)
             if mini_data and batch_idx == 10:
                 break
 
-    with open(results_json_path, 'w') as f:
-        json.dump(results, f)
+    results = pd.DataFrame(results, 
+                           columns=["audio_path", "question", "output", "gt", "question_id", "question_category", "mae"])
+    results.to_csv(results_path)
+    
+    hook()
 
 
 if __name__ == "__main__":
@@ -79,11 +81,10 @@ if __name__ == "__main__":
     parser.add_argument("--ckpt_folder_name", type=str)
     args = parser.parse_args()
 
-    results_json_dir = "/data/home/acw630/WORKPLACE/LAM/engine/results/"
-    os.makedirs(results_json_dir, exist_ok=True)
+    results_dir = "/data/home/acw630/WORKPLACE/LAM/engine/results/"
+    os.makedirs(results_dir, exist_ok=True)
 
     mini_data = False
-    normalize_sim = False
 
     checkpoint_paths = [
         load_latest_checkpoint()
@@ -91,9 +92,10 @@ if __name__ == "__main__":
     for lam_ckpt_path in checkpoint_paths:
         print(f"Using checkpoint {lam_ckpt_path}")
         pth = lam_ckpt_path.split("/")[-1].split(".")[0]
-        results_json_path = os.path.join(results_json_dir, f"{pth}.json")
+        results_path = os.path.join(results_dir, f"{pth}.csv")
+        
         generate_answer_on_musicqa(
             lam_ckpt_path=lam_ckpt_path,
-            results_json_path=results_json_path,
+            results_path=results_path,
             mini_data=mini_data,
         )

@@ -3,10 +3,10 @@
 #$ -pe smp 8
 #$ -l h_vmem=11G
 #$ -l h_rt=240:0:0
-#$ -wd /data/home/eey340/WORKPLACE/LAM/engine/data/_preprocess
+#$ -wd /data/home/acw630/WORKPLACE/LAM/engine/data/_preprocess
 #$ -j y
 #$ -N frames_43x
-#$ -o /data/home/eey340/WORKPLACE/LAM/engine/data/_preprocess/caption_frames43x.log
+#$ -o /data/home/acw630/WORKPLACE/LAM/engine/data/_preprocess/caption_frames43x.log
 #$ -m beas
 #$ -l gpu_type='ampere'
 # --------------------------------------------------------
@@ -16,17 +16,17 @@
 partial_prefix=custom_ncentroids-500-subset_size-10M_part00435
 
 # Environment variables
-export PYTHONPATH="/data/home/eey340/WORKPLACE/python.lib:${PYTHONPATH}"
+export PYTHONPATH="/data/home/acw630/WORKPLACE/python.lib:${PYTHONPATH}"
 export HF_HOME=/data/EECS-MachineListeningLab/huan/hf_cache
 export HF_DATASETS_CACHE="/data/EECS-MachineListeningLab/huan/lm"
 
 export lab_path=/data/EECS-MachineListeningLab
-export WORK_DIR=/data/home/eey340/WORKPLACE/LAM/engine/data/_preprocess
-export SCRATCH_DIR=/data/scratch/eey340/acav/acav10m
+export WORK_DIR=/data/home/acw630/WORKPLACE/LAM/engine/data/_preprocess
+export SCRATCH_DIR=/data/scratch/acw630/acav/acav10m
 export OUTPUT_DIR=${lab_path}/datasets/ACAV/acav10m
 
 module load ffmpeg/4.1.6
-source /data/home/eey340/venvs/lam/bin/activate
+source /data/home/acw630/venvs/lam/bin/activate
 
 nvidia-smi
 

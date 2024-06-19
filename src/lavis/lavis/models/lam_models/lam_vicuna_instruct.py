@@ -22,7 +22,7 @@ from lavis.common.utils import is_url
 # from utilities import set_logger
 import sys
 
-sys.path.append("/data/home/eey340/WORKPLACE/LAM/engine/models")
+sys.path.append("/data/home/acw630/WORKPLACE/LAM/engine/models")
 from audiomae_wrapper import AudioMAE
 
 # log = set_logger(__name__)

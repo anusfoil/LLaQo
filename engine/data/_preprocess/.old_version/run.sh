@@ -1,29 +1,29 @@
 #!/bin/bash
 #$ -N part39
 #$ -o ~/acav200k/logs39
-#$ -wd /data/scratch/eey340/acav/acav200k
+#$ -wd /data/scratch/acw630/acav/acav200k
 #$ -pe smp 1
 #$ -l h_vmem=10G
 #$ -l h_rt=240:0:0
 #$ -cwd
 #$ -j y
-work_dir=/data/home/eey340/WORKPLACE/LAM/engine/data/_preprocess
-scratch_dir=/data/scratch/eey340/acav/acav200k
+work_dir=/data/home/acw630/WORKPLACE/LAM/engine/data/_preprocess
+scratch_dir=/data/scratch/acw630/acav/acav200k
 output_dir=${lab_path}/datasets/ACAV/acav200k
 module load ffmpeg/4.1.6
 
-source /data/home/eey340/venvs/lam/bin/activate
+source /data/home/acw630/venvs/lam/bin/activate
 csv_name=ncentroids-500-subset_size-200K_part00039  # ncentroids-500-subset_size-200K_part00039
-wd=/data/scratch/eey340/acav/acav200k
+wd=/data/scratch/acw630/acav/acav200k
 
 # Replace the following line with a program or command
-python3 /data/home/eey340/WORKPLACE/preprocessing/prepare_acav.py \
+python3 /data/home/acw630/WORKPLACE/preprocessing/prepare_acav.py \
 download_wavs \
 --csv_path ${wd}/meta/${csv_name}.csv \
 --clips_dir ${wd}/videos/${csv_name}
 
 # Tease meta
-python3 /data/home/eey340/WORKPLACE/LAM/engine/data/_preprocess/tease_meta.py \
+python3 /data/home/acw630/WORKPLACE/LAM/engine/data/_preprocess/tease_meta.py \
 --origin_csv_dir=${scratch_dir}/meta \
 --video_storage_dir=${scratch_dir}/videos \
 --target_csv_dir=${lab_path}/datasets/ACAV/acav200k/meta

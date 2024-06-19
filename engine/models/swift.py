@@ -12,10 +12,10 @@ import transformers
 from utilities import set_logger
 import sys
 
-sys.path.append("/data/home/eey340/WORKPLACE/LAM/engine/models")
+sys.path.append("/data/home/acw630/WORKPLACE/LAM/engine/models")
 from audiomae_wrapper import AudioMAE
 
-sys.path.append("/data/home/eey340/WORKPLACE/LAM/src/lavis")
+sys.path.append("/data/home/acw630/WORKPLACE/LAM/src/lavis")
 from lavis.models.lam_models.lam import LAMBase, disabled_train
 
 log = set_logger(__name__)

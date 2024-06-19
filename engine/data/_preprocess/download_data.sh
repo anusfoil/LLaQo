@@ -1,7 +1,7 @@
 #!/bin/bash
 #$ -N download_data
-#$ -o /data/home/eey340/WORKPLACE/LAM/engine/data/_preprocess/logs/download_data.log
-#$ -wd /data/home/eey340/WORKPLACE/LAM/engine/data/_preprocess
+#$ -o /data/home/acw630/WORKPLACE/LAM/engine/data/_preprocess/logs/download_data.log
+#$ -wd /data/home/acw630/WORKPLACE/LAM/engine/data/_preprocess
 #$ -l h_vmem=11G
 #$ -l h_rt=240:0:0
 #$ -cwd
@@ -14,12 +14,12 @@
 
 export lab_path=/data/EECS-MachineListeningLab
 
-export WORK_DIR=/data/home/eey340/WORKPLACE/LAM/engine/data/_preprocess
-export SCRATCH_DIR=/data/scratch/eey340/acav/acav10m
+export WORK_DIR=/data/home/acw630/WORKPLACE/LAM/engine/data/_preprocess
+export SCRATCH_DIR=/data/scratch/acw630/acav/acav10m
 export OUTPUT_DIR=${lab_path}/datasets/ACAV/acav10m
 
 module load ffmpeg/4.1.6
-source /data/home/eey340/venvs/lam/bin/activate
+source /data/home/acw630/venvs/lam/bin/activate
 
 export OMP_NUM_THREADS=1
 
@@ -31,7 +31,7 @@ export OMP_NUM_THREADS=1
 # --partial_csvs_output_dir=${SCRATCH_DIR}/partial_csvs \
 
 # 2. Download wav using split csv, ones can use subprocess for this part
-log_dir=/data/home/eey340/acav10m
+log_dir=/data/home/acw630/acav10m
 prefix=ncentroids-500-subset_size-10M_part
 
 idx=$((${SGE_TASK_ID}-1))
