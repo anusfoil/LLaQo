@@ -69,9 +69,8 @@ def generate_answer_on_musicqa(
 
     results = pd.DataFrame(results, 
                            columns=["audio_path", "question", "output", "gt", "question_id", "question_category", "mae"])
-    results.to_csv(results_path)
+    results.to_csv(results_path, index=False)
     
-    hook()
 
 
 if __name__ == "__main__":
