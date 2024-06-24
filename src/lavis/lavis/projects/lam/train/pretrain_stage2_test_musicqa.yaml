@@ -5,13 +5,13 @@
 
 model:
   arch: lam_vicuna_instruct
-  model_type: vicuna1.5_7b-ft  # vicuna1.5_7b-ft
+  model_type: llama3_8b  # vicuna1.5_7b-ft, llama3_8b
   freeze_vit: False
   
-  load_pretrained: False
+  load_pretrained: True
   pretrained: "/data/EECS-MachineListeningLab/jinhua/lam/check_point/Pretrain_stage1/20230829080/checkpoint_63700.pth"
   
-  load_finetuned: True
+  load_finetuned: False
   finetuned: "/data/EECS-MachineListeningLab/jinhua/lam/check_point/Pretrain_stage2/20230905031/checkpoint_3750000.pth"
 
 datasets:

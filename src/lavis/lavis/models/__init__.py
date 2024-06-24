@@ -12,69 +12,40 @@ from lavis.common.registry import registry
 
 from lavis.models.base_model import BaseModel
 
-from lavis.models.blip_models.blip import BlipBase
-from lavis.models.blip_models.blip_caption import BlipCaption
-from lavis.models.blip_models.blip_classification import BlipClassification
-from lavis.models.blip_models.blip_feature_extractor import BlipFeatureExtractor
-from lavis.models.blip_models.blip_image_text_matching import BlipITM
-from lavis.models.blip_models.blip_nlvr import BlipNLVR
-from lavis.models.blip_models.blip_pretrain import BlipPretrain
-from lavis.models.blip_models.blip_retrieval import BlipRetrieval
-from lavis.models.blip_models.blip_vqa import BlipVQA
-
-from lavis.models.blip2_models.blip2 import Blip2Base
-from lavis.models.blip2_models.blip2_opt import Blip2OPT
-from lavis.models.blip2_models.blip2_t5 import Blip2T5
-from lavis.models.blip2_models.blip2_qformer import Blip2Qformer
-from lavis.models.blip2_models.blip2_image_text_matching import Blip2ITM
-
-from lavis.models.blip2_models.blip2_t5_instruct import Blip2T5Instruct
-from lavis.models.blip2_models.blip2_vicuna_instruct import Blip2VicunaInstruct
-
 from lavis.models.lam_models.lam_qformer import LamQformer
 from lavis.models.lam_models.lam_vicuna_instruct import LAMVicunaInstruct
-
-from lavis.models.pnp_vqa_models.pnp_vqa import PNPVQA
-from lavis.models.pnp_vqa_models.pnp_unifiedqav2_fid import PNPUnifiedQAv2FiD
-from lavis.models.img2prompt_models.img2prompt_vqa import Img2PromptVQA
-from lavis.models.med import XBertLMHeadDecoder
-from lavis.models.vit import VisionTransformerEncoder
-from lavis.models.clip_models.model import CLIP
-
-from lavis.models.gpt_models.gpt_dialogue import GPTDialogue
 
 from lavis.processors.base_processor import BaseProcessor
 
 __all__ = [
     "load_model",
     "BaseModel",
-    "BlipBase",
-    "BlipFeatureExtractor",
-    "BlipCaption",
-    "BlipClassification",
-    "BlipITM",
-    "BlipNLVR",
-    "BlipPretrain",
-    "BlipRetrieval",
-    "BlipVQA",
-    "Blip2Qformer",
-    "Blip2Base",
-    "Blip2ITM",
-    "Blip2OPT",
-    "Blip2T5",
-    "Blip2T5Instruct",
-    "Blip2VicunaInstruct",
-    "PNPVQA",
-    "Img2PromptVQA",
-    "PNPUnifiedQAv2FiD",
-    "CLIP",
-    "VisionTransformerEncoder",
-    "XBertLMHeadDecoder",
-    "GPTDialogue",
+    # "BlipBase",
+    # "BlipFeatureExtractor",
+    # "BlipCaption",
+    # "BlipClassification",
+    # "BlipITM",
+    # "BlipNLVR",
+    # "BlipPretrain",
+    # "BlipRetrieval",
+    # "BlipVQA",
+    # "Blip2Qformer",
+    # "Blip2Base",
+    # "Blip2ITM",
+    # "Blip2OPT",
+    # "Blip2T5",
+    # "Blip2T5Instruct",
+    # "Blip2VicunaInstruct",
+    # "PNPVQA",
+    # "Img2PromptVQA",
+    # "PNPUnifiedQAv2FiD",
+    # "CLIP",
+    # "VisionTransformerEncoder",
+    # "XBertLMHeadDecoder",
+    # "GPTDialogue",
     "LamQformer",
     "LAMVicunaInstruct",
 ]
-
 
 def load_model(name, model_type, is_eval=False, device="cpu", checkpoint=None):
     """

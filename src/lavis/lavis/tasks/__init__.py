@@ -4,9 +4,9 @@
  SPDX-License-Identifier: BSD-3-Clause
  For full license text, see the LICENSE file in the repo root or https://opensource.org/licenses/BSD-3-Clause
 """
-
-from lavis.common.registry import registry
 from lavis.tasks.base_task import BaseTask
+from lavis.common.registry import registry
+
 from lavis.tasks.captioning import CaptionTask
 from lavis.tasks.image_text_pretrain import ImageTextPretrainTask
 from lavis.tasks.multimodal_classification import (

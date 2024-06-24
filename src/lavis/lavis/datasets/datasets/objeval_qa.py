@@ -57,24 +57,27 @@ def transform_Objeval_dataset():
     """Objective eval dataset, with standardized audio and teacher's rating on each dimension.
     """
     qa_csv = []
-    ratings = pd.read_csv("/data/EECS-MachineListeningLab/datasets/LLaQo/objeval/qa/sub_001.csv")
+    
     wav_paths = glob.glob("/data/EECS-MachineListeningLab/datasets/LLaQo/objeval/songs/**/*.wav", recursive=True)
 
-    for idx, row in ratings.iterrows():
-        audio_path = row['fname']
-        row['audio_path'] = [wp for wp in wav_paths if audio_path in wp][0]
-        
-        row['question_id'] = row['question_source_id']
-        if row['question_source_id'] in [1, 2]:
-            row['Q'] = "How would you rate the overall performance, on a scale of 0 to 6?"
-            row['A'] = str(row['score'])
-            row['question_category'] = 'summary'
-            qa_csv.append(copy.deepcopy(row))
-        else:
-            row['Q'] = QMAP[row['quesition']]
-            row['A'] = str(row['score'])
-            row['question_category'] = QCA[row['quesition']]
-            qa_csv.append(copy.deepcopy(row))
+    for j in range(1, 5):
+
+        ratings = pd.read_csv(f"/data/EECS-MachineListeningLab/datasets/LLaQo/objeval/qa/sub_00{j}.csv")
+        for idx, row in ratings.iterrows():
+            audio_path = row['fname']
+            row['audio_path'] = [wp for wp in wav_paths if audio_path in wp][0]
+            
+            row['question_id'] = row['question_source_id']
+            if row['question_source_id'] in [1, 2]:
+                row['Q'] = "How would you rate the overall performance, on a scale of 0 to 6?"
+                row['A'] = str(row['score'])
+                row['question_category'] = 'summary'
+                qa_csv.append(copy.deepcopy(row))
+            else:
+                row['Q'] = QMAP[row['quesition']]
+                row['A'] = str(row['score'])
+                row['question_category'] = QCA[row['quesition']]
+                qa_csv.append(copy.deepcopy(row))
 
     qa_csv = pd.DataFrame(qa_csv)
     qa_csv.to_csv("/data/EECS-MachineListeningLab/datasets/LLaQo/objeval/audio_qa.csv")

@@ -5,11 +5,11 @@
 
 model:
   arch: instruct_vicuna7b
-  load_finetuned: True
-  load_pretrained: False
+  load_finetuned: False
+  load_pretrained: True
 
   pretrained: "/data/EECS-MachineListeningLab/huan/lam/check_point/Pretrain_stage1/20230829080/checkpoint_63700.pth"
-  finetuned: "/data/home/acw630/WORKPLACE/LAM/engine/result_model.pth"
+  finetuned: ""
 
   # vit encoder
   image_size: 224
@@ -21,8 +21,8 @@ model:
   # Q-Former
   num_query_token: 32
 
-  # path to Vicuna checkpoint
-  llm_model: "/data/scratch/eey340/hf_models/llama-2-7b"
+  # path to LLaMa checkpoint
+  llm_model: "/data/EECS-MachineListeningLab/huan/hf_cache/hub/models--meta-llama--Meta-Llama-3-8B-Instruct/snapshots/e1945c40cd546c78e41f1151f4db032b271faeaa"
 
   # generation configs
   prompt: ""

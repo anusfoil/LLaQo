@@ -1,4 +1,4 @@
-import os, glob
+import os, glob, re
 import torch
 from subprocess import run
 from torch import Tensor
@@ -62,9 +62,53 @@ def tensor_move_to(input, device=torch.device('cpu')):
     return input
 
 
-def load_latest_checkpoint():
-    checkpoint_dir = "/data/EECS-MachineListeningLab/huan/lam/check_point/Pretrain_stage2/test_musicqa/**/*.pth"
-    list_of_files = glob.glob(checkpoint_dir, recursive=True) # * means all if need specific format then *.csv
-    latest_file = max(list_of_files, key=os.path.getctime)
+# def load_latest_checkpoint(llm='vicuna'):
+    
+#     checkpoint_dir = "/data/EECS-MachineListeningLab/huan/lam/check_point/Pretrain_stage2/test_musicqa/**/*.pth"
+#     list_of_files = glob.glob(checkpoint_dir, recursive=True) # * means all if need specific format then *.csv
+#     latest_file = max(list_of_files, key=os.path.getctime)
+
+#     return latest_file
+
+
+def load_latest_checkpoint(llm='vicuna'):
+    # Directory where the checkpoints and log files are stored
+    base_dir = "/data/EECS-MachineListeningLab/huan/lam/check_point/Pretrain_stage2/test_musicqa"
+    
+    # Get all subdirectories in the base directory
+    subdirs = [d for d in os.listdir(base_dir) if os.path.isdir(os.path.join(base_dir, d))]
+    
+    # Filter subdirectories that contain a log.txt and read the 'llm_model' from log.txt
+    filtered_dirs = []
+    for subdir in subdirs:
+        log_path = os.path.join(base_dir, subdir, "log.txt")
+        if os.path.exists(log_path):
+            with open(log_path, 'r') as file:
+                for line in file:
+                    if '"llm_model":' in line:
+                        try:
+                            # This extracts the JSON object substring that contains "llm_model"
+                            match = re.search(r'"llm_model":\s*"([^"]+)', line)
+                            if match:
+                                llm_model_path = match.group(1)
+                                # Check if the model path contains the specified llm type
+                                if llm in llm_model_path:
+                                    filtered_dirs.append(subdir)
+                                    break
+                        except Exception as e:
+                            print(f"Error parsing JSON or extracting llm_model in {log_path}: {str(e)}")
+     
+    # Now find the latest checkpoint in the filtered directories
+    latest_time = -1
+    latest_file = None
+    
+    for subdir in filtered_dirs:
+        # Check all .pth files in this directory
+        files = glob.glob(os.path.join(base_dir, subdir, "*.pth"))
+        for file in files:
+            file_time = os.path.getctime(file)
+            if file_time > latest_time:
+                latest_time = file_time
+                latest_file = file
 
     return latest_file

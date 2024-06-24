@@ -43,7 +43,6 @@ from transformers.modeling_utils import (
 )
 from transformers.utils import logging
 from transformers.models.bert.configuration_bert import BertConfig
-
 logger = logging.get_logger(__name__)
 
 
