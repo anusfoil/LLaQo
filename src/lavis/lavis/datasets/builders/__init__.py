@@ -17,6 +17,12 @@ from lavis.datasets.builders.musicgestures_qa_builder import MusicGesturesQABuil
 from lavis.datasets.builders.musicshape_qa_builder import MusicShapeQABuilder
 from lavis.datasets.builders.burgmuller_qa_builder import BurgmullerQABuilder
 from lavis.datasets.builders.crocus_qa_builder import CROCUSQABuilder
+from lavis.datasets.builders.playdata_qa_builder import PlaydataQABuilder
+from lavis.datasets.builders.cipi_qa_builder import CIPIQABuilder
+from lavis.datasets.builders.techniques_qa_builder import TechniquesQABuilder
+from lavis.datasets.builders.expertise_qa_builder import ExpertiseQABuilder
+
+
 
 __all__ = [
     "ConEspressioneQABuilder",
@@ -27,6 +33,10 @@ __all__ = [
     "MusicShapeQABuilder",
     "BurgmullerQABuilder",
     "CROCUSQABuilder",
+    "PlaydataQABuilder",
+    "CIPIQABuilder",
+    "TechniquesQABuilder",
+    "ExpertiseQABuilder",
 ]
 
 

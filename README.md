@@ -5,6 +5,7 @@ Note to self:
 
 Training: 
 qsub pretrain_stage2_test_musicqa.sh
+sh  WORKPLACE/LAM/src/lavis/run_scripts/lam/train/pretrain_stage2_test_musicqa.sh 
 
 evaluate:
 sh interact_gpu_node.sh  # start the environment

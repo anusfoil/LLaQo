@@ -111,6 +111,54 @@ datasets:
       train:
         name: "blip_caption"
 
+  playdata_qa:
+    build_info:
+      splits: ["train"]
+    audio_processor:
+      train:
+        name: "audio_processor"
+        num_mel_bins: 128
+        target_length: 1024
+    text_processor:
+      train:
+        name: "blip_caption"
+
+  cipi_qa:
+    build_info:
+      splits: ["train"]
+    audio_processor:
+      train:
+        name: "audio_processor"
+        num_mel_bins: 128
+        target_length: 1024
+    text_processor:
+      train:
+        name: "blip_caption"
+
+  techniques_qa:
+    build_info:
+      splits: ["train"]
+    audio_processor:
+      train:
+        name: "audio_processor"
+        num_mel_bins: 128
+        target_length: 1024
+    text_processor:
+      train:
+        name: "blip_caption"
+
+  expertise_qa:
+    build_info:
+      splits: ["train"]
+    audio_processor:
+      train:
+        name: "audio_processor"
+        num_mel_bins: 128
+        target_length: 1024
+    text_processor:
+      train:
+        name: "blip_caption"
+
 
 run:
   runner: runner_iter

@@ -25,25 +25,25 @@ source /data/home/acw630/venvs/lam/bin/activate
 # nvidia-smi
 
 
-python -m torch.distributed.run \
-    --nproc_per_node=2 \
-    ${WORK_PLACE}/train.py \
-    --cfg-path ${WORK_PLACE}/lavis/projects/lam/train/pretrain_stage2_test_musicqa.yaml \
-    --options \
-    run.max_iters=5000000 \
-    run.iters_per_inner_epoch=3000 \
-    run.batch_size_train=4 \
-    run.accum_grad_iters=1 \
-    run.num_workers=4
-
-# python ${WORK_PLACE}/train.py \
+# python -m torch.distributed.run \
+#     --nproc_per_node=2 \
+#     ${WORK_PLACE}/train.py \
 #     --cfg-path ${WORK_PLACE}/lavis/projects/lam/train/pretrain_stage2_test_musicqa.yaml \
 #     --options \
-#     run.max_iters=50000 \
+#     run.max_iters=5000000 \
 #     run.iters_per_inner_epoch=3000 \
-#     run.batch_size_train=6 \
+#     run.batch_size_train=4 \
 #     run.accum_grad_iters=1 \
 #     run.num_workers=4
+
+python ${WORK_PLACE}/train.py \
+    --cfg-path ${WORK_PLACE}/lavis/projects/lam/train/pretrain_stage2_test_musicqa.yaml \
+    --options \
+    run.max_iters=50000 \
+    run.iters_per_inner_epoch=3000 \
+    run.batch_size_train=6 \
+    run.accum_grad_iters=1 \
+    run.num_workers=4
 
 # python3 ${WORK_PLACE}/train.py \
 #     --cfg-path ${WORK_PLACE}/lavis/projects/lam/train/pretrain_stage2.yaml \
