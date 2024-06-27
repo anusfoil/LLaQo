@@ -6,7 +6,7 @@
 #$ -wd /data/home/acw630/WORKPLACE/LAM/engine/data/_preprocess
 #$ -j y
 #$ -N test_musicqa
-#$ -o /data/home/acw630/WORKPLACE/LAM/src/lavis/run_scripts/lam/train/logs/pretraining_stage2_test_musicqa.log
+#$ -o /data/home/acw630/WORKPLACE/LAM/src/lavis/run_scripts/lam/train/logs/pretraining_stage2_test_musicqa_vicuna.log
 #$ -m beas
 #$ -l gpu_type='ampere'
 # --------------------------------------------------------
