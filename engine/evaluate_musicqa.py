@@ -75,6 +75,8 @@ def generate_answer_on_musicqa(
             
             print(output, output2)
             
+            rating = extract_rating_from_text(output[0]) 
+            
             # calculate the MAE
             results.append((
                 data['audio_path'],
@@ -85,7 +87,7 @@ def generate_answer_on_musicqa(
                 output2,
                 data['answer2'],
                 data["qidx"], data["qcategory"], 
-                np.abs(extract_rating_from_text(output[0]) - data['answer'])))
+                np.abs(rating - data['answer']) if rating else None))
             
             pbar.update(1)
             if mini_data and batch_idx == 10:
