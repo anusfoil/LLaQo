@@ -25,17 +25,17 @@ except:
 
 
 QMAP = {
-    "Is the legato even?": "How would you rate if the legato is even, on a scale of 0 to 6?",
-    "Are the note values uniform?": "How would you rate the uniformity of the note values, on a scale of 0 to 6?",
-    "How solid is the sound?": "How would you rate the solidity of the sound, on a scale of 0 to 6?",
-    "How clean is the attack?": "How would you rate the cleanliness of the attack, on a scale of 0 to 6?",
-    "Are the left and right hands balanced?": "How would you rate the balance between the left and right hands, on a scale of 0 to 6?",
-    "Are the timings aligned on the left and right hands?": "How would you rate the alignment of timings between the left and right hands, on a scale of 0 to 6?",
-    "Is it played with the correct rhythm?": "How would you rate the correctness of the rhythm, on a scale of 0 to 6?",
-    "Is the tempo kept constant?": "How would you rate the consistency of the tempo, on a scale of 0 to 6?",
-    "Are the lines connected?": "How would you rate the connectivity of the lines, on a scale of 0 to 6?",
-    "Is it played with a sense of tonality?": "How would you rate the sense of tonality, on a scale of 0 to 6?",
-    "Is the dynamics change natural?": "How would you rate the naturalness of the dynamics change, on a scale of 0 to 6?"
+    "Is the legato even?": "How would you rate if the legato is even? on a scale of 1 to 7, 1 is the worst and 6 is the best, use the full scale as much as possible. ",
+    "Are the note values uniform?": "How would you rate the uniformity of the note values? on a scale of 1 to 7, 1 is the worst and 6 is the best, use the full scale as much as possible. ",
+    "How solid is the sound?": "How would you rate the solidity of the sound? on a scale of 1 to 7, 1 is the worst and 6 is the best, use the full scale as much as possible. ",
+    "How clean is the attack?": "How would you rate the cleanliness of the attack? on a scale of 1 to 7, 1 is the worst and 6 is the best, use the full scale as much as possible. ",
+    "Are the left and right hands balanced?": "How would you rate the balance between the left and right hands? on a scale of 1 to 7, 1 is the worst and 6 is the best, use the full scale as much as possible. ",
+    "Are the timings aligned on the left and right hands?": "How would you rate the alignment of timings between the left and right hands? on a scale of 1 to 7, 1 is the worst and 6 is the best, use the full scale as much as possible. ",
+    "Is it played with the correct rhythm?": "How would you rate the correctness of the rhythm? on a scale of 1 to 7, 1 is the worst and 6 is the best, use the full scale as much as possible. ",
+    "Is the tempo kept constant?": "How would you rate the consistency of the tempo? on a scale of 1 to 7, 1 is the worst and 6 is the best, use the full scale as much as possible. ",
+    "Are the lines connected?": "How would you rate the connectivity of the lines? on a scale of 1 to 7, 1 is the worst and 6 is the best, use the full scale as much as possible. ",
+    "Is it played with a sense of tonality?": "How would you rate the sense of tonality? on a scale of 1 to 7, 1 is the worst and 6 is the best, use the full scale as much as possible. ",
+    "Is the dynamics change natural?": "How would you rate the naturalness of the dynamics change? on a scale of 1 to 7, 1 is the worst and 6 is the best, use the full scale as much as possible. "
 }
 
 QCA = {
@@ -60,22 +60,28 @@ def transform_Objeval_dataset():
     
     wav_paths = glob.glob("/data/EECS-MachineListeningLab/datasets/LLaQo/objeval/songs/**/*.wav", recursive=True)
 
-    for j in range(1, 5):
+    csv_paths = glob.glob("/data/EECS-MachineListeningLab/datasets/LLaQo/objeval/qa/*.csv")
 
-        ratings = pd.read_csv(f"/data/EECS-MachineListeningLab/datasets/LLaQo/objeval/qa/sub_00{j}.csv")
+    for csv_path in csv_paths:
+
+        ratings = pd.read_csv(csv_path)
         for idx, row in ratings.iterrows():
             audio_path = row['fname']
             row['audio_path'] = [wp for wp in wav_paths if audio_path in wp][0]
-            
             row['question_id'] = row['question_source_id']
+                        
             if row['question_source_id'] in [1, 2]:
-                row['Q'] = "How would you rate the overall performance, on a scale of 0 to 6?"
+                row['Q'] = "How would you rate the overall performance? on a scale of 1 to 7, 1 is the worst and 6 is the best?"
                 row['A'] = str(row['score'])
+                row['Q2'] = row['quesition']
+                row['A2'] = row['answer']
                 row['question_category'] = 'summary'
                 qa_csv.append(copy.deepcopy(row))
             else:
                 row['Q'] = QMAP[row['quesition']]
                 row['A'] = str(row['score'])
+                row['Q2'] = row['quesition']
+                row['A2'] = row['answer']
                 row['question_category'] = QCA[row['quesition']]
                 qa_csv.append(copy.deepcopy(row))
 
@@ -113,7 +119,9 @@ class ObjevalDataset(Dataset):
         sample = {
                 'audio_path': audio_path, 
                 'question': self.audio_qa['Q'].iloc[idx],
+                'question2': self.audio_qa['Q2'].iloc[idx],
                 'answer': self.audio_qa['A'].iloc[idx],
+                'answer2': self.audio_qa['A2'].iloc[idx],
                 'qcategory': self.audio_qa['question_category'].iloc[idx],
                 'qidx': self.audio_qa['question_id'].iloc[idx]}
         

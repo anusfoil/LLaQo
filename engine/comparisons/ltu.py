@@ -37,9 +37,16 @@ def generate_answer_on_musicqa(
         for batch_idx, data in enumerate(dataset):
 
             result = client.predict(
+                "",
                 data['audio_path'],
-                "",  
-                data['question'],
+                "You are a piano teacher. " + data['question'],
+                "7B (Default)",
+                api_name="/predict"
+            )
+            result2 = client.predict(
+                "",
+                data['audio_path'],
+                "You are a piano teacher. " + data['question2'],
                 "7B (Default)",
                 api_name="/predict"
             )
@@ -58,6 +65,8 @@ def generate_answer_on_musicqa(
                 "response": result,
                 "rating": rating,
                 "gt": ground_truth,
+                "verbal_output": result2,
+                "verbal_gt": data['answer2'],
                 "question_id": data["qidx"], 
                 "question_category": data["qcategory"],
                 "mae": mae_value

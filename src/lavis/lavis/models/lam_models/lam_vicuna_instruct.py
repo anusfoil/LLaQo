@@ -47,6 +47,7 @@ class LAMVicunaInstruct(LAMBase):
         "vicuna7b-ft": "configs/models/lam/lam_instruct_vicuna7b-ft.yaml",
         "llama2_7b": "configs/models/lam/lam_instruct_llama2_7b.yaml",
         "llama2_7b-ft": "configs/models/lam/lam_instruct_llama2_7b-ft.yaml",
+        "llama3_8b": "configs/models/lam/lam_instruct_llama3_8b.yaml",
         "vicuna1.5_7b": "configs/models/lam/lam_instruct_vicuna1.5_7b.yaml",
         "vicuna1.5_7b-ft": "configs/models/lam/lam_instruct_vicuna1.5_7b-ft.yaml",
         # "vicuna13b": "configs/models/lam/lam_instruct_vicuna13b.yaml",
@@ -79,7 +80,7 @@ class LAMVicunaInstruct(LAMBase):
         assert transformers_version >= version.parse(
             "4.28"
         ), "BLIP-2 Vicuna requires transformers>=4.28"
-        from transformers import LlamaTokenizer
+        from transformers import LlamaTokenizer, AutoTokenizer, AutoModelForCausalLM
         from lavis.models.lam_models.modeling_llama4lam import LlamaForCausalLM
 
         self.tokenizer = self.init_tokenizer(truncation_side="left")
@@ -122,12 +123,20 @@ class LAMVicunaInstruct(LAMBase):
         self.Qformer.cls = None
 
         print(llm_model)
-        self.llm_tokenizer = LlamaTokenizer.from_pretrained(
-            llm_model, use_fast=False, truncation_side="left"
-        )
-        self.llm_model = LlamaForCausalLM.from_pretrained(
-            llm_model, torch_dtype=torch.float16
-        )
+        if "llama" in llm_model: # loading for llama3
+            self.llm_tokenizer = AutoTokenizer.from_pretrained(
+                llm_model, use_fast=False, truncation_side="left"
+            )
+            self.llm_model = AutoModelForCausalLM.from_pretrained(
+                llm_model, torch_dtype=torch.float16,
+            )
+        else: # loading for vicuna
+            self.llm_tokenizer = LlamaTokenizer.from_pretrained(
+                llm_model, use_fast=False, truncation_side="left"
+            )
+            self.llm_model = LlamaForCausalLM.from_pretrained(
+                llm_model, torch_dtype=torch.float16
+            )
         self.llm_tokenizer.add_special_tokens({"pad_token": "[PAD]"})
         self.llm_tokenizer.add_special_tokens({"bos_token": "</s>"})
         self.llm_tokenizer.add_special_tokens({"eos_token": "</s>"})
@@ -648,7 +657,7 @@ class LAMVicunaInstruct(LAMBase):
             raise Exception(r"Expect audio dim either 4 or 5.")
 
         outputs = self.llm_model.generate(
-            inputs_embeds=inputs_embeds,
+            inputs_embeds=inputs_embeds.to(torch.float16),
             attention_mask=attention_mask,
             do_sample=use_nucleus_sampling,
             top_p=top_p,

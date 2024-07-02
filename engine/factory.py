@@ -71,7 +71,7 @@ def tensor_move_to(input, device=torch.device('cpu')):
 #     return latest_file
 
 
-def load_latest_checkpoint(llm='vicuna'):
+def load_latest_checkpoint(llm='vicuna', ckpt=None):
     # Directory where the checkpoints and log files are stored
     base_dir = "/data/EECS-MachineListeningLab/huan/lam/check_point/Pretrain_stage2/test_musicqa"
     
@@ -97,6 +97,14 @@ def load_latest_checkpoint(llm='vicuna'):
                                     break
                         except Exception as e:
                             print(f"Error parsing JSON or extracting llm_model in {log_path}: {str(e)}")
+     
+    if ckpt:
+        # If a specific checkpoint is specified, return it if it exists
+        ckpt_path = os.path.join(base_dir, ckpt)
+        if os.path.exists(ckpt_path):
+            return ckpt_path
+        else:
+            raise FileNotFoundError(f"Checkpoint {ckpt_path} not found")
      
     # Now find the latest checkpoint in the filtered directories
     latest_time = -1

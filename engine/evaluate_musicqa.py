@@ -65,13 +65,15 @@ def generate_answer_on_musicqa(
                 },
                 temperature=0.1,
             )
-            result = {
-                "audio_path": data['audio_path'],
-                "question": data['question'],
-                "output": output, 
-                "gt": int(data['answer'])
-            }
-            print(result)
+            output2 = model.generate(  # the semantic question
+                {
+                    "audio": data["fbank"].unsqueeze(0).cuda(),
+                    "prompt": data["question2"], 
+                },
+                temperature=0.1,
+            )
+            
+            print(output, output2)
             
             # calculate the MAE
             results.append((
@@ -80,6 +82,8 @@ def generate_answer_on_musicqa(
                 output,
                 extract_rating_from_text(output[0]),
                 int(data['answer']),
+                output2,
+                data['answer2'],
                 data["qidx"], data["qcategory"], 
                 np.abs(extract_rating_from_text(output[0]) - data['answer'])))
             
@@ -88,7 +92,7 @@ def generate_answer_on_musicqa(
                 break
 
     results = pd.DataFrame(results, 
-                           columns=["audio_path", "question", "output", "output_rating", "gt", "question_id", "question_category", "mae"])
+                           columns=["audio_path", "question", "output", "output_rating", "gt", "verbal_output", "verbal_gt", "question_id", "question_category", "mae"])
     results.to_csv(results_path, index=False)
     
 
@@ -99,6 +103,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--ckpt_folder_name", type=str)
     parser.add_argument("--llm", type=str, default="vicuna")
+    parser.add_argument("--ckpt", type=str, default=None)
     args = parser.parse_args()
 
     results_dir = "/data/home/acw630/WORKPLACE/LAM/engine/results/"
@@ -107,7 +112,7 @@ if __name__ == "__main__":
     mini_data = False
 
     checkpoint_paths = [
-        load_latest_checkpoint(llm=args.llm)
+        load_latest_checkpoint(llm=args.llm, ckpt=args.ckpt)
     ]
     for lam_ckpt_path in checkpoint_paths:
         print(f"Using checkpoint {lam_ckpt_path}")

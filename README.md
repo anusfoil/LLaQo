@@ -9,9 +9,11 @@ sh  WORKPLACE/LAM/src/lavis/run_scripts/lam/train/pretrain_stage2_test_musicqa.s
 
 evaluate:
 sh interact_gpu_node.sh  # start the environment
-source venvs/lam/bin/activate
+source ~/venvs/lam/bin/activate or source ~/venvs/lam2/bin/activate
 cd WORKPLACE/LAM/engine
 python evaluate_musicqa.py
+
+(Mullama): python MU-LLaMA/MU-LLaMA/objeval.py --model MU-LLaMA/MU-LLaMA/ckpts/checkpoint.pth --llama_dir MU-LLaMA/MU-LLaMA/ckpts/LLaMA
 
 start demo:
 sh interact_gpu_node.sh  # start the environment
