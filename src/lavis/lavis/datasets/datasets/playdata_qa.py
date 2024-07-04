@@ -71,10 +71,12 @@ def transform_Playdata_dataset():
             if row['question_source_id'] in [1, 2]:
                 row['Q'] = "How would you rate the overall performance, on a scale of 1 to 7, 1 is the worst and 6 is the best, use the full scale as much as possible. "
                 row['A'] = str(row['score'])
+                row['question_category'] = 'summary'
                 qa_csv.append(copy.deepcopy(row))
             else:
                 row['Q'] = QMAP[row['quesition']]
                 row['A'] = str(row['score'])
+                row['question_category'] = QCA[row['quesition']]
                 qa_csv.append(copy.deepcopy(row))
 
             row['Q'] = row['quesition']

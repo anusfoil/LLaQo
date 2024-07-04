@@ -31,9 +31,11 @@ def transform_CIPI_dataset():
     qa_csv = []
     
     metadata = pd.read_csv("/data/scratch/acw630/difficulty_cipi/CIPI_youtube_links.csv")
+    test_idx = [randint(0, 730) for _ in range(110)]
     for idx, row in metadata.iterrows():
 
         row['audio_path'] = "/data/scratch/acw630/difficulty_cipi/" + row['audio_path']
+        row['split'] = 'test' if idx in test_idx else 'train'
         
         row['Q'] = choice([
             "Who might be the composer of this piece?",
@@ -77,13 +79,15 @@ class CIPIDataset(Dataset):
     """ dataset."""
 
     def __init__(self, answers_csv=ANSWERS_CSV, transform=None,
-                 audio_processor=fbankProcessor.build_processor()):
+                 audio_processor=fbankProcessor.build_processor(),
+                 split='train'):
         """
         Arguments:
             answers_csv (string): Path to the csv file with con espressione game answer.
             transform (callable, optional): Optional transform to be applied on a sample.
         """
         self.audio_qa = pd.read_csv(answers_csv)
+        self.audio_qa = self.audio_qa[self.audio_qa['split'] == split]
         self.transform = transform
 
         self.audio_processor = audio_processor

@@ -6,6 +6,8 @@ import numpy as np
 sys.path.append("../../src/lavis")
 
 from lavis.datasets.datasets.objeval_qa import ObjevalDataset
+from lavis.datasets.datasets.cipi_qa import CIPIDataset
+from lavis.datasets.datasets.techniques_qa import TechniquesDataset
 
 
 def extract_rating_from_text(text):
@@ -78,8 +80,84 @@ def generate_answer_on_musicqa(
     results_df = pd.DataFrame(results)
     results_df.to_csv(results_path, index=False)
 
+
+def generate_answer_on_cipi(
+    client,  # Include the client as a parameter
+    results_path=None
+):
+    dataset = CIPIDataset()
+
+    results = []
+    with tqdm(len(dataset)) as pbar:
+        for batch_idx, data in enumerate(dataset):
+
+            if batch_idx % 3 == 1:
+                continue  # the student - master question won't be asked. only check composer and difficulty
+
+            result = client.predict(
+                "",
+                data['audio_path'],
+                data['question'],
+                "7B (Default)",
+                api_name="/predict"
+            )
+            
+            ground_truth = data['answer']
+
+            results.append({
+                "audio_path": data['audio_path'],
+                "question": data['question'],
+                "response": result,
+                "gt": ground_truth,
+            })
+
+            pbar.update(1)
+
+
+    results_df = pd.DataFrame(results)
+    results_df.to_csv(results_path, index=False)
+
+
+def generate_answer_on_techniques(
+    client,  # Include the client as a parameter
+    results_path=None
+):
+    dataset = TechniquesDataset()
+
+    results = []
+    with tqdm(len(dataset)) as pbar:
+        for batch_idx, data in enumerate(dataset):
+
+            result = client.predict(
+                "",
+                data['audio_path'],
+                data['question'],
+                "7B (Default)",
+                api_name="/predict"
+            )
+            
+            ground_truth = data['answer']
+
+            results.append({
+                "audio_path": data['audio_path'],
+                "question": data['question'],
+                "response": result,
+                "gt": ground_truth,
+            })
+
+            pbar.update(1)
+
+
+    results_df = pd.DataFrame(results)
+    results_df.to_csv(results_path, index=False)
+
+
+
+
 # Example usage, assuming you have a client object set up
 client = Client("https://yuangongfdu-ltu-2.hf.space/")
-generate_answer_on_musicqa(client, results_path="../results/ltu_results.csv")
+# generate_answer_on_musicqa(client, results_path="../results/ltu_results.csv")
+generate_answer_on_cipi(client, results_path="../results/ltu_results_cipi.csv")
+generate_answer_on_techniques(client, results_path="../results/ltu_results_techniques.csv")
 
 

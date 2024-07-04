@@ -1,6 +1,6 @@
 #!/bin/bash
-#$ -l gpu=2
-#$ -pe smp 16
+#$ -l gpu=1
+#$ -pe smp 8
 #$ -l h_vmem=11G
 #$ -l h_rt=240:0:0
 #$ -wd /data/home/acw630/WORKPLACE/LAM/engine/data/_preprocess
@@ -26,7 +26,8 @@ source /data/home/acw630/venvs/lam/bin/activate
 
 
 python -m torch.distributed.run \
-    --nproc_per_node=2 \
+    --nproc_per_node=1 \
+    --master_port=25678 \
     ${WORK_PLACE}/train.py \
     --cfg-path ${WORK_PLACE}/lavis/projects/lam/train/pretrain_stage2_test_musicqa.yaml \
     --options \

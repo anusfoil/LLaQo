@@ -111,13 +111,15 @@ class ExpertiseDataset(Dataset):
     """ dataset."""
 
     def __init__(self, answers_csv=ANSWERS_CSV, transform=None,
-                 audio_processor=fbankProcessor.build_processor()):
+                 audio_processor=fbankProcessor.build_processor(),
+                 split='train'):
         """
         Arguments:
             answers_csv (string): Path to the csv file with con espressione game answer.
             transform (callable, optional): Optional transform to be applied on a sample.
         """
         self.audio_qa = pd.read_csv(answers_csv)
+        self.audio_qa = self.audio_qa[self.audio_qa['split'] == split]
         self.transform = transform
 
         self.audio_processor = audio_processor
