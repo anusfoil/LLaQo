@@ -75,7 +75,7 @@ def generate_answer_on_musicqa(
                 temperature=0.1,
             )
             
-            print(output, output2)
+            print(output[0], output2[0])
             
             rating = extract_rating_from_text(output[0]) 
             
@@ -83,10 +83,10 @@ def generate_answer_on_musicqa(
             results.append((
                 data['audio_path'],
                 data['question'],
-                output,
+                output[0],
                 extract_rating_from_text(output[0]),
                 int(data['answer']),
-                output2,
+                output2[0],
                 data['answer2'],
                 data["qidx"], data["qcategory"], 
                 np.abs(rating - data['answer']) if rating else None))
@@ -121,14 +121,14 @@ def generate_answer_on_cipi(
 
     model.load_from_pretrained(lam_ckpt_path)
 
-    dataset = CIPIDataset()
+    dataset = CIPIDataset(split='test')
 
     results = []
     with tqdm(len(dataset)) as pbar:
         for batch_idx, data in enumerate(dataset):
 
-            if batch_idx % 3 == 1:
-                continue  # the student - master question won't be asked. only check composer and difficulty
+            # if batch_idx % 3 == 2:
+            #     continue  # the student - master question won't be asked. only check composer and difficulty
 
             output = model.generate(
                 {
@@ -143,7 +143,7 @@ def generate_answer_on_cipi(
             results.append({
                 "audio_path": data['audio_path'],
                 "question": data['question'],
-                "response": output,
+                "response": output[0],
                 "gt": ground_truth
             })
 
@@ -174,7 +174,7 @@ def generate_answer_on_techniques(
 
     model.load_from_pretrained(lam_ckpt_path)
 
-    dataset = TechniquesDataset()
+    dataset = TechniquesDataset(split='test')
 
     results = []
     with tqdm(len(dataset)) as pbar:
@@ -193,7 +193,7 @@ def generate_answer_on_techniques(
             results.append({
                 "audio_path": data['audio_path'],
                 "question": data['question'],
-                "response": output,
+                "response": output[0],
                 "gt": ground_truth
             })
 
@@ -227,12 +227,12 @@ if __name__ == "__main__":
         pth = lam_ckpt_path.split("/")[-1].split(".")[0]
         results_path = os.path.join(results_dir, f"{pth}.csv")
         
-        # generate_answer_on_musicqa(
-        #     lam_ckpt_path=lam_ckpt_path,
-        #     results_path=results_path,
-        #     mini_data=mini_data,
-        #     llm=args.llm
-        # )
+        generate_answer_on_musicqa(
+            lam_ckpt_path=lam_ckpt_path,
+            results_path=results_path,
+            mini_data=mini_data,
+            llm=args.llm
+        )
 
         generate_answer_on_cipi(
             lam_ckpt_path=lam_ckpt_path,

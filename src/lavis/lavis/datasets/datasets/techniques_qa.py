@@ -37,10 +37,15 @@ def transform_Techniques_dataset():
     qa_csv = []
     
     metadata = pd.read_csv("/data/scratch/acw630/PianoJudge/techniques/metadata.csv")
-    test_idx = [randint(0, 220) for _ in range(30)]
+    metadata = metadata.sample(frac=1, random_state=42)
+    
+    split_index = int(len(metadata) * 0.8)
+    metadata['split'] = ''
+    metadata['split'][:split_index] = 'train'
+    metadata['split'][split_index:] = 'test'
+    
     for idx, row in metadata.iterrows():
 
-        row['split'] = 'test' if idx in test_idx else 'train'
         row['audio_path'] = "/data/scratch/acw630/PianoJudge/techniques/" + row['id'] + ".wav"
         
         row['Q'] = choice(QS)

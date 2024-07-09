@@ -31,11 +31,9 @@ def transform_CIPI_dataset():
     qa_csv = []
     
     metadata = pd.read_csv("/data/scratch/acw630/difficulty_cipi/CIPI_youtube_links.csv")
-    test_idx = [randint(0, 730) for _ in range(110)]
     for idx, row in metadata.iterrows():
 
         row['audio_path'] = "/data/scratch/acw630/difficulty_cipi/" + row['audio_path']
-        row['split'] = 'test' if idx in test_idx else 'train'
         
         row['Q'] = choice([
             "Who might be the composer of this piece?",

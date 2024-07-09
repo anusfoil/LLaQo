@@ -5,7 +5,7 @@
  For full license text, see the LICENSE file in the repo root or https://opensource.org/licenses/BSD-3-Clause
 """
 
-import os, sys, math, glob
+import os, sys, math, glob, random
 import pandas as pd
 import torch
 from torch.utils.data import DataLoader, Dataset
@@ -25,17 +25,17 @@ except:
 
 
 QMAP = {
-    "Is the legato even?": "How would you rate if the legato is even? on a scale of 1 to 7, 1 is the worst and 6 is the best, use the full scale as much as possible. ",
-    "Are the note values uniform?": "How would you rate the uniformity of the note values? on a scale of 1 to 7, 1 is the worst and 6 is the best, use the full scale as much as possible. ",
-    "How solid is the sound?": "How would you rate the solidity of the sound? on a scale of 1 to 7, 1 is the worst and 6 is the best, use the full scale as much as possible. ",
-    "How clean is the attack?": "How would you rate the cleanliness of the attack? on a scale of 1 to 7, 1 is the worst and 6 is the best, use the full scale as much as possible. ",
-    "Are the left and right hands balanced?": "How would you rate the balance between the left and right hands? on a scale of 1 to 7, 1 is the worst and 6 is the best, use the full scale as much as possible. ",
-    "Are the timings aligned on the left and right hands?": "How would you rate the alignment of timings between the left and right hands? on a scale of 1 to 7, 1 is the worst and 6 is the best, use the full scale as much as possible. ",
-    "Is it played with the correct rhythm?": "How would you rate the correctness of the rhythm? on a scale of 1 to 7, 1 is the worst and 6 is the best, use the full scale as much as possible. ",
-    "Is the tempo kept constant?": "How would you rate the consistency of the tempo? on a scale of 1 to 7, 1 is the worst and 6 is the best, use the full scale as much as possible. ",
-    "Are the lines connected?": "How would you rate the connectivity of the lines? on a scale of 1 to 7, 1 is the worst and 6 is the best, use the full scale as much as possible. ",
-    "Is it played with a sense of tonality?": "How would you rate the sense of tonality? on a scale of 1 to 7, 1 is the worst and 6 is the best, use the full scale as much as possible. ",
-    "Is the dynamics change natural?": "How would you rate the naturalness of the dynamics change? on a scale of 1 to 7, 1 is the worst and 6 is the best, use the full scale as much as possible. "
+    "Is the legato even?": "How would you rate if the legato is even? on a scale of 1 to 6, 1 is the worst and 6 is the best, use the full scale as much as possible. ",
+    "Are the note values uniform?": "How would you rate the uniformity of the note values? on a scale of 1 to 6, 1 is the worst and 6 is the best, use the full scale as much as possible. ",
+    "How solid is the sound?": "How would you rate the solidity of the sound? on a scale of 1 to 6, 1 is the worst and 6 is the best, use the full scale as much as possible. ",
+    "How clean is the attack?": "How would you rate the cleanliness of the attack? on a scale of 1 to 6, 1 is the worst and 6 is the best, use the full scale as much as possible. ",
+    "Are the left and right hands balanced?": "How would you rate the balance between the left and right hands? on a scale of 1 to 6, 1 is the worst and 6 is the best, use the full scale as much as possible. ",
+    "Are the timings aligned on the left and right hands?": "How would you rate the alignment of timings between the left and right hands? on a scale of 1 to 6, 1 is the worst and 6 is the best, use the full scale as much as possible. ",
+    "Is it played with the correct rhythm?": "How would you rate the correctness of the rhythm? on a scale of 1 to 6, 1 is the worst and 6 is the best, use the full scale as much as possible. ",
+    "Is the tempo kept constant?": "How would you rate the consistency of the tempo? on a scale of 1 to 6, 1 is the worst and 6 is the best, use the full scale as much as possible. ",
+    "Are the lines connected?": "How would you rate the connectivity of the lines? on a scale of 1 to 6, 1 is the worst and 6 is the best, use the full scale as much as possible. ",
+    "Is it played with a sense of tonality?": "How would you rate the sense of tonality? on a scale of 1 to 6, 1 is the worst and 6 is the best, use the full scale as much as possible. ",
+    "Is the dynamics change natural?": "How would you rate the naturalness of the dynamics change? on a scale of 1 to 6, 1 is the worst and 6 is the best, use the full scale as much as possible. "
 }
 
 QCA = {
@@ -53,25 +53,71 @@ QCA = {
 }
 
 
+
+def set_playdata_split():
+    
+    training_files_path = "/data/EECS-MachineListeningLab/datasets/LLaQo/objeval/qa/training_files.txt"
+    if os.path.exists(training_files_path):
+        print("training data file already exsits!")
+        return
+    
+    # Define the path where CSV files are stored
+    csv_paths = glob.glob("/data/EECS-MachineListeningLab/datasets/LLaQo/objeval/qa/*.csv")
+
+    # Concatenate all CSV files into one DataFrame
+    all_csv = pd.concat([pd.read_csv(path) for path in csv_paths], ignore_index=True)
+
+    # Get unique audio file names
+    unique_files = all_csv['fname'].unique()
+
+    # Randomly shuffle the array of unique files to ensure randomness in selection
+    random.shuffle(unique_files)
+
+    # Split the unique files into training set (50% of the files)
+    split_index = len(unique_files) // 2
+    training_files = unique_files[:split_index]
+
+    # Write the training filenames to a text file
+    with open(training_files_path, 'w') as f:
+        for file in training_files:
+            f.write(file + '\n')
+    
+    # Optionally return the DataFrame and training files list for further use in the code
+    return all_csv, training_files
+
+
+
 def transform_Objeval_dataset():
     """Objective eval dataset, with standardized audio and teacher's rating on each dimension.
     """
     qa_csv = []
     
     wav_paths = glob.glob("/data/EECS-MachineListeningLab/datasets/LLaQo/objeval/songs/**/*.wav", recursive=True)
-
     csv_paths = glob.glob("/data/EECS-MachineListeningLab/datasets/LLaQo/objeval/qa/*.csv")
-
+    training_files_path = "/data/EECS-MachineListeningLab/datasets/LLaQo/objeval/qa/training_files.txt"
+    
+    # Read the training files
+    with open(training_files_path, 'r') as f:
+        training_files = f.read().splitlines()
+    
     for csv_path in csv_paths:
+        
+        if (not "006" in csv_path) and (not "007" in csv_path):
+            continue
 
         ratings = pd.read_csv(csv_path)
+        ratings = ratings[~ratings['fname'].isin(training_files)] # eval half
+        
+        # remove duplicate regarding the same audio, q and a
+        ratings = ratings.drop_duplicates(subset=['fname', 'quesition', 'answer', 'score'])
+        
         for idx, row in ratings.iterrows():
             audio_path = row['fname']
             row['audio_path'] = [wp for wp in wav_paths if audio_path in wp][0]
             row['question_id'] = row['question_source_id']
                         
             if row['question_source_id'] in [1, 2]:
-                row['Q'] = "How would you rate the overall performance? on a scale of 1 to 7, 1 is the worst and 6 is the best?"
+                row['Q'] = "How would you rate the overall performance? on a scale of 1 to 6, 1 is the worst and 6 is the best?"
                 row['A'] = str(row['score'])
                 row['Q2'] = row['quesition']
                 row['A2'] = row['answer']
@@ -167,6 +213,7 @@ class ObjevalDatasetQA(BaseDataset):
 
 
 if __name__ == "__main__":
+    set_playdata_split()
     transform_Objeval_dataset()
     hook()
 

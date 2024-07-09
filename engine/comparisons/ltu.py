@@ -91,7 +91,7 @@ def generate_answer_on_cipi(
     with tqdm(len(dataset)) as pbar:
         for batch_idx, data in enumerate(dataset):
 
-            if batch_idx % 3 == 1:
+            if batch_idx % 3 == 2:
                 continue  # the student - master question won't be asked. only check composer and difficulty
 
             result = client.predict(
@@ -110,7 +110,7 @@ def generate_answer_on_cipi(
                 "response": result,
                 "gt": ground_truth,
             })
-
+            hook()
             pbar.update(1)
 
 
@@ -156,8 +156,8 @@ def generate_answer_on_techniques(
 
 # Example usage, assuming you have a client object set up
 client = Client("https://yuangongfdu-ltu-2.hf.space/")
-# generate_answer_on_musicqa(client, results_path="../results/ltu_results.csv")
-generate_answer_on_cipi(client, results_path="../results/ltu_results_cipi.csv")
-generate_answer_on_techniques(client, results_path="../results/ltu_results_techniques.csv")
+generate_answer_on_musicqa(client, results_path="../results/ltu_results.csv")
+# generate_answer_on_cipi(client, results_path="../results/ltu_results_cipi.csv")
+# generate_answer_on_techniques(client, results_path="../results/ltu_results_techniques.csv")
 
 
