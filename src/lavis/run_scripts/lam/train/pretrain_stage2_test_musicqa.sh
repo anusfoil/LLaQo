@@ -1,14 +1,15 @@
 #!/bin/bash
-#$ -l gpu=1
-#$ -pe smp 8
-#$ -l h_vmem=11G
-#$ -l h_rt=240:0:0
-#$ -wd /data/home/acw630/WORKPLACE/LAM/engine/data/_preprocess
+#$ -cwd
 #$ -j y
+#$ -pe smp 12       
+#$ -l h_rt=120:0:0    
+#$ -l h_vmem=7.5G   
+#$ -l gpu=1         
+#$ -l h=rdg13
+#$ -wd /data/home/acw630/WORKPLACE/LAM/engine/data/_preprocess
 #$ -N test_musicqa
-#$ -o /data/home/acw630/WORKPLACE/LAM/src/lavis/run_scripts/lam/train/logs/pretraining_stage2_test_musicqa_vicuna.log
+#$ -o /data/home/acw630/WORKPLACE/LAM/src/lavis/run_scripts/lam/train/logs/pretraining_stage2_test_musicqa_vicuna_.log
 #$ -m beas
-#$ -l gpu_type='ampere'
 # --------------------------------------------------------
 # A script to run multinode training with submitit.
 # --------------------------------------------------------
@@ -21,7 +22,7 @@ export WORK_PLACE=/data/home/acw630/WORKPLACE/LAM/src/lavis
 export OMP_NUM_THREADS=1
 
 source ~/.bashrc
-source /data/home/acw630/venvs/lam/bin/activate
+source /data/home/acw630/venvs/lam2/bin/activate
 # nvidia-smi
 
 
@@ -33,8 +34,8 @@ python -m torch.distributed.run \
     --options \
     run.max_iters=5000000 \
     run.iters_per_inner_epoch=3000 \
-    run.batch_size_train=4 \
-    run.accum_grad_iters=1 \
+    run.batch_size_train=3 \
+    run.accum_grad_iters=2 \
     run.num_workers=4
 
 # python ${WORK_PLACE}/train.py \

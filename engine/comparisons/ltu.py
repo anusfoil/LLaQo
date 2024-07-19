@@ -1,4 +1,4 @@
-import os, sys, re
+import os, sys, re, signal
 from gradio_client import Client
 import pandas as pd
 from tqdm import tqdm
@@ -81,27 +81,33 @@ def generate_answer_on_musicqa(
     results_df.to_csv(results_path, index=False)
 
 
-def generate_answer_on_cipi(
-    client,  # Include the client as a parameter
-    results_path=None
-):
-    dataset = CIPIDataset()
+def generate_answer_on_cipi(client, results_path=None):
+    dataset = CIPIDataset(split="val")
 
     results = []
+    
+    # read existing
+    if os.path.exists(results_path):
+        results_df = pd.read_csv(results_path)
+        results = results_df.to_dict(orient="records")
+    
     with tqdm(len(dataset)) as pbar:
         for batch_idx, data in enumerate(dataset):
+            if batch_idx % 3 != 1:
+                continue  # Only process every third batch for difficulty
 
-            if batch_idx % 3 == 2:
-                continue  # the student - master question won't be asked. only check composer and difficulty
-
-            result = client.predict(
-                "",
-                data['audio_path'],
-                data['question'],
-                "7B (Default)",
-                api_name="/predict"
-            )
+            try:
+                result = client.predict(
+                    data['audio_path'],
+                    data['question'],
+                    # "7B (Default)",
+                    api_name="/predict"
+                )
+            except Exception as e:
+                print(f"Error on {data['audio_path']}: {e}")
+                result = ""
             
+            print(result)
             ground_truth = data['answer']
 
             results.append({
@@ -110,12 +116,12 @@ def generate_answer_on_cipi(
                 "response": result,
                 "gt": ground_truth,
             })
-            hook()
+
             pbar.update(1)
 
-
-    results_df = pd.DataFrame(results)
-    results_df.to_csv(results_path, index=False)
+            results_df = pd.DataFrame(results)
+            if results_path:
+                results_df.to_csv(results_path, index=False)
 
 
 def generate_answer_on_techniques(
@@ -155,9 +161,9 @@ def generate_answer_on_techniques(
 
 
 # Example usage, assuming you have a client object set up
-client = Client("https://yuangongfdu-ltu-2.hf.space/")
-generate_answer_on_musicqa(client, results_path="../results/ltu_results.csv")
-# generate_answer_on_cipi(client, results_path="../results/ltu_results_cipi.csv")
+client = Client("https://yuangongfdu-ltu.hf.space/")
+# generate_answer_on_musicqa(client, results_path="../results/ltu_results.csv")
+generate_answer_on_cipi(client, results_path="../results/ltu_results_cipi_.csv")
 # generate_answer_on_techniques(client, results_path="../results/ltu_results_techniques.csv")
 
 

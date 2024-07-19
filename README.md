@@ -25,8 +25,9 @@ ssh -i ~/.ssh/id_rsa_apocrita -L 7860:rdg7:7860 acw630@login.hpc.qmul.ac.uk
 ltu:
 source /etc/profile
 module load anaconda3
-conda activate venv_ltu
-cd /data/scratch/acw630/ltu/src/ltu/
+conda activate venv_ltu_as
+cd /data/scratch/acw630/ltu/src/ltu_as/
 python inference.py
 
-
+plotting
+scp -r -i id_rsa  WORKPLACE/LAM/engine/results/ hz009@frank.eecs.qmul.ac.uk:/homes/hz009/Research/llaqo

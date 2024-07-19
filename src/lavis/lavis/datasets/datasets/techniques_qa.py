@@ -42,7 +42,7 @@ def transform_Techniques_dataset():
     split_index = int(len(metadata) * 0.8)
     metadata['split'] = ''
     metadata['split'][:split_index] = 'train'
-    metadata['split'][split_index:] = 'test'
+    metadata['split'][split_index:] = 'val'
     
     for idx, row in metadata.iterrows():
 

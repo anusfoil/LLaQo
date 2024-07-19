@@ -102,8 +102,8 @@ def transform_Objeval_dataset():
     
     for csv_path in csv_paths:
         
-        if (not "006" in csv_path) and (not "007" in csv_path):
-            continue
+        # if (not "006" in csv_path) and (not "007" in csv_path):
+        #     continue
 
         ratings = pd.read_csv(csv_path)
         ratings = ratings[~ratings['fname'].isin(training_files)] # eval half
