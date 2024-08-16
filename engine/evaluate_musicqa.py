@@ -75,6 +75,8 @@ def generate_answer_on_musicqa(
                     "prompt": data["question2"], 
                 },
                 temperature=0.1,
+                repetition_penalty=8.0,
+                length_penalty=1.2,
             )
             
             print(output[0], output2[0])
@@ -85,6 +87,8 @@ def generate_answer_on_musicqa(
                         "prompt": data["question2"], 
                     },
                     temperature=0.1,
+                    repetition_penalty=8.0,
+                    length_penalty=1.2,
                 )
                 print("regenerted")
                 print(output[0], output2[0])
@@ -218,6 +222,26 @@ def generate_answer_on_techniques(
     results_df.to_csv(results_path, index=False)
 
 
+def check_validity(output):
+    
+    if "nan" in output: 
+        return False
+    if output == "":
+        return False
+    
+    if output[0].isnumeric():
+        return False
+    
+    if not output.isascii():
+        print(output)
+        return False
+    
+    if "Saxophonist" in output:
+        return False
+    
+    return True
+    
+
 def generate_answer_on_subjective(
     lam_ckpt_path="",
     results_path="/data/home/acw630/WORKPLACE/LAM/engine/results/lam_on_audioset_val_new2.csv",
@@ -239,7 +263,7 @@ def generate_answer_on_subjective(
     model.load_from_pretrained(lam_ckpt_path)
 
     dataset = SbjevalDataset()
-
+    
     results = []
     with tqdm(len(dataset)) as pbar:
         for batch_idx, data in enumerate(dataset):
@@ -250,8 +274,25 @@ def generate_answer_on_subjective(
                     "prompt": data["question"], 
                 },
                 temperature=0.1,
+                # repetition_penalty=8.0,
+                # length_penalty=1.2,
             )
-
+            print(output[0])
+            
+            count = 0
+            while (not check_validity(output[0])) and count < 5:
+                output = model.generate(
+                    {
+                        "audio": data["fbank"].unsqueeze(0).cuda(),
+                        "prompt": data["question"] + " " * (count+1),
+                    },
+                    temperature=0.1,
+                    # repetition_penalty=8.0,
+                    # length_penalty=1.2,
+                )
+                print(output[0])
+                count += 1
+                
 
             results.append({
                 "audio_path": data['audio_path'],
@@ -296,24 +337,24 @@ if __name__ == "__main__":
         #     llm=args.llm
         # )
 
-        # generate_answer_on_cipi(
-        #     lam_ckpt_path=lam_ckpt_path,
-        #     results_path=os.path.join(results_dir, f"{pth}_cipi.csv"),
-        #     mini_data=mini_data,
-        #     llm=args.llm
-        # )
-
-
-        # generate_answer_on_techniques(
-        #     lam_ckpt_path=lam_ckpt_path,
-        #     results_path=os.path.join(results_dir, f"{pth}_techniques.csv"),
-        #     mini_data=mini_data,
-        #     llm=args.llm
-        # )
-
-        generate_answer_on_subjective(
+        generate_answer_on_cipi(
             lam_ckpt_path=lam_ckpt_path,
-            results_path=os.path.join(results_dir, f"{pth}_sbj.csv"),
+            results_path=os.path.join(results_dir, f"{pth}_cipi.csv"),
             mini_data=mini_data,
             llm=args.llm
         )
+
+
+        generate_answer_on_techniques(
+            lam_ckpt_path=lam_ckpt_path,
+            results_path=os.path.join(results_dir, f"{pth}_techniques.csv"),
+            mini_data=mini_data,
+            llm=args.llm
+        )
+
+        # generate_answer_on_subjective(
+        #     lam_ckpt_path=lam_ckpt_path,
+        #     results_path=os.path.join(results_dir, f"{pth}_sbj.csv"),
+        #     mini_data=mini_data,
+        #     llm=args.llm
+        # )

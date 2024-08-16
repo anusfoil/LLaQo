@@ -9,7 +9,8 @@ model:
   load_pretrained: False
 
   pretrained: "/data/EECS-MachineListeningLab/huan/lam/check_point/Pretrain_stage1/20230829080/checkpoint_63700.pth"
-  finetuned: "/data/EECS-MachineListeningLab/huan/lam/check_point/Pretrain_stage2/test_musicqa/20231102023/checkpoint_20000.pth" # "/data/EECS-MachineListeningLab/huan/lam/check_point/Pretrain_stage2/20230913011/checkpoint_90000.pth"
+  finetuned: "/data/EECS-MachineListeningLab/huan/lam/check_point/Pretrain_stage2/test_musicqa/20231102023/checkpoint_20000.pth" 
+  # finetuned: "/data/EECS-MachineListeningLab/huan/lam/check_point/Pretrain_stage2/20230914144/checkpoint_90000.pth"
 
   # vit encoder
   image_size: 224

@@ -86,8 +86,38 @@ def set_playdata_split():
     return all_csv, training_files
 
 
-
 def transform_Objeval_dataset():
+    """Objective eval dataset, with standardized audio and teacher's rating on each dimension.
+    """
+    
+    new_audio_qa = "/data/EECS-MachineListeningLab/datasets/LLaQo/objeval/qa/new_audio_qa.csv"
+    new_audio_qa = pd.read_csv(new_audio_qa)
+    new_audio_qa = new_audio_qa[new_audio_qa['split'] == 'eval']
+    
+    qa_csv = []
+    for idx, row in new_audio_qa.iterrows():
+                
+        if row['question_source_id'] in [1, 2]:
+            row['Q'] = "How would you rate the overall performance? on a scale of 1 to 6, 1 is the worst and 6 is the best?"
+            row['A'] = str(row['score'])
+            row['Q2'] = row['q_eng']
+            row['A2'] = row['a_eng']
+            row['question_category'] = 'summary'
+            qa_csv.append(copy.deepcopy(row))
+        else:
+            row['Q'] = QMAP[row['q_eng']]
+            row['A'] = str(row['score'])
+            row['Q2'] = row['q_eng']
+            row['A2'] = row['a_eng']
+            row['question_category'] = QCA[row['q_eng']]
+            qa_csv.append(copy.deepcopy(row))
+
+    qa_csv = pd.DataFrame(qa_csv)
+    qa_csv.to_csv("/data/EECS-MachineListeningLab/datasets/LLaQo/objeval/audio_qa.csv")
+
+
+
+def transform_Objeval_dataset_():
     """Objective eval dataset, with standardized audio and teacher's rating on each dimension.
     """
     qa_csv = []
@@ -101,9 +131,6 @@ def transform_Objeval_dataset():
         training_files = f.read().splitlines()
     
     for csv_path in csv_paths:
-        
-        # if (not "006" in csv_path) and (not "007" in csv_path):
-        #     continue
 
         ratings = pd.read_csv(csv_path)
         ratings = ratings[~ratings['fname'].isin(training_files)] # eval half
@@ -112,6 +139,11 @@ def transform_Objeval_dataset():
         ratings = ratings.drop_duplicates(subset=['fname', 'quesition', 'answer', 'score'])
         
         for idx, row in ratings.iterrows():
+
+            # make sure the answer is not nan or empty
+            if ((pd.isna(row['answer']) or row['answer'] == "") or (pd.isna(row['score']) or row['score'] == "")) :
+                continue
+
             audio_path = row['fname']
             row['audio_path'] = [wp for wp in wav_paths if audio_path in wp][0]
             row['question_id'] = row['question_source_id']
@@ -213,7 +245,7 @@ class ObjevalDatasetQA(BaseDataset):
 
 
 if __name__ == "__main__":
-    set_playdata_split()
+    # set_playdata_split()
     transform_Objeval_dataset()
     hook()
 

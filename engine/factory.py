@@ -64,7 +64,7 @@ def tensor_move_to(input, device=torch.device('cpu')):
 
 # def load_latest_checkpoint(llm='vicuna'):
     
-#     checkpoint_dir = "/data/EECS-MachineListeningLab/huan/lam/check_point/Pretrain_stage2/test_musicqa/**/*.pth"
+#     checkpoint_dir = "/data/EECS-MachineListeningLab/huan/lam//**/*.pth"
 #     list_of_files = glob.glob(checkpoint_dir, recursive=True) # * means all if need specific format then *.csv
 #     latest_file = max(list_of_files, key=os.path.getctime)
 
@@ -73,7 +73,7 @@ def tensor_move_to(input, device=torch.device('cpu')):
 
 def load_latest_checkpoint(llm='vicuna', ckpt=None):
     # Directory where the checkpoints and log files are stored
-    base_dir = "/data/EECS-MachineListeningLab/huan/lam/check_point/Pretrain_stage2/test_musicqa"
+    base_dir = "/data/scratch/acw630/check_point/Pretrain_stage2/test_musicqa"
     
     # Get all subdirectories in the base directory
     subdirs = [d for d in os.listdir(base_dir) if os.path.isdir(os.path.join(base_dir, d))]
