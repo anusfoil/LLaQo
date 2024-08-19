@@ -330,27 +330,27 @@ if __name__ == "__main__":
         pth = lam_ckpt_path.split("/")[-1].split(".")[0]
         results_path = os.path.join(results_dir, f"{pth}.csv")
         
-        # generate_answer_on_musicqa(
+        generate_answer_on_musicqa(
+            lam_ckpt_path=lam_ckpt_path,
+            results_path=results_path,
+            mini_data=mini_data,
+            llm=args.llm
+        )
+
+        # generate_answer_on_cipi(
         #     lam_ckpt_path=lam_ckpt_path,
-        #     results_path=results_path,
+        #     results_path=os.path.join(results_dir, f"{pth}_cipi.csv"),
         #     mini_data=mini_data,
         #     llm=args.llm
         # )
 
-        generate_answer_on_cipi(
-            lam_ckpt_path=lam_ckpt_path,
-            results_path=os.path.join(results_dir, f"{pth}_cipi.csv"),
-            mini_data=mini_data,
-            llm=args.llm
-        )
 
-
-        generate_answer_on_techniques(
-            lam_ckpt_path=lam_ckpt_path,
-            results_path=os.path.join(results_dir, f"{pth}_techniques.csv"),
-            mini_data=mini_data,
-            llm=args.llm
-        )
+        # generate_answer_on_techniques(
+        #     lam_ckpt_path=lam_ckpt_path,
+        #     results_path=os.path.join(results_dir, f"{pth}_techniques.csv"),
+        #     mini_data=mini_data,
+        #     llm=args.llm
+        # )
 
         # generate_answer_on_subjective(
         #     lam_ckpt_path=lam_ckpt_path,

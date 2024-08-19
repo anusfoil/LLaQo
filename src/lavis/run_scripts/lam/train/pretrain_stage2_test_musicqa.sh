@@ -41,7 +41,7 @@ source /data/home/acw630/venvs/lam2/bin/activate
 python ${WORK_PLACE}/train.py \
     --cfg-path ${WORK_PLACE}/lavis/projects/lam/train/pretrain_stage2_test_musicqa.yaml \
     --options \
-    run.max_iters=500000 \
+    run.max_iters=5000000 \
     run.iters_per_inner_epoch=3000 \
     run.batch_size_train=4 \
     run.accum_grad_iters=1 \

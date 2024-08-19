@@ -67,21 +67,27 @@ def transform_Playdata_dataset():
         if row['question_source_id'] in [1, 2]:
             row['Q'] = "How would you rate the overall performance? on a scale of 1 to 6, 1 is the worst and 6 is the best?"
             row['A'] = str(row['score'])
-            row['Q2'] = random.choice([
-                            row['q_eng'],
-                            "What's your overall feedback on this performance? ",
-                            "What's your comment on this performce? ",
-                            "What's good or bad about this performance? ",
-                            "What does the student need to work on? ",
-                            "How would you describe the the performance as a teacher?"])
-            row['A2'] = row['a_eng']
+            row['question_category'] = 'summary'
+            qa_csv.append(copy.deepcopy(row))
+            
+            row['Q'] = random.choice([
+                row['q_eng'],
+                "What's your overall feedback on this performance? ",
+                "What's your comment on this performce? ",
+                "What's good or bad about this performance? ",
+                "What does the student need to work on? ",
+                "How would you describe the the performance as a teacher?"])
+            row['A'] = row['a_eng']
             row['question_category'] = 'summary'
             qa_csv.append(copy.deepcopy(row))
         else:
             row['Q'] = QMAP[row['q_eng']]
             row['A'] = str(row['score'])
-            row['Q2'] = row['q_eng']
-            row['A2'] = row['a_eng']
+            row['question_category'] = QCA[row['q_eng']]
+            qa_csv.append(copy.deepcopy(row))
+            
+            row['Q'] = row['q_eng']
+            row['A'] = row['a_eng']
             row['question_category'] = QCA[row['q_eng']]
             qa_csv.append(copy.deepcopy(row))
 
@@ -224,9 +230,10 @@ if __name__ == "__main__":
         audio_root="/data/EECS-MachineListeningLab/datasets/AudioSet/audios",
         seg_name="all_train",
     )
-    # print(next(iter(dataset)))
 
     loader = torch.utils.data.DataLoader(dataset, batch_size=2)
-    for datum in loader:
-        print(datum)
+    for idx, datum in enumerate(loader):
+        print(datum['text_input'], datum['text_output'])
+        if idx == 50:
+            hook()
         # hook()
