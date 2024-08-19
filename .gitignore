@@ -1,0 +1,9 @@
+*log
+*json
+*pyc
+**/hook.py
+**/*.wav
+test_audio/
+**/*.csv
+**/*.txt
+**/*.png
