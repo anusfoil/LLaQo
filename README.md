@@ -1,33 +1,46 @@
 # LLaQo: Towards a query-based coach in expressive performance assessment
+[![arXiv Paper](https://img.shields.io/badge/arXiv-Paper-brightgreen)]() [![NeuroPiano-data](https://img.shields.io/badge/neuropiano-data-orange)](https://huggingface.co/datasets/anusfoil/NeuroPiano-data) 
 
 
-Note to self:
 
-Training: 
-qsub pretrain_stage2_test_musicqa.sh
-sh  WORKPLACE/LAM/src/lavis/run_scripts/lam/train/pretrain_stage2_test_musicqa.sh 
+### Environment
 
-evaluate:
-sh interact_gpu_node.sh  # start the environment
-source ~/venvs/lam/bin/activate or source ~/venvs/lam2/bin/activate
-cd WORKPLACE/LAM/engine
-python evaluate_musicqa.py
+Our environment lam2 is downloadable from []. After downloading, simply do ```source /path/to/your/envs/lam2/bin/activate ```
 
-(Mullama): python /data/scratch/acw630/MU-LLaMA/MU-LLaMA/objeval.py --model /data/scratch/acw630/MU-LLaMA/MU-LLaMA/ckpts/checkpoint.pth --llama_dir /data/scratch/acw630/MU-LLaMA/MU-LLaMA/ckpts/LLaMA
+checkpoints: please access from []. It contains:
+- Vicuna-7b model: 
+- our checkpoint: 
+- audio encoder: 
 
-start demo:
-sh interact_gpu_node.sh  # start the environment
-source venvs/lam/bin/activate
-python chat.py
-ssh -i ~/.ssh/id_rsa_apocrita -L 7860:rdg7:7860 acw630@login.hpc.qmul.ac.uk
-(server_name needs to be the same as the given node, and in the port forwarding)
 
-ltu:
-source /etc/profile
-module load anaconda3
-conda activate venv_ltu_as
-cd /data/scratch/acw630/ltu/src/ltu_as/
-python inference.py
+### Inference
 
-plotting
-scp -r -i id_rsa  WORKPLACE/LAM/engine/results/ hz009@frank.eecs.qmul.ac.uk:/homes/hz009/Research/llaqo
+For the inference demo, 
+```
+python llaqo_chat.py --ckpt ./ckpts/checkpoint.pth --vicuna_dir ./ckpts/vicuna
+```
+
+### Datasets
+
+For our new NeuroPiano-dataset, please refer to the [hf repository](https://huggingface.co/datasets/anusfoil/NeuroPiano-data) as well as its [analysis report](). For other datasets, please see the following 
+
+
+### Training
+
+To be updated
+
+#### Acknowledgement
+
+The codebase is adapted from the codebase of [APT]{}, which was originally adapted from the BLIP-2,  
+
+
+#### Citaiton
+```
+@article{zhang2024llaqoassessment,
+  title={{LLaQo: Towards a query-based coach in expressive performance assessment}},
+  author={Zhang, Huan and Cheung, Vincent and Nishioka, Hayato and Dixon, Simon and Furuya, Shinichi},
+  journal={arXiv preprint arXiv:},
+  year={2024}
+}
+```
+

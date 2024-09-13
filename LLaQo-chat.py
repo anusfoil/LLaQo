@@ -5,7 +5,8 @@ import torch
 from torch.utils.data import DataLoader
 from tqdm import tqdm
 import gradio as gr
-sys.path.append("../src/lavis")
+sys.path.append("src/lavis")
+sys.path.append("../")
 
 from lavis.models import load_model_and_preprocess
 from audio_processor import fbankProcessor
@@ -40,6 +41,8 @@ if __name__ == "__main__":
     # hook() 
 
     parser = argparse.ArgumentParser()
+    parser.add_argument('--ckpt', type=str, default='ckpts/checkpoint_2283000.pth', help='checkpoint path')
+    
     sub_parsers = parser.add_subparsers(dest="mode")
 
     # Basic mode
@@ -51,27 +54,28 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     # set up model
-    checkpoint_path = load_latest_checkpoint()
+    # checkpoint_path = load_latest_checkpoint()
+    checkpoint_path = args.ckpt
     print(f"Using checkpoint {checkpoint_path}")
     # pth = checkpoint_path.split("/")[-1].split(".")[0]
     device = torch.device("cuda") if torch.cuda.is_available() else "cpu"
-    # model, _, _ = load_model_and_preprocess(
-    #     name="lam_vicuna_instruct",
-    #     model_type="vicuna1.5_7b-ft", 
-    #     is_eval=True,
-    #     device=device,
-    # )
-    # model.load_from_pretrained(checkpoint_path)
+    model, _, _ = load_model_and_preprocess(
+        name="lam_vicuna_instruct",
+        model_type="vicuna1.5_7b-ft", 
+        is_eval=True,
+        device=device,
+    )
+    model.load_from_pretrained(checkpoint_path)
 
     audio_processor=fbankProcessor.build_processor()
     test_audio = [
-        "../test_audio/burgmuller_b-07-annot.wav",
-        "../test_audio/conespressione_beethoven_casadesus.wav",
-        "../test_audio/expertnovice_Careless Love-01.wav",
-        "../test_audio/gestures_NOMETRO_FAST_LEG_1_audio.wav",
-        "../test_audio/musicshape_sample0280.wav",
-        "../test_audio/PISA_50.wav",
-        "../test_audio/YCUPPE_CZ1516-26.wav"
+        "test_audio/burgmuller_b-07-annot.wav",
+        "test_audio/conespressione_beethoven_casadesus.wav",
+        "test_audio/expertnovice_Careless Love-01.wav",
+        "test_audio/gestures_NOMETRO_FAST_LEG_1_audio.wav",
+        "test_audio/musicshape_sample0280.wav",
+        "test_audio/PISA_50.wav",
+        "test_audio/YCUPPE_CZ1516-26.wav"
     ]
 
     def process_input(wav_path, input_text):
@@ -90,12 +94,12 @@ if __name__ == "__main__":
             gr.Textbox(label="Query for the audio")
         ],
         outputs=gr.Textbox(label="Answer"),
-        title="LLaQo Toy Model Demo (solo piano performance)",
+        title="LLaQo Demo (solo piano performance)",
         description="Upload an audio file and enter your question regards to the performance. ",
-        server_port=7861
+        # server_port=7861
     )
 
-    # manual forwarding: ssh -i ~/.ssh/id_rsa_apocrita -L 7860:rdg7:7860 acw630@login.hpc.qmul.ac.uk
+    # manual forwarding from school server: ssh -i ~/.ssh/id_rsa_apocrita -L 7860:rdg7:7860 acw630@login.hpc.qmul.ac.uk
     demo.launch(server_name="sbg19")
 
 

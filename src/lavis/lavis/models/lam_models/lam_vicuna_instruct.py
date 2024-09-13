@@ -22,7 +22,8 @@ from lavis.common.utils import is_url
 # from utilities import set_logger
 import sys
 
-sys.path.append("/data/home/eey340/WORKPLACE/LAM/engine/models")
+# sys.path.append("/data/home/eey340/WORKPLACE/LAM/engine/models")
+sys.path.append("../../../../..")
 from audiomae_wrapper import AudioMAE
 
 # log = set_logger(__name__)
@@ -54,7 +55,7 @@ class LAMVicunaInstruct(LAMBase):
     }
     # FIXME
     _VIT_CHECKPOINT_PATH_ = (
-        "/data/EECS-MachineListeningLab/jinhua/pretrained_models/finetuned.pth"
+        "ckpts/vit.pth"
     )
 
     def __init__(
