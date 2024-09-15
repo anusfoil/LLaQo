@@ -1,0 +1,114 @@
+,audio_path,split,Q,A
+0,/data/EECS-MachineListeningLab/datasets/LLaQo/Burgmuller/b-01-annot.wav,train,What kind of performance might this be?,This is a student's performance.
+1,/data/EECS-MachineListeningLab/datasets/LLaQo/Burgmuller/b-01-annot.wav,train,"Which difficulty level is the piece, in a scale of 9?",5
+2,/data/EECS-MachineListeningLab/datasets/LLaQo/Burgmuller/b-01-annot.wav,train,What might this piece be and who is the composer?,"This is a practice piece for student, and it's from Burgmuller etude set."
+3,/data/EECS-MachineListeningLab/datasets/LLaQo/Burgmuller/b-01-annot.wav,train, How is the note accuracy?, Wrong notes: a strange high pitch shows up constantly in the performance. 
+4,/data/EECS-MachineListeningLab/datasets/LLaQo/Burgmuller/b-02-annot.wav,train,What kind of performance might this be?,This is a student's performance.
+5,/data/EECS-MachineListeningLab/datasets/LLaQo/Burgmuller/b-02-annot.wav,train,"Which difficulty level is the piece, in a scale of 9?",5
+6,/data/EECS-MachineListeningLab/datasets/LLaQo/Burgmuller/b-02-annot.wav,train,What might this piece be and who is the composer?,"This is a practice piece for student, and it's from Burgmuller etude set."
+7,/data/EECS-MachineListeningLab/datasets/LLaQo/Burgmuller/b-02-annot.wav,train, How is the rhythm performed?, Some rhythm hesitation towards the end. 
+8,/data/EECS-MachineListeningLab/datasets/LLaQo/Burgmuller/b-03-annot.wav,train,What kind of performance might this be?,This is a student's performance.
+9,/data/EECS-MachineListeningLab/datasets/LLaQo/Burgmuller/b-03-annot.wav,train,"Which difficulty level is the piece, in a scale of 9?",5
+10,/data/EECS-MachineListeningLab/datasets/LLaQo/Burgmuller/b-03-annot.wav,train,What might this piece be and who is the composer?,"This is a practice piece for student, and it's from Burgmuller etude set."
+11,/data/EECS-MachineListeningLab/datasets/LLaQo/Burgmuller/b-03-annot.wav,train, How is the overall performance?, Overall good performance. Very clear. 
+12,/data/EECS-MachineListeningLab/datasets/LLaQo/Burgmuller/b-04-annot.wav,train,What kind of performance might this be?,This is a student's performance.
+13,/data/EECS-MachineListeningLab/datasets/LLaQo/Burgmuller/b-04-annot.wav,train,"Which difficulty level is the piece, in a scale of 9?",5
+14,/data/EECS-MachineListeningLab/datasets/LLaQo/Burgmuller/b-04-annot.wav,train,What might this piece be and who is the composer?,"This is a practice piece for student, and it's from Burgmuller etude set."
+15,/data/EECS-MachineListeningLab/datasets/LLaQo/Burgmuller/b-04-annot.wav,train, How is the overall performance?, Flow is good; sometimes the double notes are not very synchronous. 
+16,/data/EECS-MachineListeningLab/datasets/LLaQo/Burgmuller/b-05-annot.wav,train,What kind of performance might this be?,This is a student's performance.
+17,/data/EECS-MachineListeningLab/datasets/LLaQo/Burgmuller/b-05-annot.wav,train,"Which difficulty level is the piece, in a scale of 9?",5
+18,/data/EECS-MachineListeningLab/datasets/LLaQo/Burgmuller/b-05-annot.wav,train,What might this piece be and who is the composer?,"This is a practice piece for student, and it's from Burgmuller etude set."
+19,/data/EECS-MachineListeningLab/datasets/LLaQo/Burgmuller/b-05-annot.wav,train, How is the rhythm performed?, Rhythm is not stable and hesitation throughout. 
+20,/data/EECS-MachineListeningLab/datasets/LLaQo/Burgmuller/b-06-annot.wav,train,What kind of performance might this be?,This is a student's performance.
+21,/data/EECS-MachineListeningLab/datasets/LLaQo/Burgmuller/b-06-annot.wav,train,"Which difficulty level is the piece, in a scale of 9?",5
+22,/data/EECS-MachineListeningLab/datasets/LLaQo/Burgmuller/b-06-annot.wav,train,What might this piece be and who is the composer?,"This is a practice piece for student, and it's from Burgmuller etude set."
+23,/data/EECS-MachineListeningLab/datasets/LLaQo/Burgmuller/b-06-annot.wav,train, How is the overall performance?, Wrong notes touched and hesitated rhythm here and there. 
+24,/data/EECS-MachineListeningLab/datasets/LLaQo/Burgmuller/b-07-annot.wav,test,What kind of performance might this be?,This is a student's performance.
+25,/data/EECS-MachineListeningLab/datasets/LLaQo/Burgmuller/b-07-annot.wav,test,"Which difficulty level is the piece, in a scale of 9?",5
+26,/data/EECS-MachineListeningLab/datasets/LLaQo/Burgmuller/b-07-annot.wav,test,What might this piece be and who is the composer?,"This is a practice piece for student, and it's from Burgmuller etude set."
+27,/data/EECS-MachineListeningLab/datasets/LLaQo/Burgmuller/b-07-annot.wav,test, How is the rhythm performed?, Hesitated rhythm between phrases. 
+28,/data/EECS-MachineListeningLab/datasets/LLaQo/Burgmuller/b-07-annot.wav,test, What's difficult about the piece?, Triplet rhythmic groups.
+29,/data/EECS-MachineListeningLab/datasets/LLaQo/Burgmuller/b-08-annot.wav,train,What kind of performance might this be?,This is a student's performance.
+30,/data/EECS-MachineListeningLab/datasets/LLaQo/Burgmuller/b-08-annot.wav,train,"Which difficulty level is the piece, in a scale of 9?",5
+31,/data/EECS-MachineListeningLab/datasets/LLaQo/Burgmuller/b-08-annot.wav,train,What might this piece be and who is the composer?,"This is a practice piece for student, and it's from Burgmuller etude set."
+32,/data/EECS-MachineListeningLab/datasets/LLaQo/Burgmuller/b-08-annot.wav,train, How is note accuracy?, Lots of wrong notes by mistouch.
+33,/data/EECS-MachineListeningLab/datasets/LLaQo/Burgmuller/b-08-annot.wav,train, How is the flow in the performance?, A lot of rhythm hesitation; since the performer is not very fluent in the fast notes.
+34,/data/EECS-MachineListeningLab/datasets/LLaQo/Burgmuller/b-08-annot.wav,train, What's difficult about the piece?, Fast short notes that requires the dexterity of fingers.
+35,/data/EECS-MachineListeningLab/datasets/LLaQo/Burgmuller/b-09-annot.wav,train,What kind of performance might this be?,This is a student's performance.
+36,/data/EECS-MachineListeningLab/datasets/LLaQo/Burgmuller/b-09-annot.wav,train,"Which difficulty level is the piece, in a scale of 9?",5
+37,/data/EECS-MachineListeningLab/datasets/LLaQo/Burgmuller/b-09-annot.wav,train,What might this piece be and who is the composer?,"This is a practice piece for student, and it's from Burgmuller etude set."
+38,/data/EECS-MachineListeningLab/datasets/LLaQo/Burgmuller/b-09-annot.wav,train, How is the rhythm performed?, The rhythm is not very stable; and some hesitation between the transitions.
+39,/data/EECS-MachineListeningLab/datasets/LLaQo/Burgmuller/b-09-annot.wav,train, What's the technical challenge of the piece?, Staccato notes and chordal accompaniment.
+40,/data/EECS-MachineListeningLab/datasets/LLaQo/Burgmuller/b-10-annot.wav,test,What kind of performance might this be?,This is a student's performance.
+41,/data/EECS-MachineListeningLab/datasets/LLaQo/Burgmuller/b-10-annot.wav,test,"Which difficulty level is the piece, in a scale of 9?",5
+42,/data/EECS-MachineListeningLab/datasets/LLaQo/Burgmuller/b-10-annot.wav,test,What might this piece be and who is the composer?,"This is a practice piece for student, and it's from Burgmuller etude set."
+43,/data/EECS-MachineListeningLab/datasets/LLaQo/Burgmuller/b-10-annot.wav,test, How is the overall performance?, Overall flow is good; very occational hesitations.
+44,/data/EECS-MachineListeningLab/datasets/LLaQo/Burgmuller/b-11-annot.wav,train,What kind of performance might this be?,This is a student's performance.
+45,/data/EECS-MachineListeningLab/datasets/LLaQo/Burgmuller/b-11-annot.wav,train,"Which difficulty level is the piece, in a scale of 9?",5
+46,/data/EECS-MachineListeningLab/datasets/LLaQo/Burgmuller/b-11-annot.wav,train,What might this piece be and who is the composer?,"This is a practice piece for student, and it's from Burgmuller etude set."
+47,/data/EECS-MachineListeningLab/datasets/LLaQo/Burgmuller/b-11-annot.wav,train, How is the overall performance?, Overall flow is good; occational hesitation between phrases.
+48,/data/EECS-MachineListeningLab/datasets/LLaQo/Burgmuller/b-12-annot.wav,test,What kind of performance might this be?,This is a student's performance.
+49,/data/EECS-MachineListeningLab/datasets/LLaQo/Burgmuller/b-12-annot.wav,test,"Which difficulty level is the piece, in a scale of 9?",5
+50,/data/EECS-MachineListeningLab/datasets/LLaQo/Burgmuller/b-12-annot.wav,test,What might this piece be and who is the composer?,"This is a practice piece for student, and it's from Burgmuller etude set."
+51,/data/EECS-MachineListeningLab/datasets/LLaQo/Burgmuller/b-12-annot.wav,test, How is the overall performance?, A lot of hesitations; especially between change of harmonies. 
+52,/data/EECS-MachineListeningLab/datasets/LLaQo/Burgmuller/b-12-annot.wav,test, What's difficult about the piece?, Triplet rhythmic groups.
+53,/data/EECS-MachineListeningLab/datasets/LLaQo/Burgmuller/b-13-annot.wav,train,What kind of performance might this be?,This is a student's performance.
+54,/data/EECS-MachineListeningLab/datasets/LLaQo/Burgmuller/b-13-annot.wav,train,"Which difficulty level is the piece, in a scale of 9?",5
+55,/data/EECS-MachineListeningLab/datasets/LLaQo/Burgmuller/b-13-annot.wav,train,What might this piece be and who is the composer?,"This is a practice piece for student, and it's from Burgmuller etude set."
+56,/data/EECS-MachineListeningLab/datasets/LLaQo/Burgmuller/b-13-annot.wav,train, How is the overall performance?, Occational rhythmic hesitations and wrong notes.
+57,/data/EECS-MachineListeningLab/datasets/LLaQo/Burgmuller/b-14-annot.wav,train,What kind of performance might this be?,This is a student's performance.
+58,/data/EECS-MachineListeningLab/datasets/LLaQo/Burgmuller/b-14-annot.wav,train,"Which difficulty level is the piece, in a scale of 9?",5
+59,/data/EECS-MachineListeningLab/datasets/LLaQo/Burgmuller/b-14-annot.wav,train,What might this piece be and who is the composer?,"This is a practice piece for student, and it's from Burgmuller etude set."
+60,/data/EECS-MachineListeningLab/datasets/LLaQo/Burgmuller/b-14-annot.wav,train, How is the overall performance?, Some rhythmic instability between phrases.
+61,/data/EECS-MachineListeningLab/datasets/LLaQo/Burgmuller/b-14-annot.wav,train, What's difficult about the piece?, Grace notes and triple meter Waltz rhythm.
+62,/data/EECS-MachineListeningLab/datasets/LLaQo/Burgmuller/b-15-annot.wav,test,What kind of performance might this be?,This is a student's performance.
+63,/data/EECS-MachineListeningLab/datasets/LLaQo/Burgmuller/b-15-annot.wav,test,"Which difficulty level is the piece, in a scale of 9?",5
+64,/data/EECS-MachineListeningLab/datasets/LLaQo/Burgmuller/b-15-annot.wav,test,What might this piece be and who is the composer?,"This is a practice piece for student, and it's from Burgmuller etude set."
+65,/data/EECS-MachineListeningLab/datasets/LLaQo/Burgmuller/b-15-annot.wav,test, How is the overall performance?, The groove is nice; and rhythm is stable.
+66,/data/EECS-MachineListeningLab/datasets/LLaQo/Burgmuller/b-15-annot.wav,test, How is the dynamics contrast?, Dynamics is overall very plain; can have more contrasts.  
+67,/data/EECS-MachineListeningLab/datasets/LLaQo/Burgmuller/b-15-annot.wav,test, What's the technique needed in the piece?, Staccato chords on the right hand and melody in the left hand.  
+68,/data/EECS-MachineListeningLab/datasets/LLaQo/Burgmuller/b-16-annot.wav,test,What kind of performance might this be?,This is a student's performance.
+69,/data/EECS-MachineListeningLab/datasets/LLaQo/Burgmuller/b-16-annot.wav,test,"Which difficulty level is the piece, in a scale of 9?",5
+70,/data/EECS-MachineListeningLab/datasets/LLaQo/Burgmuller/b-16-annot.wav,test,What might this piece be and who is the composer?,"This is a practice piece for student, and it's from Burgmuller etude set."
+71,/data/EECS-MachineListeningLab/datasets/LLaQo/Burgmuller/b-16-annot.wav,test, How is the overall performance?, Overall good flow; with occational hesitations.
+72,/data/EECS-MachineListeningLab/datasets/LLaQo/Burgmuller/b-16-annot.wav,test, What's difficult about the piece?, Fast notes in the left hand.
+73,/data/EECS-MachineListeningLab/datasets/LLaQo/Burgmuller/b-17-annot.wav,train,What kind of performance might this be?,This is a student's performance.
+74,/data/EECS-MachineListeningLab/datasets/LLaQo/Burgmuller/b-17-annot.wav,train,"Which difficulty level is the piece, in a scale of 9?",5
+75,/data/EECS-MachineListeningLab/datasets/LLaQo/Burgmuller/b-17-annot.wav,train,What might this piece be and who is the composer?,"This is a practice piece for student, and it's from Burgmuller etude set."
+76,/data/EECS-MachineListeningLab/datasets/LLaQo/Burgmuller/b-17-annot.wav,train, How is the rhythm performed?, A lot of hesitation that breaks the flow of the rhythm; and a lot of repeat back to fix the mistakes.
+77,/data/EECS-MachineListeningLab/datasets/LLaQo/Burgmuller/b-18-annot.wav,train,What kind of performance might this be?,This is a student's performance.
+78,/data/EECS-MachineListeningLab/datasets/LLaQo/Burgmuller/b-18-annot.wav,train,"Which difficulty level is the piece, in a scale of 9?",5
+79,/data/EECS-MachineListeningLab/datasets/LLaQo/Burgmuller/b-18-annot.wav,train,What might this piece be and who is the composer?,"This is a practice piece for student, and it's from Burgmuller etude set."
+80,/data/EECS-MachineListeningLab/datasets/LLaQo/Burgmuller/b-18-annot.wav,train, How is the overall performance?, The student is not very fluent of the piece; pauses here and there to get the notes right.
+81,/data/EECS-MachineListeningLab/datasets/LLaQo/Burgmuller/b-19-annot.wav,train,What kind of performance might this be?,This is a student's performance.
+82,/data/EECS-MachineListeningLab/datasets/LLaQo/Burgmuller/b-19-annot.wav,train,"Which difficulty level is the piece, in a scale of 9?",5
+83,/data/EECS-MachineListeningLab/datasets/LLaQo/Burgmuller/b-19-annot.wav,train,What might this piece be and who is the composer?,"This is a practice piece for student, and it's from Burgmuller etude set."
+84,/data/EECS-MachineListeningLab/datasets/LLaQo/Burgmuller/b-19-annot.wav,train, How is the overall performance?, Overall flow is alright; with a few pauses.
+85,/data/EECS-MachineListeningLab/datasets/LLaQo/Burgmuller/b-20-annot.wav,train,What kind of performance might this be?,This is a student's performance.
+86,/data/EECS-MachineListeningLab/datasets/LLaQo/Burgmuller/b-20-annot.wav,train,"Which difficulty level is the piece, in a scale of 9?",5
+87,/data/EECS-MachineListeningLab/datasets/LLaQo/Burgmuller/b-20-annot.wav,train,What might this piece be and who is the composer?,"This is a practice piece for student, and it's from Burgmuller etude set."
+88,/data/EECS-MachineListeningLab/datasets/LLaQo/Burgmuller/b-20-annot.wav,train, How is the overall performance?, Overall flow is alright; with a few pauses.
+89,/data/EECS-MachineListeningLab/datasets/LLaQo/Burgmuller/b-21-annot.wav,train,What kind of performance might this be?,This is a student's performance.
+90,/data/EECS-MachineListeningLab/datasets/LLaQo/Burgmuller/b-21-annot.wav,train,"Which difficulty level is the piece, in a scale of 9?",5
+91,/data/EECS-MachineListeningLab/datasets/LLaQo/Burgmuller/b-21-annot.wav,train,What might this piece be and who is the composer?,"This is a practice piece for student, and it's from Burgmuller etude set."
+92,/data/EECS-MachineListeningLab/datasets/LLaQo/Burgmuller/b-21-annot.wav,train, Is the performance hesitant or smooth?, The playing is very smooth; beautiful. 
+93,/data/EECS-MachineListeningLab/datasets/LLaQo/Burgmuller/b-21-annot.wav,train, How is the use of pedal?, Good use of pedal. 
+94,/data/EECS-MachineListeningLab/datasets/LLaQo/Burgmuller/b-22-annot.wav,train,What kind of performance might this be?,This is a student's performance.
+95,/data/EECS-MachineListeningLab/datasets/LLaQo/Burgmuller/b-22-annot.wav,train,"Which difficulty level is the piece, in a scale of 9?",5
+96,/data/EECS-MachineListeningLab/datasets/LLaQo/Burgmuller/b-22-annot.wav,train,What might this piece be and who is the composer?,"This is a practice piece for student, and it's from Burgmuller etude set."
+97,/data/EECS-MachineListeningLab/datasets/LLaQo/Burgmuller/b-22-annot.wav,train, How is the dynamics contrast?, Too little dynamics contrast.
+98,/data/EECS-MachineListeningLab/datasets/LLaQo/Burgmuller/b-22-annot.wav,train, How is the overall performance?, Can hear the structure of the piece; but a few rhythmic hesitations in the middle. 
+99,/data/EECS-MachineListeningLab/datasets/LLaQo/Burgmuller/b-23-annot.wav,train,What kind of performance might this be?,This is a student's performance.
+100,/data/EECS-MachineListeningLab/datasets/LLaQo/Burgmuller/b-23-annot.wav,train,"Which difficulty level is the piece, in a scale of 9?",5
+101,/data/EECS-MachineListeningLab/datasets/LLaQo/Burgmuller/b-23-annot.wav,train,What might this piece be and who is the composer?,"This is a practice piece for student, and it's from Burgmuller etude set."
+102,/data/EECS-MachineListeningLab/datasets/LLaQo/Burgmuller/b-23-annot.wav,train, Is the performance hesitant or smooth?, There are hesitations especially between the transition of harmony. 
+103,/data/EECS-MachineListeningLab/datasets/LLaQo/Burgmuller/b-23-annot.wav,train, What's difficult about the piece?, A lot of staccato use both in left and right hand.
+104,/data/EECS-MachineListeningLab/datasets/LLaQo/Burgmuller/b-24-annot.wav,train,What kind of performance might this be?,This is a student's performance.
+105,/data/EECS-MachineListeningLab/datasets/LLaQo/Burgmuller/b-24-annot.wav,train,"Which difficulty level is the piece, in a scale of 9?",5
+106,/data/EECS-MachineListeningLab/datasets/LLaQo/Burgmuller/b-24-annot.wav,train,What might this piece be and who is the composer?,"This is a practice piece for student, and it's from Burgmuller etude set."
+107,/data/EECS-MachineListeningLab/datasets/LLaQo/Burgmuller/b-24-annot.wav,train, How is the overall performance?, Generally very smooth; with a few pauses. 
+108,/data/EECS-MachineListeningLab/datasets/LLaQo/Burgmuller/b-24-annot.wav,train, What's difficult about the piece?, Fast arpeggio. 
+109,/data/EECS-MachineListeningLab/datasets/LLaQo/Burgmuller/b-25-annot.wav,train,What kind of performance might this be?,This is a student's performance.
+110,/data/EECS-MachineListeningLab/datasets/LLaQo/Burgmuller/b-25-annot.wav,train,"Which difficulty level is the piece, in a scale of 9?",5
+111,/data/EECS-MachineListeningLab/datasets/LLaQo/Burgmuller/b-25-annot.wav,train,What might this piece be and who is the composer?,"This is a practice piece for student, and it's from Burgmuller etude set."
+112,/data/EECS-MachineListeningLab/datasets/LLaQo/Burgmuller/b-25-annot.wav,train, How is the overall performance?, It has some groove; but there are still a few mistakes and hesitations.
