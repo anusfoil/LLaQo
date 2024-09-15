@@ -22,8 +22,6 @@ from lavis.common.utils import is_url
 from lavis.common.logger import MetricLogger
 from lavis.models.base_model import BaseModel
 from lavis.models.lam_models.Qformer import BertConfig, BertLMHeadModel
-from lavis.models.eva_vit import create_eva_vit_g
-from lavis.models.clip_vit import create_clip_vit_L
 
 _BERT_LOCAL_PATH_ = (
     "/data/EECS-MachineListeningLab/jinhua/pretrained_model_zoo/berts/bert_mini"

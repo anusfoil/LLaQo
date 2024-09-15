@@ -100,6 +100,6 @@ if __name__ == "__main__":
     )
 
     # manual forwarding from school server: ssh -i ~/.ssh/id_rsa_apocrita -L 7860:rdg7:7860 acw630@login.hpc.qmul.ac.uk
-    demo.launch(server_name="sbg19")
+    demo.launch(server_name="rdg1")
 
 
