@@ -1,5 +1,5 @@
 # LLaQo: Towards a query-based coach in expressive performance assessment
-[![arXiv Paper](https://img.shields.io/badge/arXiv-Paper-brightgreen)]() [![NeuroPiano-data](https://img.shields.io/badge/neuropiano-data-orange)](https://huggingface.co/datasets/anusfoil/NeuroPiano-data) 
+[![arXiv Paper](https://img.shields.io/badge/arXiv-Paper-brightgreen)](https://arxiv.org/pdf/2409.08795) [![NeuroPiano-data](https://img.shields.io/badge/neuropiano-data-orange)](https://huggingface.co/datasets/anusfoil/NeuroPiano-data) 
 
 This is the repository of LLaQo, a Large Language Query-based music coach that leverages audio language modeling to provide detailed and formative assessments of music performances. 
 
@@ -49,7 +49,7 @@ The codebase is adapted from the codebase of [APT](https://arxiv.org/abs/2312.00
 @article{zhang2024llaqoassessment,
   title={{LLaQo: Towards a query-based coach in expressive performance assessment}},
   author={Zhang, Huan and Cheung, Vincent and Nishioka, Hayato and Dixon, Simon and Furuya, Shinichi},
-  journal={arXiv preprint arXiv:},
+  journal={arXiv preprint arXiv:2409.08795},
   year={2024}
 }
 ```
