@@ -7,7 +7,7 @@ This is the repository of LLaQo, a Large Language Query-based music coach that l
 
 ### Environment
 
-Our environment lam2 is downloadable from [here](https://huggingface.co/anusfoil/LLaQo-ckpts). After downloading, simply do ```source /path/to/your/envs/lam2/bin/activate ```.
+Our environment lam2 is downloadable from [here](https://huggingface.co/anusfoil/LLaQo-ckpts). After downloading, simply do ```source /path/to/your/envs/lam2/bin/activate ```.  Or install via pip with ```requirement.txt``` or conda with ```environment.yaml```.
 
 checkpoints: please access from [here](https://huggingface.co/anusfoil/LLaQo-ckpts). It contains: Vicuna-7b model; Our checkpoint; and audio encoder. 
 

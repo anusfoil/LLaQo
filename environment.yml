@@ -1,0 +1,16 @@
+name: apt
+channels:
+  - pytorch
+  - conda-forge
+dependencies:
+  - python=3.10
+  - conda
+  - pytorch
+  - torchvision
+  - torchaudio
+  - pytorch-cuda=12.1
+  - ca-certificates
+  - certifi
+  - openssl
+  - sox
+prefix: apt
