@@ -46,11 +46,12 @@ The codebase is adapted from the codebase of [APT](https://arxiv.org/abs/2312.00
 
 #### Citaiton
 ```
-@article{zhang2024llaqoassessment,
-  title={{LLaQo: Towards a query-based coach in expressive performance assessment}},
-  author={Zhang, Huan and Cheung, Vincent and Nishioka, Hayato and Dixon, Simon and Furuya, Shinichi},
-  journal={arXiv preprint arXiv:2409.08795},
-  year={2024}
-}
+@INPROCEEDINGS{Zhang2025LLaQo,
+  author={Zhang, Huan and Cheung, Vincent K.M. and Nishioka, Hayato and Dixon, Simon and Furuya, Shinichi},
+  booktitle={ICASSP 2025 - 2025 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)}, 
+  title={LLaQo: Towards a Query-Based Coach in Expressive Music Performance Assessment}, 
+  year={2025},
+  pages={1-5},
+  doi={10.1109/ICASSP49660.2025.10890522}}
 ```
 
